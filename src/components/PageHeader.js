@@ -23,7 +23,7 @@ const PageHeader = (props) => (
 
 PageHeader.propTypes = {
   title: React.PropTypes.string,
-  subTitle: React.PropTypes.string,
+  subTitle: React.PropTypes.string
 }
 
 export default PageHeader

@@ -3,8 +3,6 @@
   "version": "0.1.1",
   "private": true,
   "devDependencies": {
-    "eslint": "^3.16.0",
-    "eslint-plugin-react": "^6.10.0",
     "react-scripts": "0.8.5",
     "standard": "^8.6.0"
   },
@@ -20,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && react-snapshot",
-    "test": "react-scripts test --env=jsdom",
+    "test": "standard | snazzy && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }

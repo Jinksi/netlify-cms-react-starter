@@ -6,7 +6,7 @@ import PageHeader from '../components/PageHeader'
 
 export default (props) => (
   <Page>
-    <PageHeader title={props.title}/>
+    <PageHeader title={props.title} />
     <Container>
       <h1>Welcome.</h1>
       <p>Hello!</p>
