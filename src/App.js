@@ -4,12 +4,13 @@ import Helmet from 'react-helmet'
 import Home from './views/Home'
 import About from './views/About'
 import NoMatch from './views/NoMatch'
-import Wrapper from './components/Wrapper'
-import Title from './components/Title'
+import { Container } from './components/common'
+import PageHeader from './components/PageHeader'
 import Nav from './components/Nav'
 import NavLink from './components/NavLink'
+import Logo from './components/Logo'
 
-const title = 'You Are Doing Great'
+const siteTitle = 'HyperStatic'
 const routes = [
   {
     title: 'Home',
@@ -27,11 +28,10 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <Wrapper>
-          <Helmet titleTemplate={`%s - ${title}`} />
-          <Title>YADG</Title>
+        <div>
+          <Helmet titleTemplate={`${siteTitle} | %s`} />
           <Nav>
-            <h1>Navigation</h1>
+            <Logo>🍉</Logo>
             {routes.map((route, i) => (
               <NavLink key={i} {...route} />
             ))}
@@ -42,7 +42,7 @@ class App extends Component {
             ))}
             <Route component={NoMatch} />
           </Switch>
-        </Wrapper>
+        </div>
       </Router>
     )
   }
