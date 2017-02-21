@@ -8,5 +8,9 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   width: 100%;
-  padding: 5rem 0;
+  padding: ${props => {
+    if (props.thick) return '10rem 0'
+    if (props.thin) return '2.5rem 0'
+    return '5rem 0'
+  }};
 `
