@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.5",
+    "snazzy": "^6.0.0",
     "standard": "^8.6.0"
   },
   "dependencies": {
