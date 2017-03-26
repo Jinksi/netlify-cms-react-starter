@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Section, Container } from './common'
 
+import { color } from '../globalStyles'
+
 const Header = styled(Section)`
   line-height: 1em;
-  color: var(--col1);
-  background: var(--col1);
+  color: ${color.primary};
+  background: ${color.primary};
   color: white;
   h2{
     font-weight: 100;

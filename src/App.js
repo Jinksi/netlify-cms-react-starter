@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
+
 import Home from './views/Home'
 import About from './views/About'
 import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import NavLink from './components/NavLink'
 import Logo from './components/Logo'
+import globalStyles from './globalStyles'
 
 const siteTitle = 'HyperStatic'
 const routes = [
@@ -23,6 +25,9 @@ const routes = [
 ]
 
 class App extends Component {
+  componentDidMount () {
+    globalStyles()
+  }
   render () {
     return (
       <Router>

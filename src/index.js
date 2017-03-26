@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from 'react-snapshot'
 import App from './App'
 import 'normalize.css'
-import './index.css'
 
 const rootEl = document.getElementById('root')
 render(<App />, rootEl)
