@@ -13,6 +13,8 @@ export default (props) => (
         <p>Hello!</p>
       </Container>
     </Section>
-    <Helmet title='Home' />
+    <Helmet>
+      <title>Home</title>
+    </Helmet>
   </Page>
 )
