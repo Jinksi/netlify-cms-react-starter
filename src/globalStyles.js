@@ -1,13 +1,20 @@
 import { injectGlobal } from 'styled-components'
+import WebFont from 'webfontloader'
+
+export const loadFonts = () => WebFont.load({
+  google: {
+    families: ['Cabin']
+  }
+})
+
+export const font = {
+  primary: `'Cabin', sans-serif`
+}
 
 export const color = {
   primary: '#FA5463',
   secondary: '#212121',
   lightGrey: 'whitesmoke'
-}
-
-export const font = {
-  primary: `'Avenir', sans-serif`
 }
 
 export default () => injectGlobal`

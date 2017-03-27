@@ -14,7 +14,8 @@
     "react-helmet": "^5",
     "react-router-dom": "^4.0.0",
     "react-snapshot": "^1.0.4",
-    "styled-components": "^1.4.4"
+    "styled-components": "^1.4.4",
+    "webfontloader": "^1.6.27"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -8,7 +8,7 @@ import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import NavLink from './components/NavLink'
 import Logo from './components/Logo'
-import globalStyles from './globalStyles'
+import globalStyles, { loadFonts } from './globalStyles'
 
 const siteTitle = 'HyperStatic'
 const routes = [
@@ -27,6 +27,7 @@ const routes = [
 class App extends Component {
   componentDidMount () {
     globalStyles()
+    loadFonts()
   }
   render () {
     return (
