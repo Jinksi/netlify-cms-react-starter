@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container } from './common'
+import { Container, Flex } from './common'
 
-const Nav = styled.nav`
-  padding: 0;
-  display: flex;
-  align-items: center;
+const Nav = styled.div`
+  background: white;
+  position: sticky;
+  top: 0;
 `
 
 export default (props) => (
-  <Container>
-    <Nav {...props} />
-  </Container>
+  <Nav>
+    <Container>
+      <Flex alignCenter {...props} />
+    </Container>
+  </Nav>
 )
