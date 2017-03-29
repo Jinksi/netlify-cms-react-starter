@@ -2,7 +2,11 @@ import { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
 
 export const font = {
-  primary: `'Open Sans', sans-serif`
+  primary: `'Open Sans', sans-serif`,
+  system: `-apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif`
 }
 
 export const color = {
