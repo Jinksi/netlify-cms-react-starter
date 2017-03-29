@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components'
+import { normalize } from 'polished'
 import WebFont from 'webfontloader'
 
 export const loadFonts = () => WebFont.load({
@@ -18,6 +19,7 @@ export const color = {
 }
 
 export default () => injectGlobal`
+  ${normalize()}
   html{
     box-sizing: border-box;
     font-size: 62.5%;
