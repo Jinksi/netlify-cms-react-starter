@@ -25,7 +25,7 @@ const routes = [
 ]
 
 class App extends Component {
-  componentDidMount () {
+  componentWillMount () {
     globalStyles()
     loadFonts()
   }
