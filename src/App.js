@@ -15,12 +15,12 @@ const routes = [
   {
     title: 'Home',
     path: '/',
-    component: Home,
+    comp: Home,
     exact: true
   }, {
     title: 'About',
     path: '/about',
-    component: About
+    comp: About
   }
 ]
 
@@ -42,7 +42,11 @@ class App extends Component {
           </Nav>
           <Switch>
             {routes.map((route, i) => (
-              <Route key={i} {...route} />
+              <Route
+                {...route}
+                key={i}
+                render={() => <route.comp {...route} />}
+              />
             ))}
             <Route component={NoMatch} />
           </Switch>
