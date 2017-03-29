@@ -25,9 +25,7 @@ export default ({title}) => {
           <Marked source={content} />
         </Container>
       </Section>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
+      <Helmet title={title} />
     </Page>
   )
 }

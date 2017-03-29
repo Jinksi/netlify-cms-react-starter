@@ -1539,7 +1539,7 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-deep-equal@^1.0.1:
+deep-equal@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
@@ -3832,7 +3832,7 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -4516,12 +4516,12 @@ react-dom, react-dom@^15.3.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
-react-helmet@^5:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.0.1.tgz#ffaf4553bb47c68a65edc53782d7fc6706796343"
+react-helmet@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-4.0.0.tgz#df74bcd6ff585a1ccbbfba5aaa1c346cabc43d03"
   dependencies:
-    deep-equal "^1.0.1"
-    object-assign "^4.1.1"
+    deep-equal "1.0.1"
+    object-assign "^4.0.1"
     react-side-effect "^1.1.0"
 
 react-markdown@^2.4.6:
@@ -5559,10 +5559,6 @@ watchpack@^0.2.1:
     async "^0.9.0"
     chokidar "^1.0.0"
     graceful-fs "^4.1.2"
-
-webfontloader@^1.6.27:
-  version "1.6.27"
-  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.27.tgz#c3899649b0653aa57d0a23388f82409e0df224ba"
 
 webidl-conversions@^3.0.0, webidl-conversions@^3.0.1:
   version "3.0.1"

@@ -1,15 +1,8 @@
 import { injectGlobal } from 'styled-components'
 import { normalize } from 'polished'
-import WebFont from 'webfontloader'
-
-export const loadFonts = () => WebFont.load({
-  google: {
-    families: ['Cabin:400,500,600']
-  }
-})
 
 export const font = {
-  primary: `'Cabin', sans-serif`
+  primary: `'Open Sans', sans-serif`
 }
 
 export const color = {

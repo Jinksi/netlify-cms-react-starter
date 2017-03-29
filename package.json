@@ -11,12 +11,11 @@
     "polished": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-helmet": "^5",
+    "react-helmet": "^4.0.0",
     "react-markdown": "^2.4.6",
     "react-router-dom": "^4.0.0",
     "react-snapshot": "^1.0.4",
-    "styled-components": "^1.4.4",
-    "webfontloader": "^1.6.27"
+    "styled-components": "^1.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
