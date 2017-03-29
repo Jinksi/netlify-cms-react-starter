@@ -18,7 +18,7 @@ const PageHeader = (props) => (
   <Header>
     <Container>
       <h1>{props.title}</h1>
-      {props.subTitle ? <h2>{props.subTitle}</h2> : ''}
+      {props.subtitle ? <h2>{props.subtitle}</h2> : ''}
     </Container>
   </Header>
 )

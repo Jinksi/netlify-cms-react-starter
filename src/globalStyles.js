@@ -4,7 +4,7 @@ import WebFont from 'webfontloader'
 
 export const loadFonts = () => WebFont.load({
   google: {
-    families: ['Cabin']
+    families: ['Cabin:400,500,600']
   }
 })
 
@@ -20,7 +20,8 @@ export const color = {
 
 export default () => injectGlobal`
   ${normalize()}
-  html{
+
+  html {
     box-sizing: border-box;
     font-size: 62.5%;
     background: ${color.lightGrey};
@@ -45,8 +46,11 @@ export default () => injectGlobal`
     box-sizing: border-box;
   }
 
-
-  a{
+  a {
     color: ${color.primary};
+  }
+
+  strong{
+    font-weight: 600;
   }
 `
