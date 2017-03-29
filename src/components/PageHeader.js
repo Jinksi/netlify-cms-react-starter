@@ -10,7 +10,7 @@ const Header = styled(Section)`
   background: ${color.primary};
   color: white;
   h2{
-    font-weight: 100;
+    font-weight: 200;
   }
 `
 

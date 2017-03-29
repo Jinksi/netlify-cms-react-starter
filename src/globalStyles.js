@@ -25,7 +25,7 @@ export default () => injectGlobal`
   }
 
   body {
-    font-family: ${font.primary};
+    font-family: ${font.system};
     min-height: 100vh;
     position: relative;
     background: white;

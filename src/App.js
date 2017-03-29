@@ -32,10 +32,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Helmet
-            titleTemplate={`${siteTitle} | %s`}
-            link={[{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans'}]}
-          />
+          <Helmet titleTemplate={`${siteTitle} | %s`} />
           <Nav>
             <Logo>🍉</Logo>
             {routes.map((route, i) => (
