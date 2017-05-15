@@ -50,4 +50,13 @@ export default () => injectGlobal`
   strong{
     font-weight: 600;
   }
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  h1, h2, h3, h4, h5 ,h6{
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
 `
