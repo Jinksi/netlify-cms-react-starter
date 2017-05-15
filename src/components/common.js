@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 
+export const Absolute = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
+export const Relative = styled.div`
+  position: relative;
+  z-index: 0;
+`
+
 export const Section = styled.section`
   width: 100%;
   padding: ${props => {
@@ -33,4 +46,12 @@ export const Flex = styled.div`
   }};
   height: ${props => props.fill ? '100%' : 'auto'};
   width: ${props => props.fill ? '100%' : 'auto'};
+`
+
+export const BackgroundImage = styled(Absolute)`
+  background-size: cover;
+  background-position: center;
+  background-image: url(${props => props.image});
+  opacity: ${props => props.opacity || 1};
+  transition: opacity .5s ease;
 `
