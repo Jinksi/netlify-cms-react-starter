@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Section, Container } from './common'
 
@@ -24,8 +25,8 @@ const PageHeader = (props) => (
 )
 
 PageHeader.propTypes = {
-  title: React.PropTypes.string,
-  subTitle: React.PropTypes.string
+  title: PropTypes.string,
+  subTitle: PropTypes.string
 }
 
 export default PageHeader

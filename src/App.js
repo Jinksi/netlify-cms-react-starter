@@ -34,7 +34,9 @@ class App extends Component {
         <div>
           <Helmet titleTemplate={`${siteTitle} | %s`} />
           <Nav>
-            <Logo>🍉</Logo>
+            <Logo>
+              <span role='img' aria-label='Watermelon'>🍉</span>
+            </Logo>
             {routes.map((route, i) => (
               <NavLink key={i} {...route} />
             ))}
