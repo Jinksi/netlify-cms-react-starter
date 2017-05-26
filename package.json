@@ -15,7 +15,7 @@
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.1.1",
     "react-snapshot": "^1.1.0",
-    "styled-components": "^1.4.4"
+    "styled-components": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
