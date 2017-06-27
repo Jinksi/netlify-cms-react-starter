@@ -3,19 +3,19 @@
   "version": "0.1.1",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^1.0.6",
+    "react-scripts": "^1.0.7",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   },
   "dependencies": {
-    "polished": "^1.1.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "polished": "^1.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-helmet": "^4.0.0",
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.1.1",
     "react-snapshot": "^1.1.0",
-    "styled-components": "^2.0.0"
+    "styled-components": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
