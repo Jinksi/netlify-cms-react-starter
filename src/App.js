@@ -34,7 +34,6 @@ class App extends Component {
     return (
       <Router>
         <ScrollToTop>
-
           <div>
             <Helmet titleTemplate={`${siteTitle} | %s`} />
             <Nav>
