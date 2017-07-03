@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
+import ScrollToTop from './components/ScrollToTop'
 import Home from './views/Home'
 import About from './views/About'
 import NoMatch from './views/NoMatch'
@@ -28,30 +29,34 @@ class App extends Component {
   componentWillMount () {
     globalStyles()
   }
+
   render () {
     return (
       <Router>
-        <div>
-          <Helmet titleTemplate={`${siteTitle} | %s`} />
-          <Nav>
-            <Logo>
-              <span role='img' aria-label='Watermelon'>🍉</span>
-            </Logo>
-            {routes.map((route, i) => (
-              <NavLink key={i} {...route} />
-            ))}
-          </Nav>
-          <Switch>
-            {routes.map((route, i) => (
-              <Route
-                {...route}
-                key={i}
-                render={() => <route.comp {...route} />}
-              />
-            ))}
-            <Route component={NoMatch} />
-          </Switch>
-        </div>
+        <ScrollToTop>
+
+          <div>
+            <Helmet titleTemplate={`${siteTitle} | %s`} />
+            <Nav>
+              <Logo>
+                <span role='img' aria-label='Watermelon'>🍉</span>
+              </Logo>
+              {routes.map((route, i) => (
+                <NavLink key={i} {...route} />
+              ))}
+            </Nav>
+            <Switch>
+              {routes.map((route, i) => (
+                <Route
+                  {...route}
+                  key={i}
+                  render={() => <route.comp {...route} />}
+                />
+              ))}
+              <Route component={NoMatch} />
+            </Switch>
+          </div>
+        </ScrollToTop>
       </Router>
     )
   }
