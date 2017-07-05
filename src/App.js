@@ -33,29 +33,28 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <ScrollToTop>
-          <div>
-            <Helmet titleTemplate={`${siteTitle} | %s`} />
-            <Nav>
-              <Logo>
-                <span role='img' aria-label='Watermelon'>🍉</span>
-              </Logo>
-              {routes.map((route, i) => (
-                <NavLink key={i} {...route} />
-              ))}
-            </Nav>
-            <Switch>
-              {routes.map((route, i) => (
-                <Route
-                  {...route}
-                  key={i}
-                  render={() => <route.comp {...route} />}
-                />
-              ))}
-              <Route component={NoMatch} />
-            </Switch>
-          </div>
-        </ScrollToTop>
+        <div>
+          <ScrollToTop />
+          <Helmet titleTemplate={`${siteTitle} | %s`} />
+          <Nav>
+            <Logo>
+              <span role='img' aria-label='Watermelon'>🍉</span>
+            </Logo>
+            {routes.map((route, i) => (
+              <NavLink key={i} {...route} />
+            ))}
+          </Nav>
+          <Switch>
+            {routes.map((route, i) => (
+              <Route
+                {...route}
+                key={i}
+                render={() => <route.comp {...route} />}
+              />
+            ))}
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
       </Router>
     )
   }
