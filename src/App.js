@@ -20,8 +20,9 @@ const routes = [
     exact: true
   }, {
     title: 'About',
-    path: '/about',
-    comp: About
+    path: '/about/',
+    comp: About,
+    exact: true
   }
 ]
 
