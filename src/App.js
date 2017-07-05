@@ -9,6 +9,7 @@ import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import NavLink from './components/NavLink'
 import Logo from './components/Logo'
+import GithubCorner from './components/GithubCorner'
 import globalStyles from './globalStyles'
 
 const siteTitle = 'HyperStatic'
@@ -36,6 +37,7 @@ class App extends Component {
       <Router>
         <div>
           <ScrollToTop />
+          <GithubCorner url='https://github.com/Jinksi/hyperstatic' />
           <Helmet titleTemplate={`${siteTitle} | %s`} />
           <Nav>
             <Logo>
