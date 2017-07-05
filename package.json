@@ -22,5 +22,10 @@
     "build": "react-scripts build && react-snapshot",
     "test": "standard | snazzy && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "reactSnapshot": {
+    "include": [
+      "/404"
+    ]
   }
 }
