@@ -1,4 +1,20 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const mixin = {
+  position: css`
+    ${props => {
+      if (props.relative) return 'position: relative;'
+      if (props.absolute) return 'position: absolute;'
+    }};
+  `,
+  textAlign: css`
+    ${props => {
+      if (props.taCenter) return 'text-align: center;'
+      if (props.taLeft) return 'text-align: left;'
+      if (props.taRight) return 'text-align: right;'
+    }};
+  `
+}
 
 export const Absolute = styled.div`
   position: absolute;
@@ -14,6 +30,8 @@ export const Relative = styled.div`
 `
 
 export const Section = styled.section`
+  ${mixin.position}
+
   width: 100%;
   padding: ${props => {
     if (props.thick) return '10rem 0'
@@ -23,9 +41,16 @@ export const Section = styled.section`
 `
 
 export const Container = styled.div`
+  ${mixin.position}
+  ${mixin.textAlign}
+
   margin: 0 auto;
-  max-width: 1111px;
   width: 90vw;
+  max-width: ${props => {
+    if (props.skinny) return '888px'
+    if (props.skinnier) return '555px'
+    return '1111px'
+  }};
 `
 
 export const Flex = styled.div`
