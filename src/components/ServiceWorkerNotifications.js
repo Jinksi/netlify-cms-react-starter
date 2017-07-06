@@ -11,6 +11,29 @@ const Notification = styled.div`
   background: ${color.primary};
   color: white;
   padding: 1rem;
+  min-height: 5rem;
+  transition: transform 0.1s ease-in-out;
+  transform: translateY(${props => props.message ? '0' : '100%'});
+`
+const CloseButton = styled.button.attrs({
+  children: 'x'
+})`
+  border: none;
+  background: white;
+  color: ${color.primary};
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 1rem;;
+  top: 1rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+    outline: none;
+  }
 `
 
 export default class ServiceWorkerNotifications extends Component {
@@ -24,6 +47,7 @@ export default class ServiceWorkerNotifications extends Component {
     this.handleReady = this.handleReady.bind(this)
     this.handleUpdated = this.handleUpdated.bind(this)
     this.handleOffline = this.handleOffline.bind(this)
+    this.handleDismiss = this.handleDismiss.bind(this)
   }
 
   componentDidMount () {
@@ -39,23 +63,27 @@ export default class ServiceWorkerNotifications extends Component {
   }
 
   handleReady () {
-    this.setState({ message: 'ready' })
+    this.setState({ message: 'This site is cached for offline use!' })
   }
 
   handleUpdated () {
-    this.setState({ message: 'updated' })
+    this.setState({ message: 'New content is available please refresh.' })
   }
 
   handleOffline () {
-    this.setState({ message: 'offline' })
+    this.setState({ message: null })
+  }
+
+  handleDismiss () {
+    this.setState({ message: null })
   }
 
   render () {
-    if (this.state.message) {
-      return (
-        <Notification>{this.state.message}</Notification>
-      )
-    }
-    return null
+    return (
+      <Notification message={this.state.message}>
+        {this.state.message}
+        <CloseButton onClick={this.handleDismiss} />
+      </Notification>
+    )
   }
 }
