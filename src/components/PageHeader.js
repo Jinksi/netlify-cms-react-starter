@@ -15,18 +15,18 @@ const Header = styled(Section)`
   }
 `
 
-const PageHeader = (props) => (
+const PageHeader = ({ title, subtitle }) => (
   <Header>
     <Container>
-      <h1>{props.title}</h1>
-      {props.subtitle ? <h2>{props.subtitle}</h2> : ''}
+      <h1>{title}</h1>
+      {subtitle ? <h2>{subtitle}</h2> : ''}
     </Container>
   </Header>
 )
 
 PageHeader.propTypes = {
   title: PropTypes.string,
-  subTitle: PropTypes.string
+  subtitle: PropTypes.string
 }
 
 export default PageHeader

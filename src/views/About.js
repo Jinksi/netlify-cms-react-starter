@@ -4,7 +4,7 @@ import Page from '../components/Page'
 import PageHeader from '../components/PageHeader'
 import { Container, Section } from '../components/common'
 
-export default ({title}) => (
+export default ({ title }) => (
   <Page>
     <PageHeader title={title} subtitle='<About />' />
     <Section thin>

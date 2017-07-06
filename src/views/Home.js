@@ -16,7 +16,7 @@ const content = `
   - **React Snapshot** for pre-rendering to static html so it works without Javascript ⭐️
 `
 
-export default ({title}) => {
+export default ({ title }) => {
   return (
     <Page>
       <PageHeader title={title} subtitle='<Home />' />
