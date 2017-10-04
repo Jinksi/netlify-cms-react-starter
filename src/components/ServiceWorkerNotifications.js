@@ -37,6 +37,15 @@ const CloseButton = styled.button.attrs({
 `
 
 export default class ServiceWorkerNotifications extends Component {
+  static defaultProps = {
+    readyMessage: 'This site is cached for offline use!',
+    updatedMessage: 'New content is available please refresh.',
+    offlineMessage: 'You are now offline, browsing from cache.',
+    ready: true,
+    updated: true,
+    offline: true
+  }
+
   state = {
     message: null
   }
@@ -54,15 +63,18 @@ export default class ServiceWorkerNotifications extends Component {
   }
 
   handleReady = () => {
-    this.setState({ message: 'This site is cached for offline use!' })
+    if (!this.props.ready) return
+    this.setState({ message: this.props.readyMessage })
   }
 
   handleUpdated = () => {
-    this.setState({ message: 'New content is available please refresh.' })
+    if (!this.props.updated) return
+    this.setState({ message: this.props.updatedMessage })
   }
 
   handleOffline = () => {
-    this.setState({ message: null })
+    if (!this.props.offline) return
+    this.setState({ message: this.props.offlineMessage })
   }
 
   handleDismiss = () => {

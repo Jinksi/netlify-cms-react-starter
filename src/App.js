@@ -38,7 +38,9 @@ class App extends Component {
       <Router>
         <div>
           <ScrollToTop />
-          <ServiceWorkerNotifications />
+          <ServiceWorkerNotifications
+            readyMessage='This message is displayed when the SW is registered'
+          />
           <GithubCorner url='https://github.com/Jinksi/hyperstatic' />
           <Helmet titleTemplate={`${siteTitle} | %s`} />
           <Nav>
