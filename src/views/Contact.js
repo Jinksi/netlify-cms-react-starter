@@ -28,6 +28,8 @@ export default ({ title }) => (
         <h3>{'<NetlifyForm />'}</h3>
         <NetlifyForm />
         <em>Note: this will only work when deployed on Netlify</em>
+        <br />
+        <em>Also, this form is active and I will receive submissions</em> 😉
       </Container>
     </Section>
     <Helmet>
