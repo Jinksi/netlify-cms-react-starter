@@ -14,7 +14,7 @@ class Form extends Component {
     _gotcha: '',
     disabled: false,
     alert: '',
-    action: '/contact-us/',
+    action: '/contact/',
     'form-name': 'Contact'
   }
 
