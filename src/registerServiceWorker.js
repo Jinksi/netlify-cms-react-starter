@@ -1,4 +1,9 @@
-/* global URL, fetch */
+/* global URL, fetch, Event */
+
+const swReady = new Event('swReady')
+const swUpdated = new Event('swUpdated')
+const swOffline = new Event('swOffline')
+
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -58,11 +63,13 @@ function registerValidSW (swUrl) {
               // It's the perfect time to display a "New content is
               // available please refresh." message in your web app.
               console.log('New content is available; please refresh.')
+              window.dispatchEvent(swUpdated)
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
               console.log('Content is cached for offline use.')
+              window.dispatchEvent(swReady)
             }
           }
         }
@@ -97,6 +104,7 @@ function checkValidServiceWorker (swUrl) {
       console.log(
         'No internet connection found. App is running in offline mode.'
       )
+      window.dispatchEvent(swOffline)
     })
 }
 
