@@ -37,44 +37,35 @@ const CloseButton = styled.button.attrs({
 `
 
 export default class ServiceWorkerNotifications extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      message: null
-    }
-
-    this.handleReady = this.handleReady.bind(this)
-    this.handleUpdated = this.handleUpdated.bind(this)
-    this.handleOffline = this.handleOffline.bind(this)
-    this.handleDismiss = this.handleDismiss.bind(this)
+  state = {
+    message: null
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     window.addEventListener('swReady', this.handleReady)
     window.addEventListener('swUpdated', this.handleUpdated)
     window.addEventListener('swOffline', this.handleOffline)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount = () => {
     window.removeEventListener('swReady', this.handleReady)
     window.removeEventListener('swUpdated', this.handleUpdated)
     window.removeEventListener('swOffline', this.handleOffline)
   }
 
-  handleReady () {
+  handleReady = () => {
     this.setState({ message: 'This site is cached for offline use!' })
   }
 
-  handleUpdated () {
+  handleUpdated = () => {
     this.setState({ message: 'New content is available please refresh.' })
   }
 
-  handleOffline () {
+  handleOffline = () => {
     this.setState({ message: null })
   }
 
-  handleDismiss () {
+  handleDismiss = () => {
     this.setState({ message: null })
   }
 
