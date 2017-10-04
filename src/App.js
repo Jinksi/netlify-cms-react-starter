@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './views/Home'
 import About from './views/About'
+import Contact from './views/Contact'
 import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import NavLink from './components/NavLink'
@@ -13,7 +14,7 @@ import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import globalStyles from './globalStyles'
 
-const siteTitle = 'HyperStatic'
+export const siteTitle = 'HyperStatic'
 const routes = [
   {
     title: 'Home',
@@ -24,6 +25,11 @@ const routes = [
     title: 'About',
     path: '/about/',
     comp: About,
+    exact: true
+  }, {
+    title: 'Contact',
+    path: '/contact/',
+    comp: Contact,
     exact: true
   }
 ]

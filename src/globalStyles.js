@@ -47,9 +47,10 @@ export default () => injectGlobal`
     color: ${color.primary};
   }
 
-  strong{
+  strong {
     font-weight: 600;
   }
+
   p {
     margin-top: 0;
     margin-bottom: 1em;
@@ -58,5 +59,35 @@ export default () => injectGlobal`
   h1, h2, h3, h4, h5 ,h6{
     margin: 0;
     margin-bottom: 0.5em;
+  }
+
+  pre {
+    background: ${color.lightGrey};
+    line-height: 1.45;
+    font-size: 85%;
+    border-radius: 3px;
+    padding: 16px;
+  }
+
+  code {
+    font-size: 85%;
+    padding: 0.15em 0;
+    background: ${color.lightGrey};
+    border-radius: 3px;
+
+    &:before,
+    &:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+
+    pre & {
+      font-size: inherit;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
   }
 `
