@@ -60,7 +60,7 @@ class Form extends Component {
           name: '',
           email: '',
           message: '',
-          subject: `New Submission from ${window.location.host}!`,
+          subject: `New Submission from ${siteTitle}!`,
           _gotcha: ''
         })
       })
