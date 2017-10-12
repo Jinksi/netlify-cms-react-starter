@@ -14,13 +14,16 @@ import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import globalStyles from './globalStyles'
 
+import data from './data.json'
+
 export const siteTitle = 'HyperStatic'
+
 const routes = [
   {
-    title: 'Home',
     path: '/',
     comp: Home,
-    exact: true
+    exact: true,
+    page: data.pages.home
   }, {
     title: 'About',
     path: '/about/',
