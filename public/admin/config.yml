@@ -1,6 +1,21 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: netlify-cms # Branch to update (optional; defaults to master)
 
 media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home.md"
+        label: "Home Page"
+        name: "home-page"
+        fields:
+          - {label: Title, name: title, widget: string}
+      - file: "content/pages/about.json"
+        label: "About Page"
+        name: "about-page"
+        fields:
+          - {label: Title, name: title, widget: string}
