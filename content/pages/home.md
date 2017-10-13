@@ -1,4 +1,5 @@
 ---
 title: Home page update
+contents: "# \U0001F349 HyperStatic\n\nA not-so-static site boilerplate:\n- **Create React App** for simplicity\n- **Styled Components** for component-based css\n- **React Router** for routing (v4)\n- **React Helmet** for document titles, descriptions, meta\n- **React Snapshot** for pre-rendering to static html so it works without Javascript ⭐️"
 ---
 
