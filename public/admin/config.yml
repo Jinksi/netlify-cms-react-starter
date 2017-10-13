@@ -10,7 +10,7 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
-      - file: "content/pages/home.md"
+      - file: "content/pages/home.json"
         label: "Home Page"
         name: "home-page"
         fields:
