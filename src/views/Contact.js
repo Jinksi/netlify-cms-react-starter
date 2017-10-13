@@ -18,9 +18,9 @@ const content = `
   Find out more in the [Netlify Docs](https://www.netlify.com/docs/form-handling/).
 `
 
-export default ({ title }) => (
+export default ({ page }) => (
   <Page>
-    <PageHeader title={title} subtitle='<Contact />' />
+    <PageHeader title={page.title} subtitle='<Contact />' />
     <Section thin>
       <Container>
         <Marked source={content} />
@@ -33,7 +33,7 @@ export default ({ title }) => (
       </Container>
     </Section>
     <Helmet>
-      <title>{title}</title>
+      <title>{page.title}</title>
     </Helmet>
   </Page>
 )

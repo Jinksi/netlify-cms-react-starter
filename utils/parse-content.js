@@ -23,7 +23,7 @@ const getFileContents = filePath =>
   readFile(filePath, 'utf8')
     .then(data => {
       let obj = {}
-      _set(obj, getNestedKey(filePath), data)
+      _set(obj, getNestedKey(filePath), JSON.parse(data))
       return obj
     })
 
