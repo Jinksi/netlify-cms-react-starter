@@ -27,13 +27,13 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Body, name: body, widget: markdown}
-      - file: "content/pages/about.json"
+      # markdown files are ok
+      - file: "content/pages/about.md"
         label: "About Page"
         name: "about-page"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Body, name: body, widget: markdown}
           - {label: Section 1, name: section1, widget: markdown}
           - {label: Section 2, name: section2, widget: markdown}
       - file: "content/pages/contact.json"

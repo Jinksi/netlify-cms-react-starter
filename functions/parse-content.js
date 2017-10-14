@@ -8,6 +8,7 @@ const util = require('util')
 
 const glob = util.promisify(globCb)
 const readFile = util.promisify(fs.readFile)
+const matter = require('gray-matter')
 
 const options = {
   contentDir: './content/',
@@ -25,9 +26,24 @@ const getDocumentName = filePath => {
   return `${pathParsed.name}`
 }
 
+const getDocumentExt = filePath => {
+  const pathParsed = path.parse(filePath)
+  return `${pathParsed.ext}`
+}
+
+const parseMarkdown = data => {
+  data = matter(data)
+  data = {...data, ...data.data}
+  delete data.data
+  return JSON.stringify(data)
+}
+
 const getFileContents = filePath => {
   return readFile(filePath, 'utf8')
     .then(data => {
+      if (getDocumentExt(filePath) === '.md') {
+        data = parseMarkdown(data)
+      }
       let documentData = JSON.parse(data)
       documentData.name = getDocumentName(filePath)
       let obj = {}
@@ -43,7 +59,7 @@ const combineJSON = async () => {
   // mergeCustomiser concats arrays items
   const mergeCustomiser = (objValue, srcValue) => _isArray(objValue) ? objValue.concat(srcValue) : objValue
   console.log(`✨  Reading JSON files in ${options.contentDir}`)
-  const paths = await glob(`${options.contentDir}/**/**.json`)
+  const paths = await glob(`${options.contentDir}/**/**.+(json|md)`)
   const results = await readFiles(paths)
   const data = _mergeWith({}, ...results, mergeCustomiser)
   return JSON.stringify(data, null, 2)

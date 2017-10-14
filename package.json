@@ -13,6 +13,7 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "glob": "^7.1.2",
+    "gray-matter": "^3.0.8",
     "react-scripts": "^1.0.10",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2",
