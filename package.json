@@ -27,6 +27,7 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
+    "netlify-identity-widget": "^1.2.0",
     "polished": "^1.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
