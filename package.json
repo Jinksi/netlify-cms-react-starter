@@ -14,17 +14,9 @@
     "eslint-plugin-standard": "^3.0.1",
     "glob": "^7.1.2",
     "react-scripts": "^1.0.10",
-    "remark": "^8.0.0",
-    "remark-frontmatter": "^1.1.0",
-    "remark-html": "^6.0.1",
-    "remark-parse": "^4.0.0",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2",
-    "sw-precache": "^5.2.0",
-    "to-vfile": "^2.1.2",
-    "unified": "^6.1.5",
-    "vfile-reporter": "^4.0.0",
-    "yamljs": "^0.3.0"
+    "sw-precache": "^5.2.0"
   },
   "dependencies": {
     "netlify-identity-widget": "^1.2.0",
