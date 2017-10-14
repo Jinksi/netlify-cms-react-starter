@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const _set = require('lodash/set')
-const _merge = require('lodash/merge')
+const _mergeWith = require('lodash/mergeWith')
+const _isArray = require('lodash/isArray')
 const globCb = require('glob')
 const util = require('util')
 
@@ -13,32 +14,46 @@ const options = {
   outputFile: './src/data.json'
 }
 
-const getNestedKey = filePath => {
+const getCollectionType = filePath => {
   const pathParsed = path.parse(filePath)
   const objectKey = pathParsed.dir.replace(options.contentDir, '').replace(/\//g, '.')
-  return `${objectKey}.${pathParsed.name}`
+  return `${objectKey}`
 }
 
-const getFileContents = filePath =>
-  readFile(filePath, 'utf8')
+const getDocumentKey = filePath => {
+  const pathParsed = path.parse(filePath)
+  return `${pathParsed.name}`
+}
+
+const getFileContents = filePath => {
+  return readFile(filePath, 'utf8')
     .then(data => {
       let obj = {}
-      _set(obj, getNestedKey(filePath), JSON.parse(data))
+      let documentData = {
+        [getDocumentKey(filePath)]: JSON.parse(data)
+      }
+      _set(obj, getCollectionType(filePath), [documentData])
+      console.log(`✨  Processed ${filePath}`)
       return obj
     })
+}
 
 const readFiles = async paths => Promise.all(paths.map(getFileContents))
 
 const combineJSON = async () => {
+  // mergeCustomiser concats arrays items
+  const mergeCustomiser = (objValue, srcValue) => _isArray(objValue) ? objValue.concat(srcValue) : objValue
+  console.log(`✨  Reading JSON files in ${options.contentDir}`)
   const paths = await glob(`${options.contentDir}/**/**.json`)
   const results = await readFiles(paths)
-  const data = _merge({}, ...results)
+  const data = _mergeWith({}, ...results, mergeCustomiser)
   return JSON.stringify(data, null, 2)
 }
 
 const writeJSON = async () => {
   const json = await combineJSON()
   fs.writeFileSync(options.outputFile, json)
+  console.log(`✅  Data saved to ${options.outputFile}`)
 }
 
 writeJSON()
