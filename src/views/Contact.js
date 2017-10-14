@@ -6,7 +6,7 @@ import NetlifyForm from '../components/NetlifyForm'
 import { Container, Section } from '../components/common'
 import Marked from 'react-markdown'
 
-export default ({ page }) => (
+export default ({ page, site }) => (
   <Page>
     <PageHeader title={page.title} subtitle='<Contact />' />
     <Section thin>
@@ -14,7 +14,7 @@ export default ({ page }) => (
         <Marked source={page.body} />
         <br />
         <h3>{'<NetlifyForm />'}</h3>
-        <NetlifyForm />
+        <NetlifyForm siteTitle={site.siteTitle} />
         <em>Note: this will only work when deployed on Netlify</em>
         <br />
         <em>Also, this form is active and I will receive submissions</em> 😉

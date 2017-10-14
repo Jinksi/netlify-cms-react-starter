@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { stringify } from 'qs'
 import { color } from '../globalStyles'
-import { siteTitle } from '../App'
 const fetch = window.fetch
 
 class Form extends Component {
@@ -10,7 +9,7 @@ class Form extends Component {
     name: '',
     email: '',
     message: '',
-    subject: `New Submission from ${siteTitle}!`,
+    subject: `New Submission from ${this.props.siteTitle}!`,
     _gotcha: '',
     disabled: false,
     alert: '',
@@ -60,7 +59,7 @@ class Form extends Component {
           name: '',
           email: '',
           message: '',
-          subject: `New Submission from ${siteTitle}!`,
+          subject: `New Submission from ${this.props.siteTitle}!`,
           _gotcha: ''
         })
       })

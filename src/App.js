@@ -13,8 +13,6 @@ import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import globalStyles from './globalStyles'
 import data from './data.json'
 
-export const siteTitle = 'HyperStatic'
-
 class App extends Component {
   state = {
     data
@@ -31,13 +29,14 @@ class App extends Component {
   getDocuments = (collection) => this.state.data[collection]
 
   render () {
+    const site = this.getDocument('settings', 'global')
     return (
       <Router>
         <div>
           <ScrollToTop />
           <ServiceWorkerNotifications />
           <GithubCorner url='https://github.com/Jinksi/hyperstatic' />
-          <Helmet titleTemplate={`${siteTitle} | %s`} />
+          <Helmet titleTemplate={`${site.siteTitle} | %s`} />
           <Nav />
           <Switch>
             <Route path='/' exact
@@ -47,7 +46,7 @@ class App extends Component {
               render={(props) => <About page={this.getDocument('pages', 'about')} {...props} />}
             />
             <Route path='/contact/' exact
-              render={(props) => <Contact page={this.getDocument('pages', 'contact')} {...props} />}
+              render={(props) => <Contact page={this.getDocument('pages', 'contact')} site={site} {...props} />}
             />
             <Route component={NoMatch} />
           </Switch>
