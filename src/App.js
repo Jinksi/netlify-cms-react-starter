@@ -19,6 +19,7 @@ export const siteTitle = 'HyperStatic'
 class App extends Component {
   componentWillMount () {
     globalStyles()
+    import('./netlifyIdentity')
   }
 
   render () {

@@ -9,4 +9,6 @@ netlifyIdentity.on('init', user => {
   }
 })
 
-netlifyIdentity.init()
+if (window.localStorage) {
+  netlifyIdentity.init()
+}
