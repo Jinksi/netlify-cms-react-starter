@@ -11,16 +11,24 @@ import Nav from './components/Nav'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import globalStyles from './globalStyles'
-
 import data from './data.json'
 
 export const siteTitle = 'HyperStatic'
 
 class App extends Component {
+  state = {
+    data
+  }
+
   componentWillMount () {
     globalStyles()
     import('./netlifyIdentity')
   }
+
+  getDocument = (collection, name) =>
+    this.state.data[collection] && this.state.data[collection].filter(page => page.name === name)[0]
+
+  getDocuments = (collection) => this.state.data[collection]
 
   render () {
     return (
@@ -33,13 +41,13 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route path='/' exact
-              render={(props) => <Home page={data.pages.home} {...props} />}
+              render={(props) => <Home page={this.getDocument('pages', 'home')} {...props} />}
             />
             <Route path='/about/' exact
-              render={(props) => <About page={data.pages.about} {...props} />}
+              render={(props) => <About page={this.getDocument('pages', 'about')} {...props} />}
             />
             <Route path='/contact/' exact
-              render={(props) => <Contact page={data.pages.contact} {...props} />}
+              render={(props) => <Contact page={this.getDocument('pages', 'contact')} {...props} />}
             />
             <Route component={NoMatch} />
           </Switch>

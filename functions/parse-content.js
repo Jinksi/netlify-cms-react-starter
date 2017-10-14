@@ -20,7 +20,7 @@ const getCollectionType = filePath => {
   return `${objectKey}`
 }
 
-const getDocumentKey = filePath => {
+const getDocumentName = filePath => {
   const pathParsed = path.parse(filePath)
   return `${pathParsed.name}`
 }
@@ -28,10 +28,9 @@ const getDocumentKey = filePath => {
 const getFileContents = filePath => {
   return readFile(filePath, 'utf8')
     .then(data => {
+      let documentData = JSON.parse(data)
+      documentData.name = getDocumentName(filePath)
       let obj = {}
-      let documentData = {
-        [getDocumentKey(filePath)]: JSON.parse(data)
-      }
       _set(obj, getCollectionType(filePath), [documentData])
       console.log(`✨  Processed ${filePath}`)
       return obj
