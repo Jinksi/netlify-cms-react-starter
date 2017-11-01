@@ -2,7 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Page from '../components/Page'
 import PageHeader from '../components/PageHeader'
-import NetlifyForm from '../components/NetlifyForm'
+import NetlifyControlledForm from '../components/NetlifyControlledForm'
+import NetlifySimpleForm from '../components/NetlifySimpleForm'
 import { Container, Section } from '../components/common'
 import Marked from 'react-markdown'
 
@@ -25,8 +26,11 @@ export default ({ title }) => (
       <Container>
         <Marked source={content} />
         <br />
-        <h3>{'<NetlifyForm />'}</h3>
-        <NetlifyForm />
+        <h3>{'<NetlifyControlledForm />'}</h3>
+        <NetlifyControlledForm />
+        <br />
+        <h3>{'<NetlifySimpleForm />'}</h3>
+        <NetlifySimpleForm />
         <em>Note: this will only work when deployed on Netlify</em>
         <br />
         <em>Also, this form is active and I will receive submissions</em> 😉
