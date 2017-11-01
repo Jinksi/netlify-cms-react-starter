@@ -1,71 +1,52 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { color } from '../globalStyles'
 
-export default class NetlifySimpleForm extends Component {
-  static defaultProps = {
-    name: 'SimpleForm',
-    subject: '',
-    action: 'thank-you'
-  }
-
-  state = {
-    alert: ''
-  }
-
-  render () {
-    const { name, action, subject } = this.props
-    const { alert } = this.state
-    return (
-      <StyledForm
-        name={name}
-        action={action}
-        data-netlify=''
-        data-netlify-honeypot='_gotcha'
-      >
-        {alert && <Alert>{alert}</Alert>}
-        <Label className='Label'>
-          <Input
-            className='Input'
-            type='text'
-            placeholder='Your Name'
-            name='name'
-            required
-          />
-        </Label>
-        <Label className='Label'>
-          <Input
-            className='Input'
-            type='email'
-            placeholder='Your Email'
-            name='email'
-            required
-            disabled={this.state.disabled ? 'disabled' : ''}
-          />
-        </Label>
-        <Label className='Label'>
-          <Textarea
-            className='Input'
-            placeholder='Message'
-            name='message'
-            rows='10'
-            required
-            disabled={this.state.disabled ? 'disabled' : ''}
-          />
-        </Label>
-        <Input type='text' name='_gotcha' style={{ display: 'none' }} />
-        <Input type='hidden' name='subject' value={subject} />
-        <Input type='hidden' name='form-name' value={name} />
-        <Button
-          className='button'
-          type='submit'
-          value='Send'
-          disabled={this.state.disabled ? 'disabled' : ''}
-        />
-      </StyledForm>
-    )
-  }
-}
+export default ({
+  name = 'SimpleForm',
+  subject = '', // optional subject of the notification email
+  action = 'thank-you'
+}) => (
+  <StyledForm
+    name={name}
+    action={action}
+    data-netlify=''
+    data-netlify-honeypot='_gotcha'
+  >
+    {alert && <Alert>{alert}</Alert>}
+    <Label className='Label'>
+      <Input
+        className='Input'
+        type='text'
+        placeholder='Your Name'
+        name='name'
+        required
+      />
+    </Label>
+    <Label className='Label'>
+      <Input
+        className='Input'
+        type='email'
+        placeholder='Your Email'
+        name='email'
+        required
+      />
+    </Label>
+    <Label className='Label'>
+      <Textarea
+        className='Input'
+        placeholder='Message'
+        name='message'
+        rows='10'
+        required
+      />
+    </Label>
+    <Input type='text' name='_gotcha' style={{ display: 'none' }} />
+    <Input type='hidden' name='subject' value={subject} />
+    <Input type='hidden' name='form-name' value={name} />
+    <Button className='button' type='submit' value='Send' />
+  </StyledForm>
+)
 
 const StyledForm = styled.form`
   display: flex;
