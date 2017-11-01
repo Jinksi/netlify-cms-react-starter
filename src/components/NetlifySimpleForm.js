@@ -13,7 +13,6 @@ export default ({
     data-netlify=''
     data-netlify-honeypot='_gotcha'
   >
-    {alert && <Alert>{alert}</Alert>}
     <Label className='Label'>
       <Input
         className='Input'
@@ -42,7 +41,7 @@ export default ({
       />
     </Label>
     <Input type='text' name='_gotcha' style={{ display: 'none' }} />
-    <Input type='hidden' name='subject' value={subject} />
+    {subject.length && <Input type='hidden' name='subject' value={subject} />}
     <Input type='hidden' name='form-name' value={name} />
     <Button className='button' type='submit' value='Send' />
   </StyledForm>
@@ -93,11 +92,6 @@ const Input = styled.input`
   }
 `
 const Textarea = Input.withComponent('textarea')
-const Alert = styled.p`
-  background: whitesmoke;
-  width: 100%;
-  padding: 2rem;
-`
 const Button = styled.input`
   background: ${color.primary};
   color: white;
