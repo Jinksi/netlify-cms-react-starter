@@ -41,7 +41,7 @@ export default ({
       />
     </Label>
     <Input type='text' name='_gotcha' style={{ display: 'none' }} />
-    {subject.length && <Input type='hidden' name='subject' value={subject} />}
+    {!!subject && <Input type='hidden' name='subject' value={subject} />}
     <Input type='hidden' name='form-name' value={name} />
     <Button className='button' type='submit' value='Send' />
   </StyledForm>
