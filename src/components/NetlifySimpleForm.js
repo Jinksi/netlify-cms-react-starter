@@ -6,7 +6,7 @@ export default class NetlifySimpleForm extends Component {
   static defaultProps = {
     name: 'SimpleForm',
     subject: '',
-    action: window.location.pathname
+    action: 'thank-you'
   }
 
   state = {
