@@ -18,7 +18,7 @@
     "sw-precache": "^5.2.0"
   },
   "dependencies": {
-    "polished": "^1.2.1",
+    "polished": "1.7.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.1.3",
