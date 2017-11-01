@@ -31,9 +31,9 @@ export default ({ title }) => (
         <br />
         <h3>{'<NetlifySimpleForm />'}</h3>
         <NetlifySimpleForm />
-        <em>Note: this will only work when deployed on Netlify</em>
+        <em>Note: these will only work when deployed on Netlify</em>
         <br />
-        <em>Also, this form is active and I will receive submissions</em> 😉
+        <em>Also, these forms is active and I will receive submissions</em> 😉
       </Container>
     </Section>
     <Helmet>
