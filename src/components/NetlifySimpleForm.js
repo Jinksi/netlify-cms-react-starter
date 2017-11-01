@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { stringify } from 'qs'
 import { color } from '../globalStyles'
-const fetch = window.fetch
 
 export default class NetlifySimpleForm extends Component {
   static defaultProps = {
@@ -15,35 +13,6 @@ export default class NetlifySimpleForm extends Component {
     alert: ''
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
-    this.setState({ disabled: true })
-    fetch(e.target.action + '?' + stringify('data'), {
-      method: 'POST'
-    })
-      .then(res => {
-        if (res.ok) {
-          return res
-        } else {
-          throw new Error('Network error')
-        }
-      })
-      .then(res => {
-        this.setState({
-          disabled: false,
-          alert: 'Thanks for your enquiry, we will get back to you soon.'
-        })
-      })
-      .catch(err => {
-        console.log(err)
-        this.setState({
-          disabled: false,
-          alert:
-            '❗️ There is a problem, your message has not been sent, please try contacting us via email'
-        })
-      })
-  }
-
   render () {
     const { name, action, subject } = this.props
     const { alert } = this.state
@@ -51,7 +20,6 @@ export default class NetlifySimpleForm extends Component {
       <StyledForm
         name={name}
         action={action}
-        onSubmit={this.handleSubmit}
         data-netlify=''
         data-netlify-honeypot='_gotcha'
       >
