@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Marked from 'react-markdown'
 import Page from '../components/Page'
 import { Container, Section } from '../components/common'
+import Content from '../components/Content'
 import PageHeader from '../components/PageHeader'
 
 export default ({ page }) => {
@@ -12,7 +12,7 @@ export default ({ page }) => {
       <PageHeader title={title} subtitle={subtitle} />
       <Section thin>
         <Container>
-          <Marked source={page.body} />
+          <Content source={page.body} />
         </Container>
       </Section>
       <Helmet>
