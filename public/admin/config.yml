@@ -9,12 +9,18 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections: # A list of collections the CMS should be able to edit
   - name: "settings"
     label: "Settings"
+    delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
     files:
       - file: "content/settings/global.json"
         label: "Global Settings"
         name: "global-settings"
+        fields:
+          - {label: Site Title, name: siteTitle, widget: string}
+      - file: "content/settings/global-yaml.yml"
+        label: "Global Settings - Yaml"
+        name: "global-settings-yaml"
         fields:
           - {label: Site Title, name: siteTitle, widget: string}
   - name: "pages"
