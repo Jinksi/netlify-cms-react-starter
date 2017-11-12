@@ -7,7 +7,7 @@ section1: |
 
   Netlify CMS works with both `.md` and `.json`.
 section2: >-
-  ## This is a skinny center-aligned <Container />
+  ## This is a Container component
 
 
   A sem vel nec sodales mi vivamus senectus sed potenti a parturient nascetur
@@ -20,7 +20,7 @@ section2: >-
   vestibulum.
 
 
-  Inline image test:
+  The image below will have a `srcset` attribute generated:
 
 
   ![Tim Marshall](/images/uploads/tim-marshall-155597.jpg)
