@@ -11,7 +11,11 @@ export default ({ page }) => (
     <Helmet>
       <title>{page.title}</title>
     </Helmet>
-    <PageHeader title={page.title} subtitle={page.subtitle} />
+    <PageHeader
+      title={page.title}
+      subtitle={page.subtitle}
+      backgroundImage={page.featuredImage}
+    />
     <Section thin>
       <Container>
         <Marked source={page.section1} />
