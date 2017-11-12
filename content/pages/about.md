@@ -1,6 +1,7 @@
 ---
 title: About page title
 subtitle: <About />
+featuredImage: /images/uploads/isabella-juskova-260426.jpg
 section1: |
   ## Hello World!
 
