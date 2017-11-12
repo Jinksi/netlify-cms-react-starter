@@ -18,5 +18,11 @@ section2: >-
   vel est ut proin dis auctor. Suscipit scelerisque orci magna interdum vel
   bibendum duis netus a consectetur dui magnis ac aliquet sem posuere tincidunt
   vestibulum.
+
+
+  Inline image test:
+
+
+  ![Tim Marshall](/images/uploads/tim-marshall-155597.jpg)
 ---
 
