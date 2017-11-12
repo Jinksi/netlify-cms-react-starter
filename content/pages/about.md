@@ -2,10 +2,12 @@
 title: About page title
 subtitle: <About />
 featuredImage: /images/uploads/isabella-juskova-260426.jpg
-section1: |
+section1: |-
   ## Hello World!
 
   Netlify CMS works with both `.md` and `.json`.
+
+  ![Image test!](/images/uploads/unsplash4.jpg)
 section2: >-
   ## This is a Container component
 
