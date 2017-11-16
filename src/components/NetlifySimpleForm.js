@@ -5,7 +5,7 @@ import { color } from '../globalStyles'
 export default ({
   name = 'SimpleForm',
   subject = '', // optional subject of the notification email
-  action = 'thank-you'
+  action = ''
 }) => (
   <StyledForm
     name={name}
