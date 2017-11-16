@@ -3,11 +3,12 @@ module.exports = {
   stripPrefix: 'build/',
   staticFileGlobs: [
     'build/**/*.html',
-    'build/*.svg',
-    'build/*.jpg',
-    'build/*.png',
-    'build/*.ico',
-    'build/*.json',
+    'build/**/*.svg',
+    'build/**/*.jpg',
+    'build/**/*.png',
+    'build/**/*.gif',
+    'build/**/*.ico',
+    'build/**/*.json',
     'build/static/**/!(*map*)',
     'build/manifest.json'
   ],
