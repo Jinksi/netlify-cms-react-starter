@@ -10,6 +10,8 @@ A not-so-static site boilerplate:
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/hyperstatic)
+
 ## Get going
 
 ``` shell
