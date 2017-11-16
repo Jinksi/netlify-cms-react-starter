@@ -14,6 +14,8 @@ const content = `
   - **React Router** for routing (v4)
   - **React Helmet** for document titles, descriptions, meta
   - **React Snapshot** for pre-rendering to static html so it works without Javascript ⭐️
+
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/hyperstatic)
 `
 
 export default ({ title }) => {
