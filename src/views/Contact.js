@@ -33,7 +33,7 @@ export default ({ title }) => (
         <NetlifySimpleForm />
         <em>Note: these will only work when deployed on Netlify</em>
         <br />
-        <em>Also, these forms is active and I will receive submissions</em> 😉
+        <em>Also, they are active and I will receive submissions</em> 😉
       </Container>
     </Section>
     <Helmet>
