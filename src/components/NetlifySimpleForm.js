@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { color } from '../globalStyles'
 
 export default ({
-  name = 'SimpleForm',
+  name = 'Simple Form',
   subject = '', // optional subject of the notification email
   action = ''
 }) => (

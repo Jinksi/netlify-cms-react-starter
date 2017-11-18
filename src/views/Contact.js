@@ -15,10 +15,10 @@ export default ({ page, site }) => (
         <Marked source={page.content} />
         <br />
         <h3>{'<NetlifyControlledForm />'}</h3>
-        <NetlifyControlledForm />
+        <NetlifyControlledForm name={'Controlled Form'} />
         <br />
         <h3>{'<NetlifySimpleForm />'}</h3>
-        <NetlifySimpleForm />
+        <NetlifySimpleForm name='Simple Form' />
         <em>Note: these will only work when deployed on Netlify</em>
         <br />
         <em>Also, they are active and I will receive submissions</em> 😉

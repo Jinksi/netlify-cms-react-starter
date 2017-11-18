@@ -5,6 +5,10 @@ import { color } from '../globalStyles'
 const fetch = window.fetch
 
 class Form extends Component {
+  static defaultProps = {
+    name: 'Controlled Form'
+  }
+
   state = {
     name: '',
     email: '',
@@ -14,7 +18,7 @@ class Form extends Component {
     disabled: false,
     alert: '',
     action: '/contact/',
-    'form-name': 'Contact'
+    'form-name': this.props.name
   }
 
   form = null
