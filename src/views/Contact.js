@@ -12,7 +12,7 @@ export default ({ page, site }) => (
     <PageHeader title={page.title} subtitle='<Contact />' />
     <Section thin>
       <Container>
-        <Marked source={page.body} />
+        <Marked source={page.content} />
         <br />
         <h3>{'<NetlifyControlledForm />'}</h3>
         <NetlifyControlledForm />

@@ -12,7 +12,7 @@ export default ({ page }) => {
       <PageHeader title={title} subtitle={subtitle} />
       <Section thin>
         <Container>
-          <Content source={page.body} />
+          <Content source={page.content} />
         </Container>
       </Section>
       <Helmet>
