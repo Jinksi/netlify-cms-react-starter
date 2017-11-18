@@ -1,5 +1,5 @@
 ---
-title: Netlify CMS + React Starter
+title: Hello World!
 subtitle: <Home />
 ---
 Hello World!
