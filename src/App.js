@@ -35,7 +35,7 @@ class App extends Component {
         <div>
           <ScrollToTop />
           <ServiceWorkerNotifications />
-          <GithubCorner url='https://github.com/Jinksi/hyperstatic' />
+          <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
           <Helmet titleTemplate={`${site.siteTitle} | %s`} />
           <Nav />
           <Switch>
