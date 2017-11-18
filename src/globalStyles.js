@@ -10,7 +10,7 @@ export const font = {
 }
 
 export const color = {
-  primary: '#FA5463',
+  primary: 'tomato',
   secondary: '#212121',
   lightGrey: 'whitesmoke'
 }

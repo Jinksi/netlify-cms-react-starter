@@ -15,7 +15,7 @@ export default (props) => (
     <Container>
       <Flex alignCenter>
         <Logo>
-          <span role='img' aria-label='Watermelon'>🍉</span>
+          <span role='img' aria-label='Chili'>🌶</span>
         </Logo>
         <NavLink to='/' exact>Home</NavLink>
         <NavLink to='/about/' exact>About</NavLink>
