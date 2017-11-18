@@ -34,6 +34,7 @@ class App extends Component {
       <Router>
         <div>
           <ScrollToTop />
+          <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
           <Helmet titleTemplate={`${site.siteTitle} | %s`} />
           <Nav />

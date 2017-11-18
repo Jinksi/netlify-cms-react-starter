@@ -41,9 +41,10 @@ export default class ServiceWorkerNotifications extends Component {
     readyMessage: 'This site is cached for offline use!',
     updatedMessage: 'New content is available please refresh.',
     offlineMessage: 'You are now offline, browsing from cache.',
-    ready: true,
-    updated: true,
-    offline: true
+    ready: false,
+    updated: false,
+    offline: false,
+    reloadOnUpdate: true
   }
 
   state = {
@@ -62,12 +63,21 @@ export default class ServiceWorkerNotifications extends Component {
     window.removeEventListener('swOffline', this.handleOffline)
   }
 
+  reloadIfUpdated = () => {
+    if (window.swUpdated) {
+      console.log('New content available: reloading window')
+      window.location.reload()
+    }
+  }
+
   handleReady = () => {
     if (!this.props.ready) return
     this.setState({ message: this.props.readyMessage })
   }
 
   handleUpdated = () => {
+    window.swUpdated = true
+    console.log('Window will reload on next render')
     if (!this.props.updated) return
     this.setState({ message: this.props.updatedMessage })
   }
@@ -82,6 +92,7 @@ export default class ServiceWorkerNotifications extends Component {
   }
 
   render () {
+    this.props.reloadOnUpdate && this.reloadIfUpdated()
     return (
       <Notification message={this.state.message}>
         {this.state.message}
