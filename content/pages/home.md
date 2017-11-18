@@ -22,19 +22,16 @@ I aim to include commonly used components and best-practices e.g. forms, setting
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/netlify-cms-react-starter)
 
 1. Hit the **Deploy to Netlify** button. This will:
-
-  - Clone the repo into your Github account
-  - Create you a new project on Netlify, build & deploy
+    - Clone the repo into your Github account
+    - Create you a new project on Netlify, build & deploy
 
 1. Once your Netlify project has been created, change a couple of settings:
-
-  - Enable **Identity**
-  - Change **Registration Preferences** to **Invite Only**
-  - Enable **Git Gateway**
+    - Enable **Identity**
+    - Change **Registration Preferences** to **Invite Only**
+    - Enable **Git Gateway**
 
 1. Invite users (probably yourself) to enable admin access
-
-  - Open the **Identity** tab and hit **Invite Users**
+    - Open the **Identity** tab and hit **Invite Users**
 
 ## Developing
 
@@ -42,17 +39,17 @@ I aim to include commonly used components and best-practices e.g. forms, setting
 
 1. Install dependencies  
 
-  `yarn` or `npm install`
+    `yarn` or `npm install`
 
 1. Run the development server
 
-  `yarn start` or `npm run start`
+    `yarn start` or `npm run start`
 
 If you are adding or editing content locally in the CMS, a couple of things to note:
 
-  1. Changes will be pushed to the remote repo.  
+  - Changes will be pushed to the remote repo.  
 
-  1. You will be prompted to enter your site's url, this is necessary for Netlify Identity to manage user login. This is stored in `localStorage`, so you might have to empty your browser cache if you are switching projects but remaining on `localhost:3000`.
+  - You will be prompted to enter your site's url, this is necessary for Netlify Identity to manage user login. This is stored in `localStorage`, so you might have to empty your browser cache if you are switching projects but remaining on `localhost:3000`.
 
 ## Editing CMS fields
 
