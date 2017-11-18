@@ -13,7 +13,7 @@ export default ({ source }) => (
 )
 
 const Image = styled.img`
-  width: 100%;
+  max-width: 100%;
   height: auto;
 `
 
