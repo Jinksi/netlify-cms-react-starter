@@ -4,7 +4,8 @@ module.exports = {
   staticFileGlobs: [
     'build/**/*.html',
     'build/**/*.svg',
-    'build/**/*.jpg',
+    'build/images/*.jpg',
+    'build/images/uploads/resized/*.jpg',
     'build/**/*.png',
     'build/**/*.gif',
     'build/**/*.ico',
