@@ -2,15 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const GithubCorner = styled.a`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 
   svg {
     fill: #151513;
     color: #fff;
     border: 0;
+    max-width: 12.5vmin;
+    max-height: 12.5vmin;
   }
 
   .octo-arm {
