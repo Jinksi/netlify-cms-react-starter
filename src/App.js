@@ -8,63 +8,46 @@ import About from './views/About'
 import Contact from './views/Contact'
 import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
-import NavLink from './components/NavLink'
-import Logo from './components/Logo'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import globalStyles from './globalStyles'
-
-export const siteTitle = 'HyperStatic'
-const routes = [
-  {
-    title: 'Home',
-    path: '/',
-    comp: Home,
-    exact: true
-  }, {
-    title: 'About',
-    path: '/about/',
-    comp: About,
-    exact: true
-  }, {
-    title: 'Contact',
-    path: '/contact/',
-    comp: Contact,
-    exact: true
-  }
-]
+import data from './data.json'
 
 class App extends Component {
-  componentWillMount () {
-    globalStyles()
+  state = {
+    data
   }
 
+  componentWillMount () {
+    globalStyles()
+    import('./netlifyIdentity')
+  }
+
+  getDocument = (collection, name) =>
+    this.state.data[collection] && this.state.data[collection].filter(page => page.name === name)[0]
+
+  getDocuments = (collection) => this.state.data[collection]
+
   render () {
+    const site = this.getDocument('settings', 'global')
     return (
       <Router>
         <div>
           <ScrollToTop />
-          <ServiceWorkerNotifications
-            readyMessage='This message is displayed when the SW is registered'
-          />
+          <ServiceWorkerNotifications />
           <GithubCorner url='https://github.com/Jinksi/hyperstatic' />
-          <Helmet titleTemplate={`${siteTitle} | %s`} />
-          <Nav>
-            <Logo>
-              <span role='img' aria-label='Watermelon'>🍉</span>
-            </Logo>
-            {routes.map((route, i) => (
-              <NavLink key={i} {...route} />
-            ))}
-          </Nav>
+          <Helmet titleTemplate={`${site.siteTitle} | %s`} />
+          <Nav />
           <Switch>
-            {routes.map((route, i) => (
-              <Route
-                {...route}
-                key={i}
-                render={() => <route.comp {...route} />}
-              />
-            ))}
+            <Route path='/' exact
+              render={(props) => <Home page={this.getDocument('pages', 'home')} {...props} />}
+            />
+            <Route path='/about/' exact
+              render={(props) => <About page={this.getDocument('pages', 'about')} {...props} />}
+            />
+            <Route path='/contact/' exact
+              render={(props) => <Contact page={this.getDocument('pages', 'contact')} site={site} {...props} />}
+            />
             <Route component={NoMatch} />
           </Switch>
         </div>

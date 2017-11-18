@@ -20,10 +20,10 @@ const NavLink = styled.span`
   }
 `
 
-export default ({ path, exact, ...props }) => (
-  <Route path={path} exact={exact} children={({match}) => (
+export default ({ to, exact, match, children }) => (
+  <Route path={to} exact={exact} children={({match}) => (
     <NavLink active={match}>
-      <Link to={path}>{props.title}</Link>
+      <Link to={to}>{children}</Link>
     </NavLink>
   )} />
 )
