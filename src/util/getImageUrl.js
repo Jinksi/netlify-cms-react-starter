@@ -4,7 +4,8 @@ const resizedDir = '/images/uploads/resized/'
 
 const getImageSrcset = path => {
   if (path.indexOf('http') >= 0) {
-    return console.warn('Cannot get srcset for external image: ' + path)
+    // Cannot get srcset for external image
+    return
   }
   const filename = path.split('.').shift()
   const extname = path.split('.').pop()
