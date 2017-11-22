@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 import ScrollToTop from './components/ScrollToTop'
+import SocialMeta from './components/SocialMeta'
 import Home from './views/Home'
 import About from './views/About'
 import Contact from './views/Contact'
@@ -24,29 +25,60 @@ class App extends Component {
   }
 
   getDocument = (collection, name) =>
-    this.state.data[collection] && this.state.data[collection].filter(page => page.name === name)[0]
+    this.state.data[collection] &&
+    this.state.data[collection].filter(page => page.name === name)[0]
 
-  getDocuments = (collection) => this.state.data[collection]
+  getDocuments = collection => this.state.data[collection]
 
   render () {
-    const site = this.getDocument('settings', 'global')
+    const {
+      siteTitle,
+      siteUrl,
+      siteDescription,
+      siteCardImage,
+      twitterSiteAccount,
+      twitterCreatorAccount
+    } = this.getDocument('settings', 'global')
     return (
       <Router>
         <div>
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
-          <Helmet titleTemplate={`${site.siteTitle} | %s`} />
+          <Helmet titleTemplate={`${siteTitle} | %s`} />
+          <SocialMeta
+            title={siteTitle}
+            url={siteUrl}
+            description={siteDescription}
+            absoluteImageUrl={siteCardImage}
+            twitterCreatorAccount={twitterCreatorAccount}
+            twitterSiteAccount={twitterSiteAccount}
+          />
           <Nav />
           <Switch>
-            <Route path='/' exact
-              render={(props) => <Home page={this.getDocument('pages', 'home')} {...props} />}
+            <Route
+              path='/'
+              exact
+              render={props => (
+                <Home page={this.getDocument('pages', 'home')} {...props} />
+              )}
             />
-            <Route path='/about/' exact
-              render={(props) => <About page={this.getDocument('pages', 'about')} {...props} />}
+            <Route
+              path='/about/'
+              exact
+              render={props => (
+                <About page={this.getDocument('pages', 'about')} {...props} />
+              )}
             />
-            <Route path='/contact/' exact
-              render={(props) => <Contact page={this.getDocument('pages', 'contact')} site={site} {...props} />}
+            <Route
+              path='/contact/'
+              exact
+              render={props => (
+                <Contact
+                  page={this.getDocument('pages', 'contact')}
+                  {...props}
+                />
+              )}
             />
             <Route component={NoMatch} />
           </Switch>

@@ -7,7 +7,7 @@ import NetlifySimpleForm from '../components/NetlifySimpleForm'
 import { Container, Section } from '../components/common'
 import Marked from 'react-markdown'
 
-export default ({ page, site }) => (
+export default ({ page }) => (
   <Page>
     <PageHeader title={page.title} subtitle='<Contact />' />
     <Section thin>

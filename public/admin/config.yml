@@ -18,6 +18,10 @@ collections: # A list of collections the CMS should be able to edit
         name: "global-settings"
         fields:
           - {label: Site Title, name: siteTitle, widget: string}
+          - {label: Site Url, name: siteUrl, widget: string, required: false}
+          - {label: Social Media Card Image, name: siteCardImage, widget: image, required: false}
+          - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
+          - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
   - name: "pages"
     label: "Pages"
     files:
