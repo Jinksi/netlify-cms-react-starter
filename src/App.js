@@ -50,7 +50,7 @@ class App extends Component {
             title={siteTitle}
             url={siteUrl}
             description={siteDescription}
-            absoluteImageUrl={siteCardImage}
+            absoluteImageUrl={siteUrl + siteCardImage}
             twitterCreatorAccount={twitterCreatorAccount}
             twitterSiteAccount={twitterSiteAccount}
           />
