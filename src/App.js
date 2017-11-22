@@ -35,9 +35,7 @@ class App extends Component {
       siteTitle,
       siteUrl,
       siteDescription,
-      siteCardImage,
-      twitterSiteAccount,
-      twitterCreatorAccount
+      socialMediaCard
     } = this.getDocument('settings', 'global')
     return (
       <Router>
@@ -50,9 +48,9 @@ class App extends Component {
             title={siteTitle}
             url={siteUrl}
             description={siteDescription}
-            absoluteImageUrl={siteUrl + siteCardImage}
-            twitterCreatorAccount={twitterCreatorAccount}
-            twitterSiteAccount={twitterSiteAccount}
+            absoluteImageUrl={socialMediaCard.image ? siteUrl + socialMediaCard.image : null}
+            twitterCreatorAccount={socialMediaCard.twitterCreatorAccount}
+            twitterSiteAccount={socialMediaCard.twitterSiteAccount}
           />
           <Nav />
           <Switch>
