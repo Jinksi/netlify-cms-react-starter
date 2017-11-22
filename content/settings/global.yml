@@ -1,5 +1,6 @@
 siteTitle: Netlify CMS + React Starter
 siteUrl: 'https://netlify-cms-react-starter.netlify.com/'
-siteCardImage: /images/uploads/card-og.png
-twitterSiteAccount: ''
-twitterCreatorAccount: '@Jinksi'
+socialMediaCard:
+  image: /images/uploads/card-og.png
+  twitterCreatorAccount: '@Jinksi'
+  twitterSiteAccount: ''
