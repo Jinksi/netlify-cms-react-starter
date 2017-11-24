@@ -13,7 +13,7 @@ const Notification = styled.div`
   padding: 1rem;
   min-height: 5rem;
   transition: transform 0.1s ease-in-out;
-  transform: translateY(${props => props.message ? '0' : '100%'});
+  transform: translateY(${props => (props.message ? '0' : '100%')});
 `
 const CloseButton = styled.button.attrs({
   children: 'x'
@@ -25,7 +25,7 @@ const CloseButton = styled.button.attrs({
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  right: 1rem;;
+  right: 1rem;
   top: 1rem;
   cursor: pointer;
 
@@ -93,11 +93,11 @@ export default class ServiceWorkerNotifications extends Component {
 
   render () {
     this.props.reloadOnUpdate && this.reloadIfUpdated()
-    return (
+    return this.state.message ? (
       <Notification message={this.state.message}>
         {this.state.message}
         <CloseButton onClick={this.handleDismiss} />
       </Notification>
-    )
+    ) : null
   }
 }
