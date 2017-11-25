@@ -42,12 +42,8 @@ const parseMarkdown = data => {
 }
 
 const parseYaml = data => {
-  try {
-    data = yaml.safeLoad(data, 'utf8')
-    return JSON.stringify(data)
-  } catch (e) {
-    return console.log(e)
-  }
+  data = yaml.safeLoad(data, 'utf8') || {}
+  return JSON.stringify(data)
 }
 
 const getFileContents = filePath => {
