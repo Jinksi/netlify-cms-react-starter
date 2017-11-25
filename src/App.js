@@ -48,9 +48,9 @@ class App extends Component {
             title={siteTitle}
             url={siteUrl}
             description={siteDescription}
-            absoluteImageUrl={socialMediaCard.image ? siteUrl + socialMediaCard.image : null}
-            twitterCreatorAccount={socialMediaCard.twitterCreatorAccount}
-            twitterSiteAccount={socialMediaCard.twitterSiteAccount}
+            absoluteImageUrl={socialMediaCard && socialMediaCard.image && siteUrl + socialMediaCard.image}
+            twitterCreatorAccount={socialMediaCard && socialMediaCard.twitterCreatorAccount}
+            twitterSiteAccount={socialMediaCard && socialMediaCard.twitterSiteAccount}
           />
           <Nav />
           <Switch>
