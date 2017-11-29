@@ -1,5 +1,5 @@
 ---
-title: About page title
+title: I AM THE CHEENO LOOOOOORRRRD
 subtitle: <About />
 featuredImage: /images/uploads/isabella-juskova-260426.jpg
 section1: |-
