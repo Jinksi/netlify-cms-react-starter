@@ -19,7 +19,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "index.html?launcher=true",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#ff3d3d",
