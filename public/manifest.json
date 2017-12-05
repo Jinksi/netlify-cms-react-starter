@@ -1,0 +1,27 @@
+{
+  "lang": "en",
+  "name": "Netlify CMS React Starter/",
+  "description": "A starter project for creating lightning-fast, offline-first websites with Netlify-CMS and React",
+  "icons": [
+    {
+      "src": "favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "favicon-196.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    },
+    {
+      "src": "favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html?launcher=true",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ff3d3d",
+  "background_color": "#ff3d3d"
+}
