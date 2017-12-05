@@ -21,7 +21,6 @@ class App extends Component {
 
   componentWillMount () {
     globalStyles()
-    import('./netlifyIdentity')
   }
 
   getDocument = (collection, name) =>
@@ -48,9 +47,17 @@ class App extends Component {
             title={siteTitle}
             url={siteUrl}
             description={siteDescription}
-            absoluteImageUrl={socialMediaCard && socialMediaCard.image && siteUrl + socialMediaCard.image}
-            twitterCreatorAccount={socialMediaCard && socialMediaCard.twitterCreatorAccount}
-            twitterSiteAccount={socialMediaCard && socialMediaCard.twitterSiteAccount}
+            absoluteImageUrl={
+              socialMediaCard &&
+              socialMediaCard.image &&
+              siteUrl + socialMediaCard.image
+            }
+            twitterCreatorAccount={
+              socialMediaCard && socialMediaCard.twitterCreatorAccount
+            }
+            twitterSiteAccount={
+              socialMediaCard && socialMediaCard.twitterSiteAccount
+            }
           />
           <Nav />
           <Switch>

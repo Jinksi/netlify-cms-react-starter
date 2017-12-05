@@ -11,4 +11,5 @@ netlifyIdentity.on('init', user => {
 
 if (window.localStorage) {
   netlifyIdentity.init()
+  window.netlifyIdentity = netlifyIdentity
 }
