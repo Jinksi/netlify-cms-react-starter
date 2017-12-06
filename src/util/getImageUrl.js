@@ -3,10 +3,7 @@ const outputDir = '/images/uploads/'
 const resizedDir = '/images/uploads/resized/'
 
 const getImageSrcset = path => {
-  if (path.indexOf('http') >= 0) {
-    // Cannot get srcset for external image
-    return
-  }
+  if (path.match(/^http/) || path.match(/svg$/)) return null
   const filename = path.split('.').shift()
   const extname = path.split('.').pop()
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
@@ -18,7 +15,7 @@ const getImageSrcset = path => {
 }
 
 const getImageSrc = (path, sizeRequested) => {
-  if (path.indexOf('http') >= 0) return path
+  if (path.match(/^http/) || path.match(/svg$/)) return path
   sizeRequested = parseInt(sizeRequested, 10)
   let size
   if (sizeRequested) {
