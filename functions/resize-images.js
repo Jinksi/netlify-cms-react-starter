@@ -33,10 +33,9 @@ const saveImages = ({ buffer, filename }) => {
   return Promise.all(
     options.sizes.map(async size => {
       const extname = path.extname(filename)
-      const newFilename = `${path.basename(
-        filename,
+      const newFilename = `${path.basename(filename, extname)}.${size}${
         extname
-      )}.${size}${extname}`
+      }`
       const outputFile = `${options.outputDir}/${newFilename}`
       const fileExists = await doesFileExist({ filename: outputFile })
       if (fileExists) return console.log(`↩️  ${outputFile} exists, skipping`)
