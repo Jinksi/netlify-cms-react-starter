@@ -10,7 +10,7 @@ const readFile = util.promisify(fs.readFile)
 const options = {
   inputDir: './public/images/uploads',
   outputDir: './public/images/uploads/resized',
-  sizes: [300, 600, 1200, 1800],
+  sizes: [10, 300, 600, 1200, 1800],
   imageFormats: ['jpg', 'jpeg', 'png', 'gif', 'webp']
 }
 
