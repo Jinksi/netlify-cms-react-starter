@@ -23,6 +23,7 @@
     "sw-precache": "^5.2.0"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "netlify-identity-widget": "^1.2.0",
     "polished": "^1.7.0",
     "react": "^16.0.0",
@@ -35,8 +36,7 @@
   },
   "scripts": {
     "start": "npm run watch:content & react-scripts start",
-    "build":
-      "npm run prepare && react-scripts build && react-snapshot && npm run sw",
+    "build": "npm run prepare && react-scripts build && react-snapshot && npm run sw",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare": "npm run parse-content & npm run resize-images",
@@ -46,6 +46,8 @@
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": ["/404"]
+    "include": [
+      "/404"
+    ]
   }
 }
