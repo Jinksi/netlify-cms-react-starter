@@ -1,0 +1,21 @@
+/* Admin tweaks 1.0.2 */
+.nc-mediaLibrary-cardImage {
+  object-fit: contain;
+  height: auto;
+  width: auto;
+  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.nc-mediaLibrary-cardImage-container {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc-imageControl-imageWrapper img {
+  object-fit: contain;
+  object-position: center;
+}
