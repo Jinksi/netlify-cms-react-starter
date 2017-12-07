@@ -4,7 +4,7 @@ import Marked from 'react-markdown'
 import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
 
 export default ({ source }) => (
-  <Marked
+  <Content
     source={source}
     renderers={{
       Image: ImageWithSrcset
@@ -15,6 +15,9 @@ export default ({ source }) => (
 const Image = styled.img`
   max-width: 100%;
   height: auto;
+`
+const Content = styled(Marked)`
+  white-space: pre-line;
 `
 
 const ImageWithSrcset = props => (
