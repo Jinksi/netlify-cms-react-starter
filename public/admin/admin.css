@@ -13,9 +13,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: whitesmoke;
+  flex-grow: 1;
+}
+
+.nc-imageControl-imageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfdfe3;
 }
 
 .nc-imageControl-imageWrapper img {
   object-fit: contain;
   object-position: center;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.nc-mediaLibrary-cardText {
+  margin: 0;
+}
+
+.nc-mediaLibrary-card {
+  display: flex;
+  flex-direction: column;
 }
