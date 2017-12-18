@@ -2,10 +2,17 @@ const sizes = [10, 300, 600, 1200, 1800]
 const outputDir = '/images/uploads/'
 const resizedDir = '/images/uploads/resized/'
 
+const parseFilename = filename => {
+  const parts = filename.match(/(.+)\.([\w]+)$/)
+  return {
+    filename: parts[1],
+    extname: parts[2]
+  }
+}
+
 const getImageSrcset = path => {
   if (path.match(/^http/) || path.match(/svg$/)) return null
-  const filename = path.split('.').shift()
-  const extname = path.split('.').pop()
+  const { filename, extname } = parseFilename(path)
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
 
   const srcset = sizes
@@ -27,8 +34,7 @@ const getImageSrc = (path, sizeRequested) => {
     size = sizes[Math.ceil(sizes.length / 2)]
   }
 
-  const extname = path.split('.').pop()
-  const filename = path.split('.').shift()
+  const { filename, extname } = parseFilename(path)
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
   return `${pathname}.${size}.${extname}`
 }
