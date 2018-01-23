@@ -27,19 +27,19 @@
   display: block;
   margin: 0;
   border: none;
-  padding: 1em;
+  border-bottom: 1px solid #bababa;
+  padding: 0.5em 0;
   line-height: 1;
   transition: border-color 0.2s;
   resize: none;
-  background: var(--lightGrey);
-  border-radius: 0;
 }
 
 .EnquiryForm--Input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px var(--lightGrey) inset !important;
 }
 
-.EnquiryForm--Input:focus {
+.EnquiryForm--Input:focus,
+.EnquiryForm--Textarea:focus {
   outline: none;
   border-color: black;
 }
@@ -50,11 +50,10 @@
   cursor: progress;
 }
 
-.EnquiryForm--Input::placeholder {
-  text-transform: uppercase;
+.EnquiryForm--Input::placeholder,
+.EnquiryForm--Textarea {
+  text-transform: none;
 }
 
 .EnquiryForm--SubmitButton {
-  width: 90%;
-  margin: 2rem auto 0;
 }

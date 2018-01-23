@@ -26,15 +26,6 @@ export default ({
     <label className='EnquiryForm--Label'>
       <input
         className='EnquiryForm--Input'
-        type='phone'
-        placeholder='Phone'
-        name='phone'
-        required
-      />
-    </label>
-    <label className='EnquiryForm--Label'>
-      <input
-        className='EnquiryForm--Input'
         type='email'
         placeholder='Email'
         name='email'
@@ -54,7 +45,7 @@ export default ({
     {!!subject && <input type='hidden' name='subject' value={subject} />}
     <input type='hidden' name='form-name' value={name} />
     <input
-      className='Button Button--tertiary EnquiryForm--SubmitButton'
+      className='Button EnquiryForm--SubmitButton'
       type='submit'
       value='Enquire'
     />
