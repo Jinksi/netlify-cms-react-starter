@@ -16,6 +16,9 @@
     "glob": "^7.1.2",
     "gray-matter": "^3.1.1",
     "js-yaml": "^3.10.0",
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
     "prop-types": "^15.6.0",
     "react-scripts": "^1.0.10",
     "sharp": "^0.18.4",
@@ -40,7 +43,8 @@
   "scripts": {
     "start": "npm run watch:content && react-scripts start",
     "build":
-      "npm run prepare-content && react-scripts build && react-snapshot && npm run sw",
+      "npm run prepare-content && react-scripts build && npm run build:postcss && react-snapshot && npm run sw",
+    "build:postcss": "postcss build/static/css/*.css -r",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare-content": "npm run parse-content && npm run resize-images",
