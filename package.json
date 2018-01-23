@@ -38,11 +38,11 @@
   },
   "scripts": {
     "start": "npm run watch:content & react-scripts start",
-    "build": "npm run prepare && react-scripts build && react-snapshot && npm run sw",
+    "build": "npm run prepare-content && react-scripts build && react-snapshot && npm run sw",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
-    "prepare": "npm run parse-content & npm run resize-images",
-    "watch:content": "chokidar 'content/**/**' -c 'npm run prepare' --initial",
+    "prepare-content": "npm run parse-content & npm run resize-images",
+    "watch:content": "chokidar 'content/**/**' -c 'npm run prepare-content' --initial",
     "sw": "sw-precache --config='sw-precache-config.js'",
     "test": "standard | snazzy && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
