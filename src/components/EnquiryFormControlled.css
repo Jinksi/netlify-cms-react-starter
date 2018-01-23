@@ -39,5 +39,6 @@
 .EnquiryForm--Alert {
   background: whitesmoke;
   width: 100%;
+  text-align: center;
   padding: 2rem;
 }

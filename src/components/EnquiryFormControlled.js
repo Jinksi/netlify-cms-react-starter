@@ -47,8 +47,8 @@ class Form extends Component {
     })
   }
 
-  resetForm = () => {
-    this.setState({ ...this.initialState })
+  resetForm = customState => {
+    this.setState({ ...this.initialState, ...customState })
     this.inputs.forEach(input => {
       delete input.dataset.touched
     })
@@ -75,7 +75,11 @@ class Form extends Component {
           throw new Error('Network error')
         }
       })
-      .then(this.resetForm)
+      .then(
+        this.resetForm({
+          alert: 'Thanks for your enquiry, we will get back to you soon.'
+        })
+      )
       .catch(err => {
         console.log(err)
         this.setState({
