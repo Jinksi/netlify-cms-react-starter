@@ -21,7 +21,7 @@ export default ({ page }) => (
         <Content source={page.section1} />
       </div>
     </div>
-    <div className='Seciton thin'>
+    <div className='Section thin'>
       <div className='Container'>
         <Content source={page.section2} />
         <p>The image below is a {'<LazyImage />'}</p>
