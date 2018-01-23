@@ -77,6 +77,7 @@ class App extends Component {
               render={props => (
                 <Contact
                   page={this.getDocument('pages', 'contact')}
+                  siteTitle={siteTitle}
                   {...props}
                 />
               )}

@@ -7,7 +7,7 @@ import EnquiryFormSimple from '../components/EnquiryFormSimple'
 import Content from '../components/Content'
 import './Contact.css'
 
-export default ({ page }) => (
+export default ({ page, siteTitle }) => (
   <div className='Contact'>
     <PageHeader title={page.title} subtitle='<Contact />' />
     <div className='Section thin'>
@@ -15,10 +15,10 @@ export default ({ page }) => (
         <Content source={page.content} />
         <br />
         <h3>{'<EnquiryFormControlled />'}</h3>
-        <EnquiryFormControlled name={'Controlled Form'} />
+        <EnquiryFormControlled siteTitle={siteTitle} name={'Controlled Form'} />
         <br />
         <h3>{'<EnquiryFormSimple />'}</h3>
-        <EnquiryFormSimple name='Simple Form' />
+        <EnquiryFormSimple siteTitle={siteTitle} name='Simple Form' />
         <em>Note: these will only work when deployed on Netlify</em>
         <br />
         <em>Also, they are active and I will receive submissions</em> 😉
