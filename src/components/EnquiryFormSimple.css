@@ -1,0 +1,60 @@
+.EnquiryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 500px;
+  margin: 2.5rem 0;
+}
+
+.EnquiryForm > * + * {
+  margin-top: 1.5rem;
+}
+
+.EnquiryForm--Label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.EnquiryForm--Input,
+.EnquiryForm--Textarea {
+  font-family: inherit;
+  font-weight: 400;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 1em;
+  line-height: 1;
+  transition: border-color 0.2s;
+  resize: none;
+  background: var(--lightGrey);
+  border-radius: 0;
+}
+
+.EnquiryForm--Input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--lightGrey) inset !important;
+}
+
+.EnquiryForm--Input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.EnquiryForm--Input[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: progress;
+}
+
+.EnquiryForm--Input::placeholder {
+  text-transform: uppercase;
+}
+
+.EnquiryForm--SubmitButton {
+  width: 90%;
+  margin: 2rem auto 0;
+}

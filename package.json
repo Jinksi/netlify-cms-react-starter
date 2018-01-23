@@ -16,6 +16,7 @@
     "glob": "^7.1.2",
     "gray-matter": "^3.1.1",
     "js-yaml": "^3.10.0",
+    "prop-types": "^15.6.0",
     "react-scripts": "^1.0.10",
     "sharp": "^0.18.4",
     "snazzy": "^7.0.0",
@@ -23,33 +24,33 @@
     "sw-precache": "^5.2.0"
   },
   "dependencies": {
-    "@researchgate/react-intersection-observer": "^0.5.0",
+    "@researchgate/react-intersection-observer": "^0.6.0",
+    "core-js": "^2.5.3",
     "intersection-observer": "^0.5.0",
     "lodash": "^4.17.4",
     "netlify-identity-widget": "^1.2.0",
-    "polished": "^1.7.0",
+    "normalize.css": "^7.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.1.3",
     "react-markdown": "^2.5.0",
     "react-router-dom": "^4.1.1",
-    "react-snapshot": "^1.1.0",
-    "styled-components": "^2.1.0"
+    "react-snapshot": "^1.1.0"
   },
   "scripts": {
-    "start": "npm run watch:content & react-scripts start",
-    "build": "npm run prepare && react-scripts build && react-snapshot && npm run sw",
+    "start": "npm run watch:content && react-scripts start",
+    "build":
+      "npm run prepare-content && react-scripts build && react-snapshot && npm run sw",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
-    "prepare": "npm run parse-content & npm run resize-images",
-    "watch:content": "chokidar 'content/**/**' -c 'npm run prepare' --initial",
+    "prepare-content": "npm run parse-content && npm run resize-images",
+    "watch:content":
+      "chokidar 'content/**/**' -c 'npm run prepare-content' --initial",
     "sw": "sw-precache --config='sw-precache-config.js'",
     "test": "standard | snazzy && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
+    "include": ["/404"]
   }
 }

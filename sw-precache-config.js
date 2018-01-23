@@ -3,11 +3,9 @@ module.exports = {
   stripPrefix: 'build/',
   staticFileGlobs: [
     'build/**/*.html',
-    'build/**/*.svg',
-    'build/images/*.jpg',
-    'build/images/uploads/resized/*.jpg',
-    'build/**/*.png',
-    'build/**/*.gif',
+    'build/**/*.svg', // all svgs
+    'build/images/*.+(jpg|png|gif)',
+    'build/images/uploads/**/*10.+(jpg|png|gif)', // 10px resized images
     'build/**/*.ico',
     'build/**/*.json',
     'build/static/**/!(*map*)',

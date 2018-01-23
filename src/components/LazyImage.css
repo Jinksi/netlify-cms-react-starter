@@ -1,0 +1,14 @@
+.LazyImage {
+  display: block;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  filter: blur(5px);
+}
+
+.LazyImage.loaded {
+  filter: blur(0);
+}
+
+.LazyImage:last-child {
+  margin-bottom: 0;
+}

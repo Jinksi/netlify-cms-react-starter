@@ -1,0 +1,9 @@
+.Logo {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}

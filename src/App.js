@@ -9,18 +9,14 @@ import About from './views/About'
 import Contact from './views/Contact'
 import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
-import globalStyles from './globalStyles'
 import data from './data.json'
 
 class App extends Component {
   state = {
     data
-  }
-
-  componentWillMount () {
-    globalStyles()
   }
 
   getDocument = (collection, name) =>
@@ -38,7 +34,7 @@ class App extends Component {
     } = this.getDocument('settings', 'global')
     return (
       <Router>
-        <div>
+        <div className='React-Wrap'>
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
@@ -85,8 +81,9 @@ class App extends Component {
                 />
               )}
             />
-            <Route component={NoMatch} />
+            <Route render={() => <NoMatch siteUrl={siteUrl} />} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     )

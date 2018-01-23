@@ -1,23 +1,23 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Page from '../components/Page'
-import { Container, Section } from '../components/common'
+
 import Content from '../components/Content'
 import PageHeader from '../components/PageHeader'
+import './Home.css'
 
 export default ({ page }) => {
   const { title, subtitle } = page
   return (
-    <Page>
+    <main className='Home'>
       <PageHeader title={title} subtitle={subtitle} />
-      <Section thin>
-        <Container>
+      <div className='Section thin'>
+        <div className='Container'>
           <Content source={page.content} />
-        </Container>
-      </Section>
+        </div>
+      </div>
       <Helmet>
         <title>{title}</title>
       </Helmet>
-    </Page>
+    </main>
   )
 }
