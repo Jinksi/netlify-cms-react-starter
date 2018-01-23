@@ -4,7 +4,7 @@
 }
 
 .Footer--Lower {
-  background: var(--primaryDark);
+  background: var(--primary);
   padding: 1rem 0;
   font-weight: 100;
 }
