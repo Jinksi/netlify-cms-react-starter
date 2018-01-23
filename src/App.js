@@ -11,16 +11,11 @@ import NoMatch from './views/NoMatch'
 import Nav from './components/Nav'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
-import globalStyles from './globalStyles'
 import data from './data.json'
 
 class App extends Component {
   state = {
     data
-  }
-
-  componentWillMount () {
-    globalStyles()
   }
 
   getDocument = (collection, name) =>
