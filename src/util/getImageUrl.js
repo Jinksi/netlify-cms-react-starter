@@ -11,7 +11,7 @@ const parseFilename = filename => {
 }
 
 const getImageSrcset = path => {
-  if (path.match(/^http/) || path.match(/svg$/)) return null
+  if (!path || path.match(/^http/) || path.match(/svg$/) || window.CMS) { return null }
   const { filename, extname } = parseFilename(path)
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
 
@@ -22,7 +22,7 @@ const getImageSrcset = path => {
 }
 
 const getImageSrc = (path, sizeRequested) => {
-  if (path.match(/^http/) || path.match(/svg$/)) return path
+  if (!path || path.match(/^http/) || path.match(/svg$/) || window.CMS) { return path }
   sizeRequested = parseInt(sizeRequested, 10)
   let size
   if (sizeRequested) {
