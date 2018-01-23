@@ -11,7 +11,7 @@ class Form extends Component {
     name: 'Controlled Form'
   }
 
-  state = {
+  initialState = {
     name: '',
     email: '',
     message: '',
@@ -23,19 +23,34 @@ class Form extends Component {
     'form-name': this.props.name
   }
 
+  state = {
+    ...this.initialState
+  }
+
   form = null
+  inputs = []
 
   componentDidMount () {
     if (!this.form) return
-    const inputs = this.form.querySelectorAll('input')
-    inputs.forEach(input => {
+    this.inputs = this.form.querySelectorAll('input, textarea')
+    this.addListeners()
+  }
+
+  addListeners = () => {
+    this.inputs.forEach(input => {
       input.addEventListener('invalid', () => {
-        console.log(input)
         input.dataset.touched = true
       })
       input.addEventListener('blur', () => {
         if (input.value !== '') input.dataset.touched = true
       })
+    })
+  }
+
+  resetForm = () => {
+    this.setState({ ...this.initialState })
+    this.inputs.forEach(input => {
+      delete input.dataset.touched
     })
   }
 
@@ -60,17 +75,7 @@ class Form extends Component {
           throw new Error('Network error')
         }
       })
-      .then(res => {
-        this.setState({
-          disabled: false,
-          alert: 'Thanks for your enquiry, we will get back to you soon.',
-          name: '',
-          email: '',
-          message: '',
-          subject: `New Submission from ${this.props.siteTitle}!`,
-          _gotcha: ''
-        })
-      })
+      .then(this.resetForm)
       .catch(err => {
         console.log(err)
         this.setState({
