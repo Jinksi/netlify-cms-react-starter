@@ -1,8 +1,10 @@
+import 'core-js/es6'
 import React from 'react'
 import { render } from 'react-snapshot'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 import './netlifyIdentity'
+import 'normalize.css'
 const rootEl = document.getElementById('root')
 render(<App />, rootEl)
 
