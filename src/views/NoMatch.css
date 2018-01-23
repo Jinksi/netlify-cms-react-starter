@@ -1,0 +1,5 @@
+.body--NoMatch .React-Wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

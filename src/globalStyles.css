@@ -142,8 +142,8 @@ pre code:after {
 }
 
 .Container {
-  max-width: 1467px;
-  width: 90vw;
+  max-width: 1111px;
+  width: 90%;
   margin: 0 auto;
 }
 .Container.skinny {

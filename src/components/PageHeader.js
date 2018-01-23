@@ -1,35 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 
-import { Section, Container, BackgroundImage } from './common'
-import { getImageSrc } from '../util/getImageUrl'
-import { color } from '../globalStyles'
-
-const Header = styled(Section)`
-  line-height: 1em;
-  color: ${color.primary};
-  background: ${color.primary};
-  color: white;
-
-  h2 {
-    font-weight: 200;
-  }
-`
+import BackgroundImage from './BackgroundImage'
+import './PageHeader.css'
 
 const PageHeader = ({ title, subtitle, backgroundImage }) => (
-  <Header relative>
-    {backgroundImage && (
-      <BackgroundImage
-        image={getImageSrc(backgroundImage, '1200')}
-        opacity={0.5}
-      />
-    )}
-    <Container relative>
-      <h1>{title}</h1>
-      {subtitle ? <h2>{subtitle}</h2> : ''}
-    </Container>
-  </Header>
+  <div className='Section PageHeader relative'>
+    {backgroundImage && <BackgroundImage src={backgroundImage} opacity={0.5} />}
+    <div className='Container relative'>
+      <h1 className='PageHeader--Title'>{title}</h1>
+      {subtitle ? <h2 className='PageHeader--Subtitle'>{subtitle}</h2> : ''}
+    </div>
+  </div>
 )
 
 PageHeader.propTypes = {

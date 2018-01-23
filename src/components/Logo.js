@@ -1,7 +1,12 @@
-import styled from 'styled-components'
+import React from 'react'
 
-export default styled.span`
-  display: block;
-  font-size: 2rem;
-  padding: 0 1rem;
-`
+import './Logo.css'
+
+export default ({ inverted }) => (
+  <div
+    className='Logo'
+    style={{
+      backgroundImage: 'url(/images/logo.png)'
+    }}
+  />
+)

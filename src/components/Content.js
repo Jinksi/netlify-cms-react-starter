@@ -1,10 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 import Marked from 'react-markdown'
+
 import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
+import './Content.css'
 
 export default ({ source }) => (
-  <Content
+  <Marked
+    className='Content'
     source={source}
     renderers={{
       Image: ImageWithSrcset
@@ -12,18 +14,12 @@ export default ({ source }) => (
   />
 )
 
-const Image = styled.img`
-  max-width: 100%;
-  height: auto;
-`
-const Content = styled(Marked)`
-  white-space: pre-line;
-`
-
-const ImageWithSrcset = props => (
-  <Image
+const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => (
+  <img
+    className='Content--Image'
     {...props}
-    src={getImageSrc(props.src)}
-    srcSet={getImageSrcset(props.src)}
+    src={getImageSrc(src)}
+    srcSet={getImageSrcset(src)}
+    alt={alt}
   />
 )
