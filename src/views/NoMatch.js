@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import './NoMatch.css'
 
-export default ({ siteUrl }) => (
-  <div className='Page'>
+const NoMatch = ({ siteUrl }) => (
+  <div className='NoMatch'>
     <section className='Section thick'>
       <div className='Container taCenter'>
         <h1>404 - Page Not Found</h1>
@@ -22,3 +23,9 @@ export default ({ siteUrl }) => (
     </Helmet>
   </div>
 )
+
+NoMatch.propTypes = {
+  siteUrl: PropTypes.string.isRequired
+}
+
+export default NoMatch
