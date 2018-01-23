@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import PageHeader from '../components/PageHeader'
-// import NetlifyControlledForm from '../components/NetlifyControlledForm'
+import EnquiryFormControlled from '../components/EnquiryFormControlled'
 import EnquiryFormSimple from '../components/EnquiryFormSimple'
 import Content from '../components/Content'
 import './Contact.css'
@@ -14,10 +14,10 @@ export default ({ page }) => (
       <div className='Container'>
         <Content source={page.content} />
         <br />
-        <h3>{'<NetlifyControlledForm />'}</h3>
-        {/* <NetlifyControlledForm name={'Controlled Form'} /> */}
+        <h3>{'<EnquiryFormControlled />'}</h3>
+        <EnquiryFormControlled name={'Controlled Form'} />
         <br />
-        <h3>{'<NetlifySimpleForm />'}</h3>
+        <h3>{'<EnquiryFormSimple />'}</h3>
         <EnquiryFormSimple name='Simple Form' />
         <em>Note: these will only work when deployed on Netlify</em>
         <br />

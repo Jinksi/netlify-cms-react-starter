@@ -18,8 +18,7 @@
   flex-wrap: wrap;
 }
 
-.EnquiryForm--Input,
-.EnquiryForm--Textarea {
+.EnquiryForm--Input {
   font-family: inherit;
   font-weight: 400;
   flex-grow: 1;
@@ -38,8 +37,7 @@
   -webkit-box-shadow: 0 0 0 1000px var(--lightGrey) inset !important;
 }
 
-.EnquiryForm--Input:focus,
-.EnquiryForm--Textarea:focus {
+.EnquiryForm--Input:focus {
   outline: none;
   border-color: black;
 }
@@ -50,8 +48,7 @@
   cursor: progress;
 }
 
-.EnquiryForm--Input::placeholder,
-.EnquiryForm--Textarea {
+.EnquiryForm--Input::placeholder {
   text-transform: none;
 }
 

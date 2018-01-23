@@ -1,0 +1,43 @@
+.EnquiryForm-controlled .EnquiryForm--Input {
+  border: none;
+}
+
+.EnquiryForm--Line {
+  width: 100%;
+  height: 1px;
+  stroke: #bababa;
+  stroke-width: 2px;
+}
+
+.EnquiryForm--Line .focus,
+.EnquiryForm--Line .valid,
+.EnquiryForm--Line .invalid {
+  transition: all 0.2s;
+  stroke-dasharray: 0, 20;
+  stroke-dashoffset: -20;
+}
+
+.EnquiryForm--Line .focus {
+  stroke: black;
+}
+
+.EnquiryForm--Line .valid {
+  stroke: hsl(166, 72%, 40%);
+}
+
+.EnquiryForm--Line .invalid {
+  stroke: var(--danger);
+}
+
+.EnquiryForm--Input:focus ~ .EnquiryForm--Line .focus,
+.EnquiryForm--Input:valid ~ .EnquiryForm--Line .valid,
+.EnquiryForm--Input[data-touched]:invalid ~ .EnquiryForm--Line .invalid {
+  stroke-dasharray: 40, 0;
+  stroke-dashoffset: 0;
+}
+
+.EnquiryForm--Alert {
+  background: whitesmoke;
+  width: 100%;
+  padding: 2rem;
+}

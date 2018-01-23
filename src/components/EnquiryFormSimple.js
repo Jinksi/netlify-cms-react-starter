@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './EnquiryFormSimple.css'
+import './EnquiryForm.css'
 
 export default ({
   name = 'Simple Form',
@@ -34,7 +34,7 @@ export default ({
     </label>
     <label className='EnquiryForm--Label'>
       <textarea
-        className='EnquiryForm--Textarea'
+        className='EnquiryForm--Input EnquiryForm--Textarea'
         placeholder='Message'
         name='message'
         rows='10'
