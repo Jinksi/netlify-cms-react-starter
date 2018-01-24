@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .EnquiryForm--Input {
@@ -27,10 +28,29 @@
   margin: 0;
   border: none;
   border-bottom: 1px solid #bababa;
-  padding: 0.5em 0;
+  padding: 0.75rem 0.5rem;
   line-height: 1;
   transition: border-color 0.2s;
   resize: none;
+}
+
+.EnquiryForm--Select {
+  border-radius: 0;
+  background: none;
+  appearance: none;
+}
+
+.EnquiryForm--Label.has-arrow:after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  height: 10px;
+  width: 10px;
+  transform: translateY(-75%) rotate(45deg);
+  pointer-events: none;
 }
 
 .EnquiryForm--Input:-webkit-autofill {
