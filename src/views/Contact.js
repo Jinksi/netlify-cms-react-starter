@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import PageHeader from '../components/PageHeader'
 import EnquiryFormControlled from '../components/EnquiryFormControlled'
 import EnquiryFormSimple from '../components/EnquiryFormSimple'
+import EnquiryFormSimpleAjax from '../components/EnquiryFormSimpleAjax'
 import Content from '../components/Content'
 import './Contact.css'
 
@@ -17,8 +18,10 @@ export default ({ page, siteTitle }) => (
         <h3>{'<EnquiryFormControlled />'}</h3>
         <EnquiryFormControlled siteTitle={siteTitle} name={'Controlled Form'} />
         <br />
-        <h3>{'<EnquiryFormSimple />'}</h3>
+        <h3>{'<EnquiryFormSimpleAjax />'}</h3>
         <EnquiryFormSimple siteTitle={siteTitle} name='Simple Form' />
+        <h3>{'<EnquiryFormSimpleAjax />'}</h3>
+        <EnquiryFormSimpleAjax siteTitle={siteTitle} name='Simple Form Ajax' />
         <em>Note: these will only work when deployed on Netlify</em>
         <br />
         <em>Also, they are active and I will receive submissions</em> 😉

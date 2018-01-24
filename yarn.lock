@@ -2141,6 +2141,12 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
+dom-form-serializer@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/dom-form-serializer/-/dom-form-serializer-1.0.7.tgz#19a90f56b4d342040bf9fcc78e4f380396d3baa5"
+  dependencies:
+    matches-selector "^1.0.0"
+
 dom-serializer@0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -4629,6 +4635,10 @@ makeerror@1.0.x:
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+
+matches-selector@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/matches-selector/-/matches-selector-1.2.0.tgz#d1814e7e8f43e69d22ac33c9af727dc884ecf12a"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
