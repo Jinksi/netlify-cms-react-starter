@@ -36,10 +36,10 @@ export default ({
       <select
         className='EnquiryForm--Input EnquiryForm--Select'
         name='type'
-        placeholder='Type of enquiry'
+        defaultValue='Type of Enquiry'
         required
       >
-        <option selected disabled hidden>
+        <option disabled hidden>
           Type of Enquiry
         </option>
         <option>Need to know more</option>

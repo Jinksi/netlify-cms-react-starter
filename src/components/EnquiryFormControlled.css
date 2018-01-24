@@ -35,10 +35,3 @@
   stroke-dasharray: 40, 0;
   stroke-dashoffset: 0;
 }
-
-.EnquiryForm--Alert {
-  background: whitesmoke;
-  width: 100%;
-  text-align: center;
-  padding: 2rem;
-}
