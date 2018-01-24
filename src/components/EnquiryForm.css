@@ -62,7 +62,8 @@
   border-color: black;
 }
 
-.EnquiryForm--Input[disabled] {
+.EnquiryForm--Input[disabled],
+.EnquiryForm--SubmitButton[disabled] {
   opacity: 0.4;
   pointer-events: none;
   cursor: progress;
@@ -72,5 +73,9 @@
   text-transform: none;
 }
 
-.EnquiryForm--SubmitButton {
+.EnquiryForm--Alert {
+  background: var(--lightGrey);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
 }
