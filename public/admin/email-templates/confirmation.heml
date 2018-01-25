@@ -8,11 +8,16 @@
       .button {
         background: #ff3d3d;
       }
+      .logo {
+        margin: auto;
+        width: 100px;
+        height: auto;
+      }
     </style>
   </head>
   <body>
     <container>
-      <img style='margin: auto' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
+      <img class='logo' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
       <h2>Confirm your signup</h2>
       <p>Follow this link to confirm your account:</p>
       <button class='button' href="{{ .ConfirmationURL }}" style="margin: auto;">Confirm your mail</button>

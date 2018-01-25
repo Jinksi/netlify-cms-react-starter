@@ -8,11 +8,16 @@
       .button {
         background: #ff3d3d;
       }
+      .logo {
+        margin: auto;
+        width: 100px;
+        height: auto;
+      }
     </style>
   </head>
   <body>
     <container>
-      <img style='margin: auto' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
+      <img class='logo' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
       <h2>You have been invited</h2>
       <p>You have been invited to create a user on {{ .SiteURL }}</p>
       <button class='button' href="{{ .ConfirmationURL }}" style="margin: auto;">Accept the invite</button>
