@@ -6,7 +6,7 @@
         text-align: center;
       }
       .button {
-        background: #ff3d3d;
+        background: #366dc7;
       }
       .logo {
         margin: auto;
@@ -17,7 +17,7 @@
   </head>
   <body>
     <container>
-      <img class='logo' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
+      <img class='logo' src='{{ .SiteURL }}/images/logo.png' />
       <h2>Confirm your signup</h2>
       <p>Follow this link to confirm your account:</p>
       <button class='button' href="{{ .ConfirmationURL }}" style="margin: auto;">Confirm your mail</button>
