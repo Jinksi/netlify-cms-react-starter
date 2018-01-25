@@ -12,7 +12,7 @@
   </head>
   <body>
     <container>
-      <img style='margin: auto' src='https://netlify-cms-react-starter.netlify.com/images/logo.svg' />
+      <img style='margin: auto' src='https://netlify-cms-react-starter.netlify.com/images/logo.png' />
       <h2>Confirm Change of Email</h2>
       <p>Follow this link to confirm the update of your email from {{ .Email }} to {{ .NewEmail }}:</p>
       <button class='button' href="{{ .ConfirmationURL }}" style="margin: auto;">Change Email</button>
