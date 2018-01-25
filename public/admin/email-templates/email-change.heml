@@ -1,0 +1,21 @@
+<heml>
+  <head>
+    <subject>Confirm Change of Email</subject>
+    <style>
+      body {
+        text-align: center;
+      }
+      .button {
+        background: #ff3d3d;
+      }
+    </style>
+  </head>
+  <body>
+    <container>
+      <img style='margin: auto' src='https://netlify-cms-react-starter.netlify.com/images/logo.svg' />
+      <h2>Follow this link to confirm the update of your email from {{ .Email }} to {{ .NewEmail }}:</h2>
+      <p>Follow this link to confirm your account</p>
+      <button class='button' href="{{ .ConfirmationURL }}" style="margin: auto;">Change Email</button>
+    </container>
+  </body>
+</heml>

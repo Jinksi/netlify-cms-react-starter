@@ -44,10 +44,8 @@
   },
   "scripts": {
     "start": "npm run watch:content & react-scripts start",
-    "start:heml": "heml develop email.heml",
     "build": "npm run prepare-content && react-scripts build && npm run build:postcss && react-snapshot && npm run sw",
     "build:postcss": "postcss build/static/css/*.css -r",
-    "build:heml": "postcss build/static/css/*.css -r",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare-content": "npm run parse-content && npm run resize-images",
