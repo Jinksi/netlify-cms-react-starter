@@ -9,7 +9,7 @@
         background: #366dc7;
       }
       .logo {
-        margin: auto;
+        margin: 25px auto;
         width: 100px;
         height: auto;
       }
