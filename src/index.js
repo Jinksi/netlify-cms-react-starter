@@ -18,3 +18,7 @@ if (module.hot) {
 }
 
 registerServiceWorker()
+
+if (process.env.REACT_APP_SITE_URL && 'localStorage' in window) {
+  window.localStorage.setItem('netlifySiteURL', process.env.REACT_APP_SITE_URL)
+}
