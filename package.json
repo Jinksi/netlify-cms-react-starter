@@ -51,6 +51,7 @@
       "npm-run-all -s prepare-content build:js build:postcss react-snapshot sw",
     "build:js": "react-scripts build",
     "build:postcss": "postcss build/static/css/*.css -r",
+    "react-snapshot": "react-snapshot",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare-content": "npm-run-all -s parse-content resize-images",
