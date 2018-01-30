@@ -80,6 +80,7 @@ const writeJSON = async () => {
   const json = await combineJSON()
   fs.writeFileSync(options.outputFile, json)
   console.log(`✅  Data saved to ${options.outputFile}`)
+  process.exit()
 }
 
 writeJSON()

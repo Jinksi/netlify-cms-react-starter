@@ -34,9 +34,10 @@ const saveImages = ({ buffer, filename }) => {
   return Promise.all(
     options.sizes.map(async size => {
       const extname = path.extname(filename)
-      const newFilename = `${path.basename(filename, extname)}.${size}${
+      const newFilename = `${path.basename(
+        filename,
         extname
-      }`
+      )}.${size}${extname}`
       const outputFile = `${options.outputDir}/${newFilename}`
       const fileExists = await doesFileExist({ filename: outputFile })
       if (fileExists) return console.log(`↩️  ${outputFile} exists, skipping`)
@@ -74,9 +75,12 @@ const resizeImages = async () => {
     )
     const filesToResize = files.filter(filename => !filename.match(ignore))
     const imageFiles = await readFiles(filesToResize)
-    imageFiles.map(saveImages)
+    Promise.all(imageFiles.map(saveImages))
+      .then(() => process.exit())
+      .catch(console.error)
   } catch (e) {
     console.log(e)
+    process.exit(1)
   }
 }
 
