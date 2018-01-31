@@ -12,6 +12,7 @@ const Schema = ({
   openingHours
 }) => {
   // see http://schema.org/docs/schemas.html
+  // test https://search.google.com/structured-data/testing-tool
 
   const data = {
     '@context': 'http://schema.org/',
