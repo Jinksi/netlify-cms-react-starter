@@ -1,7 +1,10 @@
 siteTitle: Netlify CMS + React Starter
 siteUrl: 'https://netlify-cms-react-starter.netlify.com'
-siteDescription: 'A starter project for creating lightning-fast, offline-first websites with Netlify CMS and React.'
+siteDescription: >-
+  A starter project for creating lightning-fast, offline-first websites with
+  Netlify CMS and React.
 socialMediaCard:
   image: /images/uploads/card-og.png
   twitterCreatorAccount: '@Jinksi'
   twitterSiteAccount: ''
+headerScripts: <!-- Add your analytics scripts / verification meta here -->
