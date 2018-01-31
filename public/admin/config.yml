@@ -28,6 +28,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Image, name: image, widget: image, required: false}
               - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
+          - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
   - name: "pages"
     label: "Pages"
     delete: false # Prevent users from deleting documents in this collection

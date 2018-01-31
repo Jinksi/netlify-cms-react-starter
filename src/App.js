@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 import ScrollToTop from './components/ScrollToTop'
-import SocialMeta from './components/SocialMeta'
+import Meta from './components/Meta'
 import Home from './views/Home'
 import About from './views/About'
 import Contact from './views/Contact'
@@ -26,12 +26,15 @@ class App extends Component {
   getDocuments = collection => this.state.data[collection]
 
   render () {
+    const globalSettings = this.getDocument('settings', 'global')
     const {
       siteTitle,
       siteUrl,
       siteDescription,
-      socialMediaCard
-    } = this.getDocument('settings', 'global')
+      socialMediaCard,
+      headerScripts
+    } = globalSettings
+
     return (
       <Router>
         <div className='React-Wrap'>
@@ -39,7 +42,7 @@ class App extends Component {
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
           <Helmet titleTemplate={`${siteTitle} | %s`} />
-          <SocialMeta
+          <Meta
             title={siteTitle}
             url={siteUrl}
             description={siteDescription}
@@ -54,6 +57,7 @@ class App extends Component {
             twitterSiteAccount={
               socialMediaCard && socialMediaCard.twitterSiteAccount
             }
+            headerScripts={headerScripts}
           />
           <Nav />
           <Switch>
