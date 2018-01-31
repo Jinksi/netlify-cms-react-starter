@@ -9,4 +9,3 @@ socialMediaCard:
   twitterSiteAccount: ''
 headerScripts: |-
   <!-- Add your analytics scripts / verification meta here -->
-  <script>alert('test')</script>
