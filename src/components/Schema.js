@@ -7,7 +7,7 @@ const Schema = ({
   email,
   phone: telephone,
   url,
-  logoUrl,
+  logoUrl: logo,
   type,
   openingHours
 }) => {
@@ -24,7 +24,8 @@ const Schema = ({
     email,
     telephone,
     url,
-    openingHours
+    openingHours,
+    logo
   }
 
   return (
