@@ -15,20 +15,26 @@ const Meta = ({
     headerScriptsElement.outerHTML = headerScripts
   }
 
-  // Site Url Check
-  if (url === 'https://netlify-cms-react-starter.netlify.com') {
-    console.warn(`Site url may need updating (${url})`)
+  const runChecks = () => {
+    if (process.env.NODE_ENV !== 'development') return
+
+    // Site Url Check
+    if (url === 'https://netlify-cms-react-starter.netlify.com') {
+      console.warn(`Site url may need updating (${url})`)
+    }
+
+    // Title
+    if (!title) {
+      console.error(`Missing Site Title`)
+    }
+
+    // Description
+    if (!description) {
+      console.error(`Missing Site Description`)
+    }
   }
 
-  // Title
-  if (!title) {
-    console.error(`Missing Site Title`)
-  }
-
-  // Description
-  if (!description) {
-    console.error(`Missing Site Description`)
-  }
+  runChecks()
 
   return (
     <Helmet>
@@ -50,4 +56,5 @@ const Meta = ({
     </Helmet>
   )
 }
+
 export default Meta
