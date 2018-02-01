@@ -14,6 +14,22 @@ const Meta = ({
   if (headerScripts && headerScriptsElement) {
     headerScriptsElement.outerHTML = headerScripts
   }
+
+  // Site Url Check
+  if (url === 'https://netlify-cms-react-starter.netlify.com') {
+    console.warn(`Site url may need updating (${url})`)
+  }
+
+  // Title
+  if (!title) {
+    console.error(`Missing Site Title`)
+  }
+
+  // Description
+  if (!description) {
+    console.error(`Missing Site Description`)
+  }
+
   return (
     <Helmet>
       <meta name='description' content={description} />
