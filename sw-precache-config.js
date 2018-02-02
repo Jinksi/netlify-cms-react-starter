@@ -16,8 +16,19 @@ module.exports = {
   // any external urls you wish to cache (e.g. CDN)
   runtimeCaching: [
     {
+      // cache content from external url as they are loaded by browser
       urlPattern: /^https?:\/\/.*example-cdn.com/,
       handler: 'cacheFirst'
+    },
+    {
+      // cache files in the images directory as they are loaded by browser
+      urlPattern: '/images/(.*)',
+      handler: 'cacheFirst',
+      options: {
+        cache: {
+          name: 'images-cache'
+        }
+      }
     }
   ]
 }
