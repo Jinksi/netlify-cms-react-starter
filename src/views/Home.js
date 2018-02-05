@@ -10,8 +10,8 @@ export default ({ page }) => {
   return (
     <main className='Home'>
       <PageHeader title={title} subtitle={subtitle} />
-      <div className='Section thin'>
-        <div className='Container'>
+      <div className='section thin'>
+        <div className='container'>
           <Content source={page.content} />
         </div>
       </div>

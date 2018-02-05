@@ -11,8 +11,8 @@ import './Contact.css'
 export default ({ page, siteTitle }) => (
   <div className='Contact'>
     <PageHeader title={page.title} subtitle='<Contact />' />
-    <div className='Section thin'>
-      <div className='Container'>
+    <div className='section thin'>
+      <div className='container'>
         <Content source={page.content} />
         <h3>{'<EnquiryFormSimple />'}</h3>
         <EnquiryFormSimple name='Simple Form' />

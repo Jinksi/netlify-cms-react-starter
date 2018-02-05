@@ -5,9 +5,9 @@ import BackgroundImage from './BackgroundImage'
 import './PageHeader.css'
 
 const PageHeader = ({ title, subtitle, backgroundImage }) => (
-  <div className='Section PageHeader relative'>
+  <div className='section PageHeader relative'>
     {backgroundImage && <BackgroundImage src={backgroundImage} opacity={0.5} />}
-    <div className='Container relative'>
+    <div className='container relative'>
       <h1 className='PageHeader--Title'>{title}</h1>
       {subtitle ? <h2 className='PageHeader--Subtitle'>{subtitle}</h2> : ''}
     </div>

@@ -130,65 +130,65 @@ pre code:after {
 
 /* Layout */
 
-.Section {
+.section {
   width: 100%;
   padding: 5rem 0;
 }
-.Section.thick {
+.section.thick {
   padding: 10rem 0;
 }
-.Section.thin {
+.section.thin {
   padding: 2.5rem 0;
 }
-.Section.noPadding {
+.section.noPadding {
   padding: 0;
 }
 
-.Container {
+.container {
   max-width: 1111px;
   width: 90%;
   margin: 0 auto;
 }
-.Container.skinny {
+.container.skinny {
   max-width: 888px;
 }
-.Container.skinnier {
+.container.skinnier {
   max-width: 555px;
 }
 
 /* Flex */
 
-.Flex {
+.flex {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-.Flex.column {
+.flex.column {
   flex-direction: column;
 }
-.Flex.justifyCenter {
+.flex.justifyCenter {
   justify-content: center;
 }
-.Flex.justifyEnd {
+.flex.justifyEnd {
   justify-content: flex-end;
 }
-.Flex.justifyBetween {
+.flex.justifyBetween {
   justify-content: space-between;
 }
-.Flex.justifyAround {
+.flex.justifyAround {
   justify-content: space-around;
 }
-.Flex.alignStart {
+.flex.alignStart {
   align-items: flex-start;
 }
-.Flex.alignEnd {
+.flex.alignEnd {
   align-items: flex-end;
 }
-.Flex.alignStretch {
+.flex.alignStretch {
   align-items: stretch;
 }
-.Flex.fill {
+.flex.fill {
   height: 100%;
   width: 100%;
 }

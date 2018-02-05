@@ -6,8 +6,8 @@ import './NoMatch.css'
 
 const NoMatch = ({ siteUrl }) => (
   <div className='NoMatch'>
-    <section className='Section thick'>
-      <div className='Container taCenter'>
+    <section className='section thick'>
+      <div className='container taCenter'>
         <h1>404 - Page Not Found</h1>
         <p>
           We can't find the page you are looking for!<br />Head back to{' '}
