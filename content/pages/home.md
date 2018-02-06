@@ -6,6 +6,8 @@ subtitle: <Home />
 # 🌶 Netlify CMS + React Starter
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![dependencies](https://david-dm.org/jinksi/netlify-cms-react-starter.svg)](https://david-dm.org/jinksi/netlify-cms-react-starter)
 
 A starter project for creating lightning-fast, offline-first websites with [Netlify CMS](https://netlifycms.org) and React.
 
