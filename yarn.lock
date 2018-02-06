@@ -5315,6 +5315,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+moveto@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/moveto/-/moveto-1.7.1.tgz#b97847c2c6a12b88a179afd4fee0718b6851797e"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
