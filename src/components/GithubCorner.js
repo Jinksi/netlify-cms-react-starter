@@ -1,9 +1,20 @@
 import React from 'react'
 import './GithubCorner.css'
 
-export default ({ url }) => (
-  <a className='GithubCorner' href={url} aria-label='View source on Github'>
-    <svg width='80' height='80' viewBox='0 0 250 250' aria-hidden='true'>
+export default ({ url, style, className = '', color = '#151513' }) => (
+  <a
+    className={`GithubCorner ${className}`}
+    href={url}
+    aria-label='View source on Github'
+    style={style}
+  >
+    <svg
+      width='80'
+      height='80'
+      viewBox='0 0 250 250'
+      aria-hidden='true'
+      fill={color}
+    >
       <path d='M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z' />
       <path
         className='octo-arm'
