@@ -24,6 +24,7 @@
     "prop-types": "^15.6.0",
     "react-scripts": "^1.0.10",
     "sharp": "^0.18.4",
+    "sitemap-static": "^0.4.2",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2",
     "sw-precache": "^5.2.0"
@@ -49,20 +50,20 @@
     "start": "npm-run-all prepare-content -p start:content start:js",
     "start:js": "react-scripts start",
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
-    "build": "npm-run-all -s prepare-content build:js build:postcss react-snapshot sw",
+    "build":
+      "npm-run-all -s prepare-content build:* build:postcss build:react-snapshot build:sitemap build:sw",
     "build:js": "react-scripts build",
     "build:postcss": "postcss build/static/css/*.css -r",
-    "react-snapshot": "react-snapshot",
+    "build:react-snapshot": "react-snapshot",
+    "build:sw": "sw-precache --config='sw-precache-config.js'",
+    "build:sitemap": "node ./functions/generate-sitemap.js",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare-content": "npm-run-all -s parse-content resize-images",
-    "sw": "sw-precache --config='sw-precache-config.js'",
     "test": "standard | snazzy && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
+    "include": ["/404"]
   }
 }
