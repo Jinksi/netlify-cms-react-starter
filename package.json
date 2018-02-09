@@ -50,7 +50,8 @@
     "start": "npm-run-all prepare-content -p start:content start:js",
     "start:js": "react-scripts start",
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
-    "build": "npm-run-all -s prepare-content build:* build:postcss build:react-snapshot build:sitemap build:sw",
+    "build":
+      "npm-run-all -s prepare-content build:js build:postcss build:react-snapshot build:sitemap build:sw",
     "build:js": "react-scripts build",
     "build:postcss": "postcss build/static/css/*.css -r",
     "build:react-snapshot": "react-snapshot",
