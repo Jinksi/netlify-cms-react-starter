@@ -1,4 +1,6 @@
+import React from 'react'
 import AOS from 'aos'
+import Helmet from 'react-helmet'
 import 'aos/dist/aos.css'
 
 export default ({ options }) => {
@@ -9,6 +11,20 @@ export default ({ options }) => {
     easing: 'ease-out-sine',
     delay: 0
   }
+
   AOS.init({ ...defaultOptions, ...options })
-  return null
+
+  return (
+    <Helmet>
+      <noscript>{`
+        <style>
+          /* override AOS css if no JS */
+          [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+          }
+        </style>
+      `}</noscript>
+    </Helmet>
+  )
 }
