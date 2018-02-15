@@ -43,7 +43,10 @@ class App extends Component {
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
-          <Helmet titleTemplate={`${siteTitle} | %s`} />
+          <Helmet
+            defaultTitle={siteTitle}
+            titleTemplate={`${siteTitle} | %s`}
+          />
           <Meta
             title={siteTitle}
             url={siteUrl}
