@@ -34,7 +34,11 @@ const parseYaml = data => {
 
 const replaceUploadUrls = (uploads = [], string) => {
   uploads.forEach(upload => {
-    string = string.replace(upload.publicPath, upload.download_url)
+    const url = new URL(upload.download_url)
+    if (url.pathname.match(/.svg$/)) {
+      url.search += (url.search.slice(1) === '' ? '?' : '&') + 'sanitize=true'
+    }
+    string = string.replace(upload.publicPath, url)
   })
   return string
 }
