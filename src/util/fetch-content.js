@@ -29,7 +29,7 @@ const parseYaml = data => {
   return yaml.safeLoad(data) || {}
 }
 
-export const fetchContent = async (rateLimit = 100) => {
+export const fetchContent = async (rateLimit = 35) => {
   if (!window.localStorage || !window.netlifyIdentity) {
     return Promise.resolve(null)
   }
