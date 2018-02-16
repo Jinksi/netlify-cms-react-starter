@@ -29,7 +29,7 @@ const parseYaml = data => {
   return yaml.safeLoad(data) || {}
 }
 
-export const fetchContent = async (rateLimit = 35) => {
+export const fetchContent = async (rateLimit = 0) => {
   if (!window.localStorage || !window.netlifyIdentity) {
     return Promise.resolve(null)
   }
@@ -54,7 +54,8 @@ export const fetchContent = async (rateLimit = 35) => {
         fetch(endpoint, {
           headers: {
             Authorization: `Bearer ${token}`
-          }
+          },
+          cache: 'no-store'
         })
       )
       .then(res => res.json())
