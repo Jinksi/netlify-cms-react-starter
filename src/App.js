@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
+import _merge from 'lodash/merge'
 
 import ScrollToTop from './components/ScrollToTop'
 import Meta from './components/Meta'
@@ -13,11 +14,38 @@ import Footer from './components/Footer'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import AOS from './components/AOS'
+import Spinner from './components/Spinner'
+import { fetchContent } from './util/fetch-content'
 import data from './data.json'
 
 class App extends Component {
   state = {
-    data
+    data,
+    loading: false
+  }
+
+  componentDidMount = () => {
+    this.fetchPreviewContent()
+  }
+
+  fetchPreviewContent = () => {
+    if (
+      !window.netlifyIdentity ||
+      !window.netlifyIdentity.currentUser() ||
+      process.env.NODE_ENV === 'development'
+    ) {
+      return false
+    }
+
+    this.setState({ loading: true })
+    fetchContent()
+      .then(newData => {
+        this.setState(prevState => {
+          const data = _merge(prevState.data, newData)
+          return { data, loading: false }
+        })
+      })
+      .catch(() => this.setState({ loading: false }))
   }
 
   getDocument = (collection, name) =>
@@ -39,6 +67,7 @@ class App extends Component {
     return (
       <Router>
         <div className='React-Wrap'>
+          {this.state.loading && <Spinner />}
           <AOS options={{ duration: 250 }} />
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
