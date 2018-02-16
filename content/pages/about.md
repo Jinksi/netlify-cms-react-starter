@@ -7,7 +7,7 @@ section1: |-
 
   Netlify CMS works with both `.md` and `.json`.
 
-  ![Image test!](/images/uploads/unsplash4.jpg)
+  ![Image test!](/images/uploads/isabella-juskova-260426.jpg)
 section2: >-
   ## This is a Container component
 
