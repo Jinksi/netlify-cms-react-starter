@@ -1,7 +1,7 @@
 ---
 title: About page title
 subtitle: <About />
-featuredImage: /images/uploads/mark-chang-74-3.jpg
+featuredImage: /images/uploads/tim-marshall-155597.jpg
 section1: |-
   ## Hello World!
 
