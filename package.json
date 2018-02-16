@@ -50,12 +50,14 @@
     "start": "npm-run-all prepare-content -p start:content start:app",
     "start:app": "react-scripts start",
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
-    "build": "npm-run-all -s prepare-content build:app build:postcss build:react-snapshot build:sitemap build:sw",
+    "build":
+      "npm-run-all -s prepare-content build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
     "build:app": "react-scripts build",
     "build:postcss": "postcss build/static/css/*.css -r",
     "build:react-snapshot": "react-snapshot",
     "build:sw": "sw-precache --config='sw-precache-config.js'",
     "build:sitemap": "node ./functions/generate-sitemap.js",
+    "build:sha": "git rev-parse HEAD > build/sha",
     "parse-content": "node ./functions/parse-content.js",
     "resize-images": "node ./functions/resize-images.js",
     "prepare-content": "npm-run-all -s parse-content resize-images",
@@ -63,8 +65,6 @@
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
+    "include": ["/404"]
   }
 }
