@@ -1,6 +1,9 @@
 const matter = require('gray-matter')
 const yaml = require('js-yaml')
 
+const mediaFolder = 'public/images/uploads'
+const publicFolder = '/images/uploads'
+
 const b64DecodeUnicode = str =>
   // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings#30106551
   decodeURIComponent(
@@ -29,6 +32,13 @@ const parseYaml = data => {
   return yaml.safeLoad(data) || {}
 }
 
+const replaceUploadUrls = (uploads = [], string) => {
+  uploads.forEach(upload => {
+    string = string.replace(upload.publicPath, upload.download_url)
+  })
+  return string
+}
+
 export const fetchContent = async (rateLimit = 0) => {
   if (!window.localStorage || !window.netlifyIdentity) {
     return Promise.resolve(null)
@@ -45,13 +55,13 @@ export const fetchContent = async (rateLimit = 0) => {
       setTimeout(() => resolve(), time)
     })
 
-  const fetchGithub = (path = 'content') => {
+  const fetchGithub = (path = 'content', endpoint = 'contents') => {
     const siteUrl = window.localStorage.netlifySiteURL || ''
-    const endpoint = `${siteUrl}/.netlify/git/github/contents/${path}`
+    const url = `${siteUrl}/.netlify/git/github/${endpoint}/${path}`
     console.log(`Fetching ${path}`)
     return wait(rateLimit)
       .then(() =>
-        fetch(endpoint, {
+        fetch(url, {
           headers: {
             Authorization: `Bearer ${token}`
           },
@@ -66,8 +76,39 @@ export const fetchContent = async (rateLimit = 0) => {
       .catch(console.error)
   }
 
+  const checkSHA = () => {
+    console.log('Checking SHA')
+    let githubSHA = ''
+    let localSHA = ''
+    return fetchGithub('refs/heads/master', 'git')
+      .then(ref => {
+        githubSHA = ref.object.sha
+      })
+      .then(() => fetch('/sha'))
+      .then(res => res.text())
+      .then(res => (localSHA = res))
+      .then(() => {
+        if (githubSHA.trim() === localSHA.trim()) {
+          return Promise.reject('Github latest commit equal to build')
+        } else {
+          console.log(
+            `Github SHA ${githubSHA} not equal to build SHA ${localSHA}: Fetching content from git`
+          )
+        }
+      })
+  }
+
   let data = {}
-  return fetchGithub()
+  let uploads = []
+  return checkSHA()
+    .then(() => fetchGithub(mediaFolder))
+    .then((res = []) => {
+      uploads = res.filter(file => file.type !== 'dir').map(file => ({
+        ...file,
+        publicPath: `${publicFolder}/${file.name}`
+      }))
+    })
+    .then(() => fetchGithub())
     .then(items => {
       if (!items) throw new Error('No items found')
       const dirs = items.filter(item => item.type === 'dir')
@@ -87,7 +128,8 @@ export const fetchContent = async (rateLimit = 0) => {
           .then(files => {
             files.forEach(file => {
               const fileType = getFileExtension(file.name)
-              const fileContents = b64DecodeUnicode(file.content)
+              let fileContents = b64DecodeUnicode(file.content)
+              fileContents = replaceUploadUrls(uploads, fileContents)
               const json =
                 fileType === 'md'
                   ? parseMarkdown(fileContents)
@@ -100,5 +142,5 @@ export const fetchContent = async (rateLimit = 0) => {
       return Promise.all(dirsToFetch)
     })
     .then(() => data)
-    .catch(console.error)
+    .catch(console.warn)
 }
