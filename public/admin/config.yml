@@ -72,7 +72,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: 'Status'
         name: 'status'
         widget: 'select'
-        options: ["Published", "Featured / Published", "Draft / Hidden"]
+        options: ["Published", "Featured", "Draft"]
         default: 'Published'
       - label: "Categories"
         name: "categories"
