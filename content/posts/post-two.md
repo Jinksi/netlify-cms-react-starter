@@ -1,6 +1,6 @@
 ---
 title: Post Two
-status: Published
+status: Draft / Hidden
 categories:
   - category: Fluff
 date: '2018-03-28'
