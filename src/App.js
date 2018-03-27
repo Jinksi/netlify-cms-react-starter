@@ -15,7 +15,6 @@ import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import AOS from './components/AOS'
 import Spinner from './components/Spinner'
-import { fetchContent } from './util/fetch-content'
 import data from './data.json'
 
 class App extends Component {
@@ -36,16 +35,17 @@ class App extends Component {
     ) {
       return false
     }
-
-    this.setState({ loading: true })
-    fetchContent()
-      .then(newData => {
-        this.setState(prevState => {
-          const data = _merge(prevState.data, newData)
-          return { data, loading: false }
+    import('./util/fetch-content').then(({ fetchContent }) => {
+      this.setState({ loading: true })
+      fetchContent()
+        .then(newData => {
+          this.setState(prevState => {
+            const data = _merge(prevState.data, newData)
+            return { data, loading: false }
+          })
         })
-      })
-      .catch(() => this.setState({ loading: false }))
+        .catch(() => this.setState({ loading: false }))
+    })
   }
 
   getDocument = (collection, name) =>
