@@ -1,9 +1,9 @@
 ---
 title: Hello World!
 status: Featured / Published
-date: 2018-12-14T03:52:13.021Z
 categories:
   - category: News
+date: '2018-03-27'
 postFeaturedImage: /images/uploads/tim-marshall-155597.jpg
 excerpt: >-
   Etiam ac quam eget lectus venenatis ullamcorper sit amet non arcu. Nullam
