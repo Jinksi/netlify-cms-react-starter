@@ -10,7 +10,7 @@
 }
 
 .NavLink:hover,
-.NavLink:active,
+.NavLink.active,
 .NavLink:focus {
   color: var(--primary);
   border-bottom-color: currentColor;

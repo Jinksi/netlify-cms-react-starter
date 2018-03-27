@@ -29,6 +29,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
           - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
+
   - name: "pages"
     label: "Pages"
     delete: false # Prevent users from deleting documents in this collection
@@ -58,3 +59,42 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: Body, name: body, widget: markdown}
+
+  - name: posts
+    label: Posts
+    editor:
+      preview: false
+    folder: content/posts
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: Title, name: title, widget: string}
+      - label: 'Status'
+        name: 'status'
+        widget: 'select'
+        options: ["Published", "Featured / Published", "Draft / Hidden"]
+        default: 'Published'
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        fields:
+          - label: "Category"
+            name: "category"
+            widget: "relation"
+            collection: "postCategories"
+            searchFields: ["title"]
+            valueField: "title"
+      - {label: Date / Order, name: date, widget: date}
+      - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
+      - {label: Excerpt, name: excerpt, widget: text}
+      - {label: Content, name: body, widget: markdown}
+
+  - name: postCategories
+    label: Post Categories
+    editor:
+      preview: false
+    folder: content/postCategories
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: Title, name: title, widget: string}

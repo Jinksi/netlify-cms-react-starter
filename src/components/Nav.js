@@ -7,21 +7,22 @@ import './Nav.css'
 
 export default ({ handlePopupOpen }) => (
   <nav className='Nav'>
-    <div className='container'>
-      <div className='flex alignCenter justifyStart'>
-        <Link to='/'>
-          <Logo />
-        </Link>
-        <NavLink to='/' exact>
-          Home
-        </NavLink>
-        <NavLink to='/about/' exact>
-          About
-        </NavLink>
-        <NavLink to='/contact/' exact>
-          Contact
-        </NavLink>
-      </div>
+    <div className='Nav--Container container'>
+      <Link to='/'>
+        <Logo />
+      </Link>
+      <NavLink to='/' exact>
+        Home
+      </NavLink>
+      <NavLink to='/about/' exact>
+        About
+      </NavLink>
+      <NavLink to='/blog/' exact>
+        Blog
+      </NavLink>
+      <NavLink to='/contact/' exact>
+        Contact
+      </NavLink>
     </div>
   </nav>
 )

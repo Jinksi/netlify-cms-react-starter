@@ -87,6 +87,14 @@ pre code:before,
 pre code:after {
   display: none;
 }
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  line-height: 1.1;
+  font-size: 1em;
+  font-style: italic;
+  border-left: 2px solid var(--primary);
+}
 
 /* Utility Classes */
 .light {
@@ -154,43 +162,6 @@ pre code:after {
 }
 .container.skinnier {
   max-width: 555px;
-}
-
-/* Flex */
-
-.flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-.flex.column {
-  flex-direction: column;
-}
-.flex.justifyCenter {
-  justify-content: center;
-}
-.flex.justifyEnd {
-  justify-content: flex-end;
-}
-.flex.justifyBetween {
-  justify-content: space-between;
-}
-.flex.justifyAround {
-  justify-content: space-around;
-}
-.flex.alignStart {
-  align-items: flex-start;
-}
-.flex.alignEnd {
-  align-items: flex-end;
-}
-.flex.alignStretch {
-  align-items: stretch;
-}
-.flex.fill {
-  height: 100%;
-  width: 100%;
 }
 
 /* Buttons */
