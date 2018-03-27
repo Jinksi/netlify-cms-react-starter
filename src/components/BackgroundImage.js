@@ -9,7 +9,10 @@ import { getImageSrc } from '../util/getImageUrl'
 export default class BackgroundImage extends React.Component {
   static defaultProps = {
     lazy: false,
-    src: ''
+    src: '',
+    className: '',
+    contain: false,
+    opacity: 1
   }
 
   state = {
@@ -44,7 +47,7 @@ export default class BackgroundImage extends React.Component {
   }
 
   render () {
-    let className = this.props.className || ''
+    let { className, contain, opacity } = this.props
     if (this.state.loaded) className += ' BackgroundImage-lazy-loaded'
     if (this.props.lazy) className += ' BackgroundImage-lazy'
     const options = {
@@ -56,12 +59,12 @@ export default class BackgroundImage extends React.Component {
     return (
       <Observer {...options}>
         <div
-          className={`BackgroundImage absolute ${className || ''}`}
+          className={`BackgroundImage absolute ${className}`}
           src={this.state.src}
           style={{
             backgroundImage: `url(${this.state.src})`,
-            backgroundSize: this.props.contain ? 'contain' : 'cover',
-            opacity: this.props.opacity || 1
+            backgroundSize: contain ? 'contain' : 'cover',
+            opacity: opacity
           }}
         />
       </Observer>
