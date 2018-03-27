@@ -174,10 +174,10 @@ class App extends Component {
                   <SinglePost
                     singlePost={singlePost}
                     nextPostURL={
-                      nextPost && `/blog/${_kebabCase(nextPost.title)}`
+                      nextPost && `/blog/${_kebabCase(nextPost.title)}/`
                     }
                     prevPostURL={
-                      prevPost && `/blog/${_kebabCase(prevPost.title)}`
+                      prevPost && `/blog/${_kebabCase(prevPost.title)}/`
                     }
                     {...props}
                   />
