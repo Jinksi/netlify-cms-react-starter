@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
 
   - name: "pages"
-    label: "Pages"
+    label: "Page"
     delete: false # Prevent users from deleting documents in this collection
     editor:
       preview: false
@@ -61,7 +61,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Body, name: body, widget: markdown}
 
   - name: posts
-    label: Posts
+    label: Post
     editor:
       preview: false
     folder: content/posts
@@ -90,7 +90,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: Content, name: body, widget: markdown}
 
   - name: postCategories
-    label: Post Categories
+    label: Post Category
     editor:
       preview: false
     folder: content/postCategories
