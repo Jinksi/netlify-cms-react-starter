@@ -65,7 +65,7 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: false
     folder: content/posts
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: Title, name: title, widget: string}
@@ -83,7 +83,7 @@ collections: # A list of collections the CMS should be able to edit
             widget: "relation"
             collection: "postCategories"
             searchFields: ["title"]
-            valueField: "title"
+            valueField: "name"
       - {label: Date / Order, name: date, widget: date}
       - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
       - {label: Excerpt, name: excerpt, widget: text}

@@ -74,7 +74,7 @@ class App extends Component {
     )
     const categoriesFromPosts = getCollectionTerms(posts, 'categories')
     const postCategories = this.getDocuments('postCategories').filter(
-      category => categoriesFromPosts.indexOf(category.title.toLowerCase()) >= 0
+      category => categoriesFromPosts.indexOf(category.name.toLowerCase()) >= 0
     )
 
     return (
