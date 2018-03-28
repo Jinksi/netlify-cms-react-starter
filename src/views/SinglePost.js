@@ -47,7 +47,7 @@ export default ({ singlePost, nextPostURL, prevPostURL }) => {
 
           <div className='SinglePost--Pagination Flex alignStretch justifyBetween flexWrap'>
             {nextPostURL && (
-              <Link classsName='SinglePost--Pagination--Link' to={nextPostURL}>
+              <Link className='SinglePost--Pagination--Link' to={nextPostURL}>
                 Next Post
               </Link>
             )}
