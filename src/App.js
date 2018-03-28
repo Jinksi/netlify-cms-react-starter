@@ -20,7 +20,7 @@ import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import AOS from './components/AOS'
 import Spinner from './components/Spinner'
 import data from './data.json'
-import { documentHasTerm } from './util/collection'
+import { documentHasTerm, getCollectionTerms } from './util/collection'
 
 class App extends Component {
   state = {
@@ -69,8 +69,13 @@ class App extends Component {
       headerScripts
     } = globalSettings
 
-    const posts = this.getDocuments('posts')
-    const postCategories = this.getDocuments('postCategories')
+    const posts = this.getDocuments('posts').filter(
+      post => post.status !== 'Draft'
+    )
+    const categoriesFromPosts = getCollectionTerms(posts, 'categories')
+    const postCategories = this.getDocuments('postCategories').filter(
+      category => categoriesFromPosts.indexOf(category.title.toLowerCase()) >= 0
+    )
 
     return (
       <Router>
