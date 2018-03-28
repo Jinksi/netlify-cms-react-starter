@@ -83,7 +83,7 @@ collections: # A list of collections the CMS should be able to edit
             widget: "relation"
             collection: "postCategories"
             searchFields: ["title"]
-            valueField: "name"
+            valueField: "title"
       - {label: Date / Order, name: date, widget: date}
       - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
       - {label: Excerpt, name: excerpt, widget: text}
