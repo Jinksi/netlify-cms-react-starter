@@ -18,7 +18,8 @@ export default ({ source, className = '' }) => (
     className={`Content ${className}`}
     source={encodeMarkdownURIs(source)}
     renderers={{
-      image: ImageWithSrcset
+      image: ImageWithSrcset,
+      html: HtmlBlock
     }}
   />
 )
@@ -35,3 +36,12 @@ const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
     />
   )
 }
+
+const HtmlBlock = ({ value }) => (
+  <div
+    className={value.indexOf('iframe') ? `Content--Iframe` : ``}
+    dangerouslySetInnerHTML={{
+      __html: value
+    }}
+  />
+)
