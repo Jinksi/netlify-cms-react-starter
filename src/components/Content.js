@@ -37,11 +37,14 @@ const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
   )
 }
 
-const HtmlBlock = ({ value }) => (
-  <div
-    className={value.indexOf('iframe') ? `Content--Iframe` : ``}
-    dangerouslySetInnerHTML={{
-      __html: value
-    }}
-  />
-)
+const HtmlBlock = ({ value }) => {
+  if (value.indexOf('<iframe') !== 0) return value
+  return (
+    <div
+      className={`Content--Iframe`}
+      dangerouslySetInnerHTML={{
+        __html: value
+      }}
+    />
+  )
+}
