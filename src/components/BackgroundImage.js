@@ -12,15 +12,19 @@ export default class BackgroundImage extends React.Component {
     src: '',
     className: '',
     contain: false,
-    opacity: 1
+    opacity: 1,
+    imageSize: 1800
   }
 
   state = {
     src:
       this.props.src.indexOf('http') === 0
         ? ''
-        : getImageSrc(this.props.src, this.props.lazy ? 10 : 1800),
-    dataSrc: getImageSrc(this.props.src, 1800),
+        : getImageSrc(
+          this.props.src,
+          this.props.lazy ? 10 : this.props.imageSize
+        ),
+    dataSrc: getImageSrc(this.props.src, this.props.imageSize),
     loaded: false
   }
 
@@ -41,15 +45,19 @@ export default class BackgroundImage extends React.Component {
     if (this.props.src === nextProps.src) return
 
     this.setState({
-      src: getImageSrc(nextProps.src, nextProps.lazy ? 10 : 1800),
-      dataSrc: getImageSrc(nextProps.src, 1800)
+      src: getImageSrc(
+        nextProps.src,
+        nextProps.lazy ? 10 : this.props.imageSize
+      ),
+      dataSrc: getImageSrc(nextProps.src, this.props.imageSize)
     })
   }
 
   render () {
-    let { className, contain, opacity } = this.props
-    if (this.state.loaded) className += ' BackgroundImage-lazy-loaded'
-    if (this.props.lazy) className += ' BackgroundImage-lazy'
+    let { className, contain, opacity, lazy } = this.props
+    let { loaded, src } = this.state
+    if (loaded) className += ' BackgroundImage-lazy-loaded'
+    if (lazy) className += ' BackgroundImage-lazy'
     const options = {
       onChange: this.handleIntersection,
       onlyOnce: true,
@@ -60,9 +68,9 @@ export default class BackgroundImage extends React.Component {
       <Observer {...options}>
         <div
           className={`BackgroundImage absolute ${className}`}
-          src={this.state.src}
+          src={src}
           style={{
-            backgroundImage: `url(${this.state.src})`,
+            backgroundImage: `url(${src})`,
             backgroundSize: contain ? 'contain' : 'cover',
             opacity: opacity
           }}
