@@ -6,13 +6,13 @@ import PageHeader from '../components/PageHeader'
 import './Home.css'
 
 export default ({ page }) => {
-  const { title, subtitle } = page
+  const { title, subtitle, body } = page
   return (
     <main className='Home'>
       <PageHeader title={title} subtitle={subtitle} />
       <div className='section thin'>
         <div className='container'>
-          <Content source={page.content} />
+          <Content source={body} />
         </div>
       </div>
       <Helmet>
