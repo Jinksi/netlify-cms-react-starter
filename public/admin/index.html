@@ -14,12 +14,6 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/netlify-cms@1.7.0/dist/cms.js"></script>
-
-  <script>
-  // redirect when logging out
-window.netlifyIdentity.on('logout', function () {
-  document.location.href = '/'
-})
-</script>
+  <script src="cms.bundle.js"></script>
 </body>
 </html>
