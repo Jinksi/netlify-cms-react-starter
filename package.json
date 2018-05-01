@@ -48,11 +48,14 @@
     "react-snapshot": "^1.1.0"
   },
   "scripts": {
-    "start": "npm-run-all prepare-content -p start:content start:app",
+    "start": "npm-run-all prepare-content -p start:content start:app start:cms",
     "start:app": "react-scripts start",
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
-    "build": "npm-run-all -s prepare-content build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
+    "start:cms": "chokidar 'cms/cms.js' -c 'cd cms && npm run build'",
+    "build":
+      "npm-run-all -s prepare-content build:cms build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
     "build:app": "react-scripts build",
+    "build:cms": "cd cms && npm run build",
     "build:postcss": "postcss build/static/css/*.css -r",
     "build:react-snapshot": "react-snapshot",
     "build:sw": "sw-precache --config='sw-precache-config.js'",
@@ -65,8 +68,6 @@
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
+    "include": ["/404"]
   }
 }

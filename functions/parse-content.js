@@ -56,6 +56,7 @@ const getFileContents = filePath => {
     }
     let documentData = JSON.parse(data)
     documentData.name = getDocumentName(filePath)
+    documentData.body = documentData.body || documentData.content
     let obj = {}
     _set(obj, getCollectionType(filePath), [documentData])
     console.log(`✨  Processed ${filePath}`)

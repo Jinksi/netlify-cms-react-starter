@@ -9,7 +9,7 @@ import { dateFormatted } from '../util/date'
 import './SinglePost.css'
 
 export default ({ singlePost, nextPostURL, prevPostURL }) => {
-  const { content, categories, postFeaturedImage, title, date } = singlePost
+  const { body, categories, postFeaturedImage, title, date } = singlePost
   return (
     <article className='SinglePost section light'>
       <Helmet>
@@ -42,7 +42,7 @@ export default ({ singlePost, nextPostURL, prevPostURL }) => {
           {title && <h1 className='SinglePost--Title'>{title}</h1>}
 
           <div className='SinglePost--InnerContent'>
-            <Content source={content} />
+            <Content source={body} />
           </div>
 
           <div className='SinglePost--Pagination Flex alignStretch justifyBetween flexWrap'>

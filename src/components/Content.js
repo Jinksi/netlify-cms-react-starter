@@ -4,7 +4,7 @@ import Marked from 'react-markdown'
 import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
 import './Content.css'
 
-const encodeMarkdownURIs = source => {
+const encodeMarkdownURIs = (source = '') => {
   const markdownLinkRegex = /\[(?:\[[^\]]*\]|[^[\]])*\]\([ \t]*<?((?:\([^)]*\)|[^()])*?)>?[ \t]*(['"].*?\6[ \t]*)?\)/g
   return source.replace(markdownLinkRegex, (match, linkURI) => {
     if (!linkURI) return match

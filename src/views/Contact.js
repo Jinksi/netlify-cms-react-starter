@@ -13,7 +13,7 @@ export default ({ page, siteTitle }) => (
     <PageHeader title={page.title} subtitle='<Contact />' />
     <div className='section thin'>
       <div className='container'>
-        <Content source={page.content} />
+        <Content source={page.body} />
         <h3>{'<EnquiryFormSimple />'}</h3>
         <EnquiryFormSimple name='Simple Form' />
         <br />

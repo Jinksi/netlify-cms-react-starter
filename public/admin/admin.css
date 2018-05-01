@@ -47,6 +47,10 @@
   flex-direction: column;
 }
 
+.nc-entryEditor-container {
+  max-width: 96%;
+}
+
 /* Custom logo */
 
 /* .nc-githubAuthenticationPage-logo {
