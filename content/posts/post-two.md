@@ -4,7 +4,7 @@ status: Published
 categories:
   - category: Fluff
 date: '2018-03-28'
-postFeaturedImage: /images/uploads/isabella-juskova-260426.jpg
+postFeaturedImage: /images/uploads/vyouw5byhlc.jpeg
 excerpt: This is an excerpt of Post Two
 ---
 
