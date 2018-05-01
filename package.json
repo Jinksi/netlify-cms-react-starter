@@ -53,7 +53,7 @@
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
     "start:cms": "chokidar 'cms/cms.js' -c 'cd cms && npm run build'",
     "build":
-      "npm-run-all -s prepare-content build:app build:cms build:postcss build:react-snapshot build:sitemap build:sw build:sha",
+      "npm-run-all -s prepare-content build:cms build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
     "build:app": "react-scripts build",
     "build:cms": "cd cms && npm run build",
     "build:postcss": "postcss build/static/css/*.css -r",
