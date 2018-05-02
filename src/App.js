@@ -125,6 +125,7 @@ class App extends Component {
                 const categoryPosts = posts.filter(post =>
                   documentHasTerm(post, 'categories', slug)
                 )
+                if (!categoryPosts.length) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <Blog
                     posts={categoryPosts}
@@ -146,6 +147,7 @@ class App extends Component {
                 const singlePost = posts[singlePostID]
                 const nextPost = posts[singlePostID + 1]
                 const prevPost = posts[singlePostID - 1]
+                if (!singlePost) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <SinglePost
                     singlePost={singlePost}
