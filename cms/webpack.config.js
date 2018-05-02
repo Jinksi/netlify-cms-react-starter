@@ -3,6 +3,12 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+const production = process.env.NODE_ENV === 'production'
+
+console.log(`Building CMS in ${production ? 'production' : 'development'} mode`)
+
+const productionPlugins = production ? [new UglifyJsPlugin()] : []
+
 module.exports = {
   entry: './cms.js',
   output: {
@@ -38,6 +44,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'cms.bundle.css'
     }),
-    new UglifyJsPlugin()
+    ...productionPlugins
   ]
 }
