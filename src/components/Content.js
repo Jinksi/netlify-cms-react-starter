@@ -1,5 +1,6 @@
 import React from 'react'
 import Marked from 'react-markdown'
+import PropTypes from 'prop-types'
 
 import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
 import './Content.css'
@@ -12,17 +13,6 @@ const encodeMarkdownURIs = (source = '') => {
     return replaced
   })
 }
-
-export default ({ source, className = '' }) => (
-  <Marked
-    className={`Content ${className}`}
-    source={encodeMarkdownURIs(source)}
-    renderers={{
-      image: ImageWithSrcset,
-      html: HtmlBlock
-    }}
-  />
-)
 
 const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
   const decodedSrc = decodeURI(src)
@@ -48,3 +38,22 @@ const HtmlBlock = ({ value }) => {
     />
   )
 }
+
+const Content = ({ source, src, className = '' }) => (
+  <Marked
+    className={`Content ${className}`}
+    source={encodeMarkdownURIs(source || src)}
+    renderers={{
+      image: ImageWithSrcset,
+      html: HtmlBlock
+    }}
+  />
+)
+
+Content.propTypes = {
+  source: PropTypes.string,
+  src: PropTypes.string,
+  className: PropTypes.string
+}
+
+export default Content
