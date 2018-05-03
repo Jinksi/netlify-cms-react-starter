@@ -1,10 +1,10 @@
 import 'core-js/es6'
 import React from 'react'
 import { render } from 'react-snapshot'
-import App from './App'
-import registerServiceWorker from './registerServiceWorker'
 import 'normalize.css'
 import './globalStyles.css'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 
 const rootEl = document.getElementById('root')
 render(<App />, rootEl)
