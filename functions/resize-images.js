@@ -41,7 +41,7 @@ const saveImages = ({ buffer, filename }) => {
         filename,
         extname
       )}.${size}${extname}`
-      const outputFile = `${options.outputDir}/${newFilename}`
+      const outputFile = path.resolve(options.outputDir, newFilename)
       const fileExists = await doesFileExist({ filename: outputFile })
       if (fileExists) return console.log(`↩️  ${outputFile} exists, skipping`)
       return saveImage({ buffer, size, outputFile })
