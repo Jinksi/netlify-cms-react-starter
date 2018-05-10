@@ -7,10 +7,13 @@ const sharp = require('sharp')
 const glob = util.promisify(globCb)
 const readFile = util.promisify(fs.readFile)
 
+const { sizes, resizedDir, outputDir } = require('../src/util/getImageUrl')
+const dirPrefix = './public'
+
 const options = {
-  inputDir: './public/images/uploads',
-  outputDir: './public/images/uploads/resized',
-  sizes: [10, 300, 600, 1200, 1800],
+  sizes,
+  inputDir: `${dirPrefix}${outputDir}`,
+  outputDir: `${dirPrefix}${resizedDir}`,
   imageFormats: ['jpg', 'jpeg', 'png', 'gif', 'webp']
 }
 
