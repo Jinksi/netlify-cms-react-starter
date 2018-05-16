@@ -7,6 +7,8 @@ import About from '../src/views/About'
 import SinglePost from '../src/views/SinglePost'
 import Contact from '../src/views/Contact'
 
+console.log('React version', React.version)
+
 const CMS = window.CMS
 CMS.registerPreviewStyle(
   'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'
