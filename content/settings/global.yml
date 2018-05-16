@@ -9,3 +9,4 @@ socialMediaCard:
   twitterSiteAccount: ''
 headerScripts: |-
   <!-- Add your analytics scripts / verification meta here -->
+enableServiceWorker: false

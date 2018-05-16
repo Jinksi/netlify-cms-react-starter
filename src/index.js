@@ -4,7 +4,8 @@ import { render } from 'react-snapshot'
 import 'normalize.css'
 import './globalStyles.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker, { unregister } from './registerServiceWorker'
+import data from './data.json'
 
 const rootEl = document.getElementById('root')
 render(<App />, rootEl)
@@ -16,8 +17,13 @@ if (module.hot) {
   })
 }
 
-registerServiceWorker()
-
 if (process.env.REACT_APP_SITE_URL && 'localStorage' in window) {
   window.localStorage.setItem('netlifySiteURL', process.env.REACT_APP_SITE_URL)
+}
+
+const globalSettings =
+  data.settings && data.settings.filter(doc => doc.name === 'global')[0]
+
+if (globalSettings) {
+  globalSettings.enableServiceWorker ? registerServiceWorker() : unregister()
 }
