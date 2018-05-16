@@ -52,7 +52,7 @@ export default ({ singlePost, nextPostURL, prevPostURL }) => {
               </Link>
             )}
             {prevPostURL && (
-              <Link classsName='SinglePost--Pagination--Link' to={prevPostURL}>
+              <Link className='SinglePost--Pagination--Link' to={prevPostURL}>
                 Previous Post
               </Link>
             )}
