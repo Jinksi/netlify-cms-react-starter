@@ -75,10 +75,7 @@ const combineJSON = async () => {
   const mergeCustomiser = (objValue, srcValue) =>
     _isArray(objValue) ? objValue.concat(srcValue) : objValue
 
-  spinner = ora({
-    text: `Reading JSON files in ${options.contentDir}`,
-    enabled: true
-  }).start()
+  spinner = ora(`Reading JSON files in ${options.contentDir}`).start()
   const paths = await glob(`${options.contentDir}/**/**.+(json|md|yaml|yml)`)
   const results = await readFiles(paths)
   const data = _mergeWith({}, ...results, mergeCustomiser)
