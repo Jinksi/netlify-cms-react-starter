@@ -65,7 +65,7 @@
     "image-cache:push":
       "mkdir -p ./node_modules/__image-cache && cp ./public/images/uploads/resized/* ./node_modules/__image-cache/.",
     "image-cache:pull":
-      "cp ./node_modules/__image-cache/* ./public/images/uploads/resized/.",
+      "[[ -e ./node_modules/__image-cache/ ]] && cp ./node_modules/__image-cache/* ./public/images/uploads/resized/. 2>/dev/null || :",
     "parse-content": "node ./functions/parse-content.js",
     "prepare": "npm run install:cms",
     "install:cms": "cd cms && npm i",
