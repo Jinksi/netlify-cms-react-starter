@@ -5,6 +5,7 @@ const _mergeWith = require('lodash/mergeWith')
 const _isArray = require('lodash/isArray')
 const globCb = require('glob')
 const util = require('util')
+const ora = require('ora')
 
 const glob = util.promisify(globCb)
 const readFile = util.promisify(fs.readFile)
@@ -15,6 +16,8 @@ const options = {
   contentDir: './content/',
   outputFile: './src/data.json'
 }
+
+let spinner
 
 const getCollectionType = filePath => {
   const pathParsed = path.parse(filePath)
@@ -48,6 +51,7 @@ const parseYaml = data => {
 
 const getFileContents = filePath => {
   return readFile(filePath, 'utf8').then(data => {
+    spinner.start(`Processing ${filePath}`)
     if (getDocumentExt(filePath) === '.md') {
       data = parseMarkdown(data)
     }
@@ -59,7 +63,7 @@ const getFileContents = filePath => {
     documentData.body = documentData.body || documentData.content
     let obj = {}
     _set(obj, getCollectionType(filePath), [documentData])
-    console.log(`✨  Processed ${filePath}`)
+    spinner.succeed(`Processed ${filePath}`)
     return obj
   })
 }
@@ -70,7 +74,8 @@ const combineJSON = async () => {
   // mergeCustomiser concats arrays items
   const mergeCustomiser = (objValue, srcValue) =>
     _isArray(objValue) ? objValue.concat(srcValue) : objValue
-  console.log(`✨  Reading JSON files in ${options.contentDir}`)
+
+  spinner = ora(`Reading JSON files in ${options.contentDir}`).start()
   const paths = await glob(`${options.contentDir}/**/**.+(json|md|yaml|yml)`)
   const results = await readFiles(paths)
   const data = _mergeWith({}, ...results, mergeCustomiser)
@@ -80,7 +85,7 @@ const combineJSON = async () => {
 const writeJSON = async () => {
   const json = await combineJSON()
   fs.writeFileSync(options.outputFile, json)
-  console.log(`✅  Data saved to ${options.outputFile}`)
+  spinner.succeed(`Data saved to ${options.outputFile}`)
   process.exit()
 }
 

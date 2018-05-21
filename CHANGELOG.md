@@ -1,3 +1,7 @@
+## 0.2.2 - 2018-05-21
+
+* Use ora for build console message
+
 ## 0.2.1 - 2018-05-17
 
 * Log netlifySiteUrl when viewing CMS on localhost
