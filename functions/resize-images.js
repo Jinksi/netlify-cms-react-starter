@@ -76,7 +76,10 @@ const doesFileExist = async ({ filename }) => {
 }
 
 const resizeImages = async () => {
-  spinner = ora(`Reading image files in ${options.inputDir}`).start()
+  spinner = ora({
+    text: `Reading image files in ${options.inputDir}`,
+    enabled: true
+  }).start()
   try {
     const fileGlob = `${options.inputDir}/**/**.+(${options.imageFormats.join(
       '|'
