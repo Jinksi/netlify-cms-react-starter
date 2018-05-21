@@ -3,7 +3,6 @@ const path = require('path')
 const globCb = require('glob')
 const util = require('util')
 const sharp = require('sharp')
-const ora = require('ora')
 
 const glob = util.promisify(globCb)
 const readFile = util.promisify(fs.readFile)
@@ -18,28 +17,23 @@ const options = {
   imageFormats: ['jpg', 'jpeg', 'png', 'gif', 'webp']
 }
 
-let spinner
-
-const saveImage = ({ buffer, size, outputFile, spinner }) => {
+const saveImage = ({ buffer, size, outputFile }) => {
   return new Promise((resolve, reject) => {
     sharp(buffer)
       .resize(size)
       .withoutEnlargement()
       .toFile(outputFile, err => {
         if (err) {
-          spinner.fail(err)
           return reject(err)
         } else {
-          spinner.succeed(`Saved ${outputFile}`)
-          return resolve(`Saved ${outputFile}`)
+          return resolve(console.log(`✅ Saved ${outputFile}`))
         }
       })
   })
 }
 
 const saveImages = ({ buffer, filename }) => {
-  spinner.text = `Processing ${filename}`
-
+  console.log(`🎞  Processing ${filename}`)
   return Promise.all(
     options.sizes.map(async size => {
       const extname = path.extname(filename)
@@ -49,11 +43,8 @@ const saveImages = ({ buffer, filename }) => {
       )}.${size}${extname}`
       const outputFile = path.resolve(options.outputDir, newFilename)
       const fileExists = await doesFileExist({ filename: outputFile })
-      if (fileExists) {
-        spinner.info(`${outputFile} exists, skipping`)
-        return `${outputFile} exists, skipping`
-      }
-      return saveImage({ buffer, size, outputFile, spinner })
+      if (fileExists) return console.log(`↩️  ${outputFile} exists, skipping`)
+      return saveImage({ buffer, size, outputFile })
     })
   )
 }
@@ -76,7 +67,7 @@ const doesFileExist = async ({ filename }) => {
 }
 
 const resizeImages = async () => {
-  spinner = ora(`Reading image files in ${options.inputDir}`).start()
+  console.log(`✨  Reading image files in ${options.inputDir}`)
   try {
     const fileGlob = `${options.inputDir}/**/**.+(${options.imageFormats.join(
       '|'
@@ -88,13 +79,10 @@ const resizeImages = async () => {
     const filesToResize = files.filter(filename => !filename.match(ignore))
     const imageFiles = await readFiles(filesToResize)
     Promise.all(imageFiles.map(saveImages))
-      .then(() => {
-        spinner.succeed(`Finished reading image files in ${options.inputDir}`)
-        process.exit()
-      })
-      .catch(spinner.fail)
+      .then(() => process.exit())
+      .catch(console.error)
   } catch (e) {
-    spinner.fail(e)
+    console.log(e)
     process.exit(1)
   }
 }
