@@ -62,9 +62,9 @@
     "build:sitemap": "node ./functions/generate-sitemap.js",
     "build:sha": "git rev-parse HEAD > build/sha",
     "image-cache:push":
-      "mkdir -p ./node_modules/ncms-image-cache && cp ./public/images/uploads/resized/* ./node_modules/ncms-image-cache/. && ls ./node_modules/ncms-image-cache/ | wc -l",
+      "mkdir -p ./node_modules/ncms-image-cache && cp ./package.json ./node_modules/ncms-image-cache/. && cp ./public/images/uploads/resized/* ./node_modules/ncms-image-cache/. && ls ./node_modules/ncms-image-cache/ | wc -l",
     "image-cache:pull":
-      "ls ./node_modules/ && ls ./node_modules/ncms-image-cache | wc -l && cp ./node_modules/ncms-image-cache/* ./public/images/uploads/resized/. 2>/dev/null || :",
+      "ls ./node_modules/ncms-image-cache | wc -l && cp ./node_modules/ncms-image-cache/* ./public/images/uploads/resized/. 2>/dev/null || :",
     "parse-content": "node ./functions/parse-content.js",
     "prepare": "npm run install:cms",
     "install:cms": "cd cms && npm i",
