@@ -1,6 +1,10 @@
 const sizes = [10, 300, 600, 1200, 1800]
 const outputDir = '/images/uploads/'
 const resizedDir = '/images/uploads/resized/'
+const imgixUrl = null // imgix web folder domain e.g. https://example.imgix.net (no trailing slash)
+
+const getImgixUrl = ({ path, size }) =>
+  `${imgixUrl}${encodeURI(path)}?w=${size}&fit=max&auto=compress`
 
 const parseFilename = filename => {
   const parts = filename.match(/(.+)\.([\w]+)$/)
@@ -18,7 +22,14 @@ const getImageSrcset = path => {
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
 
   const srcset = sizes
-    .map(size => `${pathname}.${size}.${extname} ${size}w`)
+    .map(
+      size =>
+        `${
+          imgixUrl
+            ? getImgixUrl({ path, size })
+            : `${pathname}.${size}.${extname}`
+        } ${size}w`
+    )
     .join(', ')
   return srcset
 }
@@ -40,6 +51,7 @@ const getImageSrc = (path, sizeRequested) => {
 
   const { filename, extname } = parseFilename(path)
   const pathname = encodeURI(filename.replace(outputDir, resizedDir))
+  if (imgixUrl) return getImgixUrl({ path, size })
   return `${pathname}.${size}.${extname}`
 }
 
@@ -48,5 +60,6 @@ module.exports = {
   getImageSrc,
   sizes,
   outputDir,
-  resizedDir
+  resizedDir,
+  imgixUrl
 }
