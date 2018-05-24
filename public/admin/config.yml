@@ -55,9 +55,14 @@ collections: # A list of collections the CMS should be able to edit
         widget: 'select'
         options: ["Published", "Featured", "Draft"]
         default: 'Published'
+      - {label: Date / Order, name: date, widget: date}
+      - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
+      - {label: Excerpt, name: excerpt, widget: text}
+      - {label: Content, name: body, widget: markdown}
       - label: "Categories"
         name: "categories"
         widget: "list"
+        required: false
         fields:
           - label: "Category"
             name: "category"
@@ -65,10 +70,6 @@ collections: # A list of collections the CMS should be able to edit
             collection: "postCategories"
             searchFields: ["title"]
             valueField: "title"
-      - {label: Date / Order, name: date, widget: date}
-      - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
-      - {label: Excerpt, name: excerpt, widget: text}
-      - {label: Content, name: body, widget: markdown}
 
 
   - name: postCategories
