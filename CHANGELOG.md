@@ -1,3 +1,7 @@
+## 0.2.4 - 2018-05-24
+
+* Use strict CMS version (1.8.0)
+
 ## 0.2.3 - 2018-05-21
 
 * Add optional imgix integration for images
