@@ -1,3 +1,8 @@
+## 0.2.5 - 2018-05-25
+
+* Upgrade CMS (1.8.2)
+* Update singlePost CMS config
+
 ## 0.2.4 - 2018-05-24
 
 * Use strict CMS version (1.8.0)
