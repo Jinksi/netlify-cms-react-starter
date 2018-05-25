@@ -1,3 +1,7 @@
+## 0.2.7 - 2018-05-25
+
+* Update slugify() util function to support plural initialisms
+
 ## 0.2.6 - 2018-05-25
 
 * Add slugify() util function
