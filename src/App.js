@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import _findIndex from 'lodash/findIndex'
-import _kebabCase from 'lodash/kebabCase'
 
 import ScrollToTop from './components/ScrollToTop'
 import Meta from './components/Meta'
@@ -18,6 +17,7 @@ import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
 import AOS from './components/AOS'
 import data from './data.json'
+import { slugify } from './util/url'
 import { documentHasTerm, getCollectionTerms } from './util/collection'
 
 class App extends Component {
@@ -142,7 +142,7 @@ class App extends Component {
                 const slug = props.match.params.slug
                 const singlePostID = _findIndex(
                   posts,
-                  item => _kebabCase(item.title) === slug
+                  item => slugify(item.title) === slug
                 )
                 const singlePost = posts[singlePostID]
                 const nextPost = posts[singlePostID + 1]
@@ -152,10 +152,10 @@ class App extends Component {
                   <SinglePost
                     singlePost={singlePost}
                     nextPostURL={
-                      nextPost && `/blog/${_kebabCase(nextPost.title)}/`
+                      nextPost && `/blog/${slugify(nextPost.title)}/`
                     }
                     prevPostURL={
-                      prevPost && `/blog/${_kebabCase(prevPost.title)}/`
+                      prevPost && `/blog/${slugify(prevPost.title)}/`
                     }
                     {...props}
                   />

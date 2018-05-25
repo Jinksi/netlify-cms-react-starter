@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import _kebabCase from 'lodash/kebabCase'
 
+import { slugify } from '../util/url'
 import BackgroundImage from './BackgroundImage'
 import './PostCard.css'
 
 const PostCard = ({ postItem, className = '', ...props }) => (
   <Link
-    to={`/blog/${_kebabCase(postItem.title)}/`}
+    to={slugify(`/blog/${postItem.title}/`)}
     className={`PostCard ${className}`}
     {...props}
   >

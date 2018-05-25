@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import _kebabCase from 'lodash/kebabCase'
 
+import { slugify } from '../util/url'
 import './PostCategoriesNav.css'
 
 const PostCategoriesNav = ({ categories }) => (
@@ -14,7 +14,7 @@ const PostCategoriesNav = ({ categories }) => (
         <NavLink
           className='NavLink'
           key={category.title + index}
-          to={`/blog/category/${_kebabCase(category.title)}/`}
+          to={`/blog/category/${slugify(category.title)}/`}
         >
           {category.title}
         </NavLink>

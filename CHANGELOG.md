@@ -1,3 +1,7 @@
+## 0.2.6 - 2018-05-25
+
+* Add slugify() util function
+
 ## 0.2.5 - 2018-05-25
 
 * Upgrade CMS (1.8.2)
