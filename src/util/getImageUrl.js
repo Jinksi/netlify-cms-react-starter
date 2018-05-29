@@ -4,7 +4,7 @@ const resizedDir = '/images/uploads/resized/'
 const imgixUrl = null // imgix web folder domain e.g. https://example.imgix.net (no trailing slash)
 
 const getImgixUrl = ({ path, size }) =>
-  `${imgixUrl}${encodeURI(path)}?w=${size}&fit=max&auto=compress`
+  `${imgixUrl}${encodeURI(path)}?w=${size}&fit=max&auto=compress,format`
 
 const parseFilename = filename => {
   const parts = filename.match(/(.+)\.([\w]+)$/)
