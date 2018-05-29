@@ -33,9 +33,9 @@
     <script>
       // check for netlifyIdentity, redirect to admin if user is logging in
       if (window.localStorage && window.netlifyIdentity) {
-        netlifyIdentity.on('init', user => {
+        netlifyIdentity.on('init', function (user) {
           if (!user) {
-            netlifyIdentity.on('login', () => {
+            netlifyIdentity.on('login', function () {
               document.location.href = '/admin/'
             })
           }

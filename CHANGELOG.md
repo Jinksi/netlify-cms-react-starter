@@ -1,3 +1,7 @@
+## 0.2.9 - 2018-05-30
+
+* IE11 support updates
+
 ## 0.2.8 - 2018-05-29
 
 * Use imgix auto=format for automatic webp conversion

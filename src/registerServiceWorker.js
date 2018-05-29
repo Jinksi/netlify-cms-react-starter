@@ -1,9 +1,5 @@
 /* global URL, fetch, Event */
 
-const swReady = new Event('swReady')
-const swUpdated = new Event('swUpdated')
-const swOffline = new Event('swOffline')
-
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -24,9 +20,16 @@ const isLocalhost = Boolean(
     )
 )
 
+let swReady, swUpdated, swOffline
+
 export default function register () {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
+
+    swReady = new Event('swReady')
+    swUpdated = new Event('swUpdated')
+    swOffline = new Event('swOffline')
+
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location)
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
