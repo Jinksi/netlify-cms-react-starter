@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-react-starter",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.0.1",
