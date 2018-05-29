@@ -1,3 +1,7 @@
+## 0.2.8 - 2018-05-29
+
+* Use imgix auto=format for automatic webp conversion
+
 ## 0.2.7 - 2018-05-25
 
 * Update slugify() util function to support plural initialisms
