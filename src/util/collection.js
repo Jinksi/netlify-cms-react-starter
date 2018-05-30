@@ -1,6 +1,7 @@
 import _uniq from 'lodash/uniq'
 import _kebabCase from 'lodash/kebabCase'
 import _values from 'lodash/values'
+import _includes from 'lodash/includes'
 
 export const getCollectionTerms = (
   collection = [],
@@ -35,5 +36,5 @@ export const documentHasTerm = (doc, taxonomyName, term) => {
       ? termField.split(',').map(term => _kebabCase(term))
       : termField.map(term => _kebabCase(_values(term)[0]))
 
-  return terms.includes(_kebabCase(term))
+  return _includes(terms, _kebabCase(term))
 }
