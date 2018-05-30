@@ -1,5 +1,6 @@
 import _uniq from 'lodash/uniq'
 import _kebabCase from 'lodash/kebabCase'
+import _values from 'lodash/values'
 
 export const getCollectionTerms = (
   collection = [],
@@ -18,7 +19,7 @@ export const getCollectionTerms = (
       const collectionItemTerms =
         typeof termField === 'string'
           ? termField.split(',').map(term => _kebabCase(term.trim()))
-          : termField.map(term => _kebabCase(Object.values(term)[0]))
+          : termField.map(term => _kebabCase(_values(term)[0]))
       return _uniq([...acc, ...collectionItemTerms])
     }, [])
     .sort()
