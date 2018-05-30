@@ -1,5 +1,7 @@
 import _uniq from 'lodash/uniq'
 import _kebabCase from 'lodash/kebabCase'
+import _values from 'lodash/values'
+import _includes from 'lodash/includes'
 
 export const getCollectionTerms = (
   collection = [],
@@ -18,7 +20,7 @@ export const getCollectionTerms = (
       const collectionItemTerms =
         typeof termField === 'string'
           ? termField.split(',').map(term => _kebabCase(term.trim()))
-          : termField.map(term => _kebabCase(Object.values(term)[0]))
+          : termField.map(term => _kebabCase(_values(term)[0]))
       return _uniq([...acc, ...collectionItemTerms])
     }, [])
     .sort()
@@ -32,7 +34,7 @@ export const documentHasTerm = (doc, taxonomyName, term) => {
   const terms =
     typeof termField === 'string'
       ? termField.split(',').map(term => _kebabCase(term))
-      : termField.map(term => _kebabCase(Object.values(term)[0]))
+      : termField.map(term => _kebabCase(_values(term)[0]))
 
-  return terms.includes(_kebabCase(term))
+  return _includes(terms, _kebabCase(term))
 }

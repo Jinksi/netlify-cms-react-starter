@@ -32,7 +32,7 @@ class Form extends Component {
 
   componentDidMount () {
     if (!this.form) return
-    this.inputs = this.form.querySelectorAll('input, textarea')
+    this.inputs = [...this.form.querySelectorAll('input, textarea')]
     this.addListeners()
   }
 
