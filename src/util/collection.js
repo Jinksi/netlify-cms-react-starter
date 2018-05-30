@@ -33,7 +33,7 @@ export const documentHasTerm = (doc, taxonomyName, term) => {
   const terms =
     typeof termField === 'string'
       ? termField.split(',').map(term => _kebabCase(term))
-      : termField.map(term => _kebabCase(Object.values(term)[0]))
+      : termField.map(term => _kebabCase(_values(term)[0]))
 
   return terms.includes(_kebabCase(term))
 }
