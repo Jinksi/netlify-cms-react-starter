@@ -4,6 +4,7 @@
 * Improved default logo / favicon
 * Improved default card-og.png
 * Improved contact page layout
+* Update <BackgroundImage />
 * Change normalize.css to modern-normalize
 * Add react-feather icons
 * Remove AOS

@@ -5,7 +5,8 @@
   bottom: 0;
   right: 0;
   background-position: center;
-  transition: opacity 0.5s ease;
+  transform: translate3d(0, 0, 0);
+  transition: filter 0.3s ease-in-out;
   overflow: hidden;
 }
 
