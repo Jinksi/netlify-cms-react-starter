@@ -36,7 +36,7 @@ const getImageSrcset = path => {
 
 const getImageSrc = (path, sizeRequested) => {
   if (!path || path.match(/^http/) || path.match(/svg$/) || window.CMS) {
-    return path
+    return encodeURI(path)
   }
   sizeRequested = parseInt(sizeRequested, 10)
   let size
