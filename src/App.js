@@ -111,6 +111,7 @@ class App extends Component {
               exact
               render={props => (
                 <Blog
+                  page={this.getDocument('pages', 'blog')}
                   posts={posts}
                   postCategories={postCategories}
                   {...props}
@@ -128,6 +129,7 @@ class App extends Component {
                 if (!categoryPosts.length) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <Blog
+                    page={this.getDocument('pages', 'blog')}
                     posts={categoryPosts}
                     postCategories={postCategories}
                     showFeatured={false}
@@ -145,8 +147,8 @@ class App extends Component {
                   item => slugify(item.title) === slug
                 )
                 const singlePost = posts[singlePostID]
-                const nextPost = posts[singlePostID + 1]
-                const prevPost = posts[singlePostID - 1]
+                const nextPost = posts[singlePostID - 1]
+                const prevPost = posts[singlePostID + 1]
                 if (!singlePost) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <SinglePost

@@ -1,10 +1,11 @@
 .Footer {
-  background: var(--primary);
+  padding: 3rem 0;
+  background: var(--darkGrey);
   color: white;
 }
 
 .Footer--Lower {
-  background: var(--primary);
+  background: var(--darkGrey);
   padding: 1rem 0;
   font-weight: 100;
 }

@@ -1,31 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Content from './Content'
 import BackgroundImage from './BackgroundImage'
 import './PageHeader.css'
 
-const PageHeader = ({ title, subtitle, backgroundImage }) => (
-  <div className='section PageHeader relative'>
-    {backgroundImage && <BackgroundImage src={backgroundImage} opacity={0.5} />}
-    <div className='container relative'>
-      <h1 className='PageHeader--Title' data-aos='fade-left'>
-        {title}
-      </h1>
-      {subtitle ? (
-        <h2
-          className='PageHeader--Subtitle'
-          data-aos='fade-left'
-          data-aos-duration='400'
-        >
-          {subtitle}
-        </h2>
-      ) : (
-        ''
+const PageHeader = ({
+  title,
+  subtitle,
+  backgroundImage,
+  large,
+  className = ''
+}) => {
+  if (large) className += ' PageHeader-large'
+  return (
+    <div className={`PageHeader relative ${className}`}>
+      {backgroundImage && (
+        <BackgroundImage src={backgroundImage} opacity={0.4} />
       )}
+      <div className='container relative'>
+        <h1 className='PageHeader--Title' data-aos='fade'>
+          {title}
+        </h1>
+        {subtitle && (
+          <Content
+            className='PageHeader--Subtitle'
+            data-aos='fade'
+            data-aos-duration='400'
+            src={subtitle}
+          />
+        )}
+      </div>
     </div>
-  </div>
-)
-
+  )
+}
 PageHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string

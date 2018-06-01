@@ -2,7 +2,7 @@
 title: Post Two
 status: Published
 categories:
-  - category: Fluff
+  - category: Updates
 date: '2018-03-28'
 postFeaturedImage: /images/uploads/vyouw5byhlc.jpeg
 excerpt: This is an excerpt of Post Two

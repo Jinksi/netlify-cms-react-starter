@@ -8,7 +8,7 @@
 }
 
 .EnquiryForm > * + * {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .EnquiryForm--Label {
@@ -21,21 +21,19 @@
 
 .EnquiryForm--Input {
   font-family: inherit;
-  font-weight: 400;
   flex-grow: 1;
   box-sizing: border-box;
   display: block;
   margin: 0;
-  border: none;
-  border-bottom: 1px solid #bababa;
-  padding: 0.75rem 0.5rem;
-  line-height: 1;
+  border: 1px solid #bababa;
+  padding: 1.5rem 2rem;
+  border-radius: var(--borderRadius);
+  line-height: 1.25em;
   transition: border-color 0.2s;
   resize: none;
 }
 
 .EnquiryForm--Select {
-  border-radius: 0;
   background: none;
   appearance: none;
 }
@@ -43,7 +41,7 @@
 .EnquiryForm--Label.has-arrow:after {
   content: '';
   position: absolute;
-  right: 3px;
+  right: 2.5rem;
   top: 50%;
   border-right: 1px solid;
   border-bottom: 1px solid;

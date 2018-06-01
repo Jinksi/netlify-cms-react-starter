@@ -1,9 +1,10 @@
 :root {
-  --primary: #ff3d3d;
-  --primary-light: #ff6f6f;
+  --primary: #0984d2;
+  --primary-light: #6fadff;
   --secondary: #212121;
   --lightGrey: whitesmoke;
   --midGrey: #cacaca;
+  --darkGrey: #272727;
   --danger: #ff3d3d;
   --font-primary: 'Open Sans', sans-serif;
   --font-system: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
@@ -26,16 +27,10 @@ body {
   background: white;
   color: var(--secondary);
   font-size: 1.6em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
 }
 
 a {
@@ -140,13 +135,13 @@ blockquote {
 
 .section {
   width: 100%;
-  padding: 5rem 0;
+  padding: 7.5rem 0;
 }
 .section.thick {
   padding: 10rem 0;
 }
 .section.thin {
-  padding: 2.5rem 0;
+  padding: 3.5rem 0;
 }
 .section.noPadding {
   padding: 0;
@@ -171,11 +166,11 @@ blockquote {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 400;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   font-size: 1.4rem;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1.25rem 3rem;
   border: none;
   transition: all 0.2s ease;
   cursor: pointer;
