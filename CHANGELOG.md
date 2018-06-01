@@ -1,3 +1,13 @@
+## 0.3.0 - 2018-06-01
+
+* General design updates
+* Improved default logo / favicon
+* Improved default card-og.png
+* Improved contact page layout
+* Change normalize.css to modern-normalize
+* Add react-feather icons
+* Remove AOS
+
 ## 0.2.9 - 2018-05-30
 
 * IE11 support updates
