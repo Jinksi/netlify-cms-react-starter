@@ -34,7 +34,7 @@ class PostSection extends React.Component {
       .slice(0, limit || posts.length)
 
     return (
-      <div className='section thin PostSection'>
+      <div className='PostSection'>
         <div className='container'>
           {title && <h2 className='PostSection--Title'>{title}</h2>}
           {!!visiblePosts.length && (
@@ -46,12 +46,12 @@ class PostSection extends React.Component {
           )}
           {showLoadMore &&
             visiblePosts.length < posts.length && (
-              <div className='taCenter'>
-                <button className='button' onClick={this.increaseLimit}>
-                  {loadMoreTitle}
-                </button>
-              </div>
-            )}
+            <div className='taCenter'>
+              <button className='button' onClick={this.increaseLimit}>
+                {loadMoreTitle}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     )

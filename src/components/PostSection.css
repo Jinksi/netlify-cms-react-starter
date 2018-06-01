@@ -1,3 +1,6 @@
+.PostSection {
+  padding: 2rem 0;
+}
 .PostSection .PostCard {
   width: calc(33.33% - 4rem);
 }
@@ -7,6 +10,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 @supports (display: grid) {

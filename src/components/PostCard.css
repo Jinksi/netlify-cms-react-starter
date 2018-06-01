@@ -1,7 +1,19 @@
 .PostCard {
   text-decoration: none;
-  margin: 4rem 2rem;
+  margin: 2rem;
   background: white;
+  color: inherit;
+  border: 1px solid var(--lightGrey);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s ease-in-out;
+  overflow: hidden;
+}
+
+.PostCard:hover,
+.PostCard:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
 }
 
 .PostCard--Image {
@@ -10,16 +22,15 @@
   height: 15rem;
 }
 
-.PostCard--Category {
-  font-size: 1rem;
-  text-align: right;
+.PostCard--Title {
+  margin: 0;
 }
 
 .PostCard--Content {
-  margin: 0 auto;
-  width: 90%;
+  padding: 0 2.5rem 2.5rem;
 }
 
-.PostCard--Title {
-  margin: 2rem 0;
+.PostCard--Category {
+  font-size: 1rem;
+  text-align: right;
 }

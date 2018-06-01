@@ -1,16 +1,6 @@
 .Contact {
 }
 
-.Contact--Section1--Container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.Contact--Section1--Container > * {
-  width: calc(50% - 2rem);
-}
-
 .Contact--Details {
   margin-top: 3rem;
 }
@@ -33,4 +23,16 @@
 .Contact--Details--Item svg {
   margin-right: 1.5rem;
   color: var(--primary);
+}
+
+@media (min-width: 750px) {
+  .Contact--Section1--Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .Contact--Section1--Container > * {
+    width: calc(50% - 2rem);
+  }
 }

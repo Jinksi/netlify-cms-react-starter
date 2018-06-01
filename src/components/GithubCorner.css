@@ -7,8 +7,10 @@
 .GithubCorner svg {
   color: #fff;
   border: 0;
-  max-width: 12.5vmin;
-  max-height: 12.5vmin;
+  width: 12vmin;
+  height: 12vmin;
+  max-width: 6rem;
+  max-height: 6rem;
 }
 
 .GithubCorner .octo-arm {
