@@ -19,8 +19,8 @@ collections: # A list of collections the CMS should be able to edit
         name: "contact-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Body, name: body, widget: markdown}
           - {label: Address, name: address, widget: text}
           - {label: Phone, name: phone, widget: string}
@@ -31,16 +31,16 @@ collections: # A list of collections the CMS should be able to edit
         name: "blog-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
 
       - file: "content/pages/about.md"
         label: "About Page"
         name: "about-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Section 1, name: section1, widget: markdown}
           - {label: Section 2, name: section2, widget: markdown}
 
@@ -49,6 +49,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "home-page"
         fields:
           - {label: Title, name: title, widget: string}
+          - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Body, name: body, widget: markdown}
 
