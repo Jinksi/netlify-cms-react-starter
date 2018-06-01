@@ -14,30 +14,42 @@ collections: # A list of collections the CMS should be able to edit
     editor:
       preview: true
     files:
-      - file: "content/pages/home.md"
-        label: "Home Page"
-        name: "home-page"
+      - file: "content/pages/contact.md"
+        label: "Contact Page"
+        name: "contact-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Body, name: body, widget: markdown}
+          - {label: Address, name: address, widget: text}
+          - {label: Phone, name: phone, widget: string}
+          - {label: Email Address, name: email, widget: string}
+
+      - file: "content/pages/blog.md"
+        label: "Blog Page"
+        name: "blog-page"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - {label: Featured Image, name: featuredImage, widget: image}
 
       - file: "content/pages/about.md"
         label: "About Page"
         name: "about-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Section 1, name: section1, widget: markdown}
           - {label: Section 2, name: section2, widget: markdown}
 
-      - file: "content/pages/contact.md"
-        label: "Contact Page"
-        name: "contact-page"
+      - file: "content/pages/home.md"
+        label: "Home Page"
+        name: "home-page"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Body, name: body, widget: markdown}
 
 

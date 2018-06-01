@@ -54,8 +54,22 @@ export default class BackgroundImage extends React.Component {
   }
 
   render () {
-    let { className, contain, opacity, lazy } = this.props
+    let { className, contain, opacity, lazy, imageSize } = this.props
     let { loaded, src } = this.state
+
+    if (!lazy) {
+      return (
+        <div
+          className={`BackgroundImage absolute ${className}`}
+          style={{
+            backgroundImage: `url(${getImageSrc(this.props.src, imageSize)})`,
+            backgroundSize: contain ? 'contain' : 'cover',
+            opacity: opacity
+          }}
+        />
+      )
+    }
+
     if (loaded) className += ' BackgroundImage-lazy-loaded'
     if (lazy) className += ' BackgroundImage-lazy'
     const options = {
@@ -68,7 +82,6 @@ export default class BackgroundImage extends React.Component {
       <Observer {...options}>
         <div
           className={`BackgroundImage absolute ${className}`}
-          src={src}
           style={{
             backgroundImage: `url(${src})`,
             backgroundSize: contain ? 'contain' : 'cover',

@@ -1,7 +1,7 @@
 import 'core-js/es6'
 import React from 'react'
 import { render } from 'react-snapshot'
-import 'normalize.css'
+import 'modern-normalize/modern-normalize.css'
 import './globalStyles.css'
 import App from './App'
 import registerServiceWorker, { unregister } from './registerServiceWorker'

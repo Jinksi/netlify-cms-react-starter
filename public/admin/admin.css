@@ -53,7 +53,7 @@
 
 /* Custom logo */
 
-/* .nc-githubAuthenticationPage-logo {
+.nc-githubAuthenticationPage-logo {
   background-image: url(/images/logo.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -79,4 +79,4 @@
   transform: translate(-50%, -50%);
   width: auto;
   text-indent: 0;
-} */
+}

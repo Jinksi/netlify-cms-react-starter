@@ -15,7 +15,6 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
-import AOS from './components/AOS'
 import data from './data.json'
 import { slugify } from './util/url'
 import { documentHasTerm, getCollectionTerms } from './util/collection'
@@ -52,7 +51,6 @@ class App extends Component {
     return (
       <Router>
         <div className='React-Wrap'>
-          <AOS options={{ duration: 250 }} />
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />
@@ -111,6 +109,7 @@ class App extends Component {
               exact
               render={props => (
                 <Blog
+                  page={this.getDocument('pages', 'blog')}
                   posts={posts}
                   postCategories={postCategories}
                   {...props}
@@ -128,6 +127,7 @@ class App extends Component {
                 if (!categoryPosts.length) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <Blog
+                    page={this.getDocument('pages', 'blog')}
                     posts={categoryPosts}
                     postCategories={postCategories}
                     showFeatured={false}
@@ -145,8 +145,8 @@ class App extends Component {
                   item => slugify(item.title) === slug
                 )
                 const singlePost = posts[singlePostID]
-                const nextPost = posts[singlePostID + 1]
-                const prevPost = posts[singlePostID - 1]
+                const nextPost = posts[singlePostID - 1]
+                const prevPost = posts[singlePostID + 1]
                 if (!singlePost) return <NoMatch siteUrl={siteUrl} />
                 return (
                   <SinglePost

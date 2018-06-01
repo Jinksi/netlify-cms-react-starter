@@ -8,17 +8,30 @@ import PostSection from '../components/PostSection'
 
 import './Blog.css'
 
-export default ({ page, posts, postCategories, showFeatured = true }) => {
+export default ({
+  page,
+  posts = [],
+  postCategories = [],
+  showFeatured = true
+}) => {
+  const { title, subtitle, featuredImage } = page
   posts = _sortBy(posts, ['date']).reverse()
 
   return (
     <main className='Blog'>
       <Helmet>
-        <title>Blog</title>
+        <title>{title}</title>
       </Helmet>
-      <PageHeader title='Blog' />
 
-      <PostCategoriesNav categories={postCategories} />
+      <PageHeader
+        title={title}
+        subtitle={subtitle}
+        backgroundImage={featuredImage}
+      />
+
+      {!!postCategories.length && (
+        <PostCategoriesNav categories={postCategories} />
+      )}
       {!!posts.length && <PostSection posts={posts} />}
     </main>
   )

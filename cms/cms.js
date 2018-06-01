@@ -4,8 +4,9 @@ import '../src/globalStyles.css'
 import data from '../src/data.json'
 import Home from '../src/views/Home'
 import About from '../src/views/About'
-import SinglePost from '../src/views/SinglePost'
 import Contact from '../src/views/Contact'
+import Blog from '../src/views/Blog'
+import SinglePost from '../src/views/SinglePost'
 
 console.log('React version', React.version)
 
@@ -17,7 +18,10 @@ CMS.registerPreviewStyle('/admin/cms.bundle.css')
 
 const getDocument = (collection, name) =>
   data[collection] && data[collection].filter(page => page.name === name)[0]
+const getDocuments = (collection, name) => data[collection]
+
 const globalSettings = getDocument('settings', 'global')
+const posts = getDocuments('posts')
 
 // Preview Templates
 CMS.registerPreviewTemplate('home-page', ({ entry }) => (
@@ -28,6 +32,9 @@ CMS.registerPreviewTemplate('about-page', ({ entry }) => (
 ))
 CMS.registerPreviewTemplate('contact-page', ({ entry }) => (
   <Contact page={entry.toJS().data} siteTitle={globalSettings.siteTitle} />
+))
+CMS.registerPreviewTemplate('blog-page', ({ entry }) => (
+  <Blog page={entry.toJS().data} posts={posts} />
 ))
 CMS.registerPreviewTemplate('posts', ({ entry }) => (
   <SinglePost singlePost={entry.toJS().data} />

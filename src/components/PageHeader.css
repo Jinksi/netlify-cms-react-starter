@@ -1,13 +1,19 @@
 .PageHeader {
-  line-height: 1em;
-  color: var(--primary);
-  background: var(--primary);
+  background-color: var(--darkGrey);
   color: white;
+  padding: 15rem 0;
+}
+
+.PageHeader-large {
+  padding: 20rem 0;
 }
 
 .PageHeader--Title {
+  font-size: 6rem;
+  margin-bottom: 0;
 }
 
 .PageHeader--Subtitle {
-  font-weight: 200;
+  font-weight: 400;
+  font-size: 1.8rem;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router-dom'
+import { ChevronLeft } from 'react-feather'
 
 import Content from '../components/Content'
 import BackgroundImage from '../components/BackgroundImage'
@@ -9,12 +10,13 @@ import { dateFormatted } from '../util/date'
 import './SinglePost.css'
 
 export default ({ singlePost, nextPostURL, prevPostURL }) => {
-  const { body, categories, postFeaturedImage, title, date } = singlePost
+  const { title, date, postFeaturedImage, body, categories = [] } = singlePost
   return (
     <article className='SinglePost section light'>
       <Helmet>
         <title>{title}</title>
       </Helmet>
+
       {postFeaturedImage && (
         <BackgroundImage
           className='SinglePost--BackgroundImage'
@@ -24,9 +26,12 @@ export default ({ singlePost, nextPostURL, prevPostURL }) => {
       )}
 
       <div className='container skinny'>
+        <Link className='SinglePost--BackButton' to='/blog/'>
+          <ChevronLeft /> BACK
+        </Link>
         <div className='SinglePost--Content relative'>
           <div className='SinglePost--Meta'>
-            {!!categories &&
+            {!!categories.length &&
               categories.map(obj => (
                 <span key={obj.category} className='SinglePost--Meta--Category'>
                   {obj.category}
@@ -45,15 +50,21 @@ export default ({ singlePost, nextPostURL, prevPostURL }) => {
             <Content source={body} />
           </div>
 
-          <div className='SinglePost--Pagination Flex alignStretch justifyBetween flexWrap'>
-            {nextPostURL && (
-              <Link className='SinglePost--Pagination--Link' to={nextPostURL}>
-                Next Post
+          <div className='SinglePost--Pagination'>
+            {prevPostURL && (
+              <Link
+                className='SinglePost--Pagination--Link prev'
+                to={prevPostURL}
+              >
+                Previous Post
               </Link>
             )}
-            {prevPostURL && (
-              <Link className='SinglePost--Pagination--Link' to={prevPostURL}>
-                Previous Post
+            {nextPostURL && (
+              <Link
+                className='SinglePost--Pagination--Link next'
+                to={nextPostURL}
+              >
+                Next Post
               </Link>
             )}
           </div>

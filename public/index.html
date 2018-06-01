@@ -31,16 +31,16 @@
     -->
     <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-      // check for netlifyIdentity, redirect to admin if user is logging in
-      if (window.localStorage && window.netlifyIdentity) {
-        netlifyIdentity.on('init', function (user) {
-          if (!user) {
-            netlifyIdentity.on('login', function () {
-              document.location.href = '/admin/'
-            })
-          }
-        })
-      }
-    </script>
+    // check for netlifyIdentity, redirect to admin if user is logging in
+if (window.localStorage && window.netlifyIdentity) {
+  netlifyIdentity.on('init', function(user) {
+    if (!user) {
+      netlifyIdentity.on('login', function() {
+        document.location.href = '/admin/'
+      })
+    }
+  })
+}
+</script>
   </body>
 </html>
