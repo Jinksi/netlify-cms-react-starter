@@ -1,3 +1,8 @@
+## 0.3.1 - 2018-06-01
+
+* Encode CMS image urls
+* Update config.yml
+
 ## 0.3.0 - 2018-06-01
 
 * General design updates
