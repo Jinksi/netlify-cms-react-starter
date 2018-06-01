@@ -15,7 +15,6 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import GithubCorner from './components/GithubCorner'
 import ServiceWorkerNotifications from './components/ServiceWorkerNotifications'
-import AOS from './components/AOS'
 import data from './data.json'
 import { slugify } from './util/url'
 import { documentHasTerm, getCollectionTerms } from './util/collection'
@@ -52,7 +51,6 @@ class App extends Component {
     return (
       <Router>
         <div className='React-Wrap'>
-          <AOS options={{ duration: 250 }} />
           <ScrollToTop />
           <ServiceWorkerNotifications reloadOnUpdate />
           <GithubCorner url='https://github.com/Jinksi/netlify-cms-react-starter' />

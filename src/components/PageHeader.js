@@ -19,16 +19,9 @@ const PageHeader = ({
         <BackgroundImage src={backgroundImage} opacity={0.4} />
       )}
       <div className='container relative'>
-        <h1 className='PageHeader--Title' data-aos='fade'>
-          {title}
-        </h1>
+        <h1 className='PageHeader--Title'>{title}</h1>
         {subtitle && (
-          <Content
-            className='PageHeader--Subtitle'
-            data-aos='fade'
-            data-aos-duration='400'
-            src={subtitle}
-          />
+          <Content className='PageHeader--Subtitle' src={subtitle} />
         )}
       </div>
     </div>
