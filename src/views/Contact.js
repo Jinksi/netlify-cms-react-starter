@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { MapPin, Smartphone, Mail } from 'react-feather'
 
 import PageHeader from '../components/PageHeader'
@@ -7,14 +6,10 @@ import EnquiryFormSimpleAjax from '../components/EnquiryFormSimpleAjax'
 import Content from '../components/Content'
 import './Contact.css'
 
-export default ({ page }) => {
-  const { title, subtitle, featuredImage, address, phone, email } = page
+export default ({ fields }) => {
+  const { body, title, subtitle, featuredImage, address, phone, email } = fields
   return (
     <div className='Contact'>
-      <Helmet>
-        <title>{page.title}</title>
-      </Helmet>
-
       <PageHeader
         title={title}
         subtitle={subtitle}
@@ -24,7 +19,7 @@ export default ({ page }) => {
       <div className='section Contact--Section1'>
         <div className='container Contact--Section1--Container'>
           <div>
-            <Content source={page.body} />
+            <Content source={body} />
 
             <div className='Contact--Details'>
               {address && (

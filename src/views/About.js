@@ -1,18 +1,14 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import PageHeader from '../components/PageHeader'
 import LazyImage from '../components/LazyImage'
 import Content from '../components/Content.js'
 import './About.css'
 
-export default ({ page }) => {
-  const { title, subtitle, featuredImage, section1, section2 } = page
+export default ({ fields }) => {
+  const { title, subtitle, featuredImage, section1, section2 } = fields
   return (
     <div className='About'>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
       <PageHeader
         title={title}
         subtitle={subtitle}
