@@ -1,3 +1,7 @@
+## 0.4.1 - 2018-06-06
+
+* Round imgix width request to nearest 100px
+
 ## 0.4.0 - 2018-06-06
 
 * Improve reusability of <Meta /> component

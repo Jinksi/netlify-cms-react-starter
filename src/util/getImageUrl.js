@@ -1,3 +1,5 @@
+const _ceil = require('lodash/ceil')
+
 const sizes = [10, 300, 600, 1200, 1800]
 const outputDir = '/images/uploads/'
 const resizedDir = '/images/uploads/resized/'
@@ -40,7 +42,10 @@ const getImageSrc = (path, sizeRequested) => {
   }
   sizeRequested = parseInt(sizeRequested, 10)
   let size
-  if (sizeRequested) {
+  if (sizeRequested && imgixUrl) {
+    // round to nearest 100px
+    size = sizeRequested <= 100 ? sizeRequested : _ceil(sizeRequested, -2)
+  } else if (sizeRequested) {
     // rounds up to nearest size or returns largest
     size =
       sizes.filter(num => num >= sizeRequested)[0] || sizes[sizes.length - 1]
