@@ -1,22 +1,16 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link } from 'react-router-dom'
 import { ChevronLeft } from 'react-feather'
 
 import Content from '../components/Content'
 import BackgroundImage from '../components/BackgroundImage'
 import { dateFormatted } from '../util/date'
-
 import './SinglePost.css'
 
-export default ({ singlePost, nextPostURL, prevPostURL }) => {
-  const { title, date, postFeaturedImage, body, categories = [] } = singlePost
+export default ({ fields, nextPostURL, prevPostURL }) => {
+  const { title, date, postFeaturedImage, body, categories = [] } = fields
   return (
     <article className='SinglePost section light'>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-
       {postFeaturedImage && (
         <BackgroundImage
           className='SinglePost--BackgroundImage'

@@ -25,19 +25,19 @@ const posts = getDocuments('posts')
 
 // Preview Templates
 CMS.registerPreviewTemplate('home-page', ({ entry }) => (
-  <Home page={entry.toJS().data} />
+  <Home fields={entry.toJS().data} />
 ))
 CMS.registerPreviewTemplate('about-page', ({ entry }) => (
-  <About page={entry.toJS().data} />
+  <About fields={entry.toJS().data} />
 ))
 CMS.registerPreviewTemplate('contact-page', ({ entry }) => (
-  <Contact page={entry.toJS().data} siteTitle={globalSettings.siteTitle} />
+  <Contact fields={entry.toJS().data} siteTitle={globalSettings.siteTitle} />
 ))
 CMS.registerPreviewTemplate('blog-page', ({ entry }) => (
-  <Blog page={entry.toJS().data} posts={posts} />
+  <Blog fields={entry.toJS().data} posts={posts} />
 ))
 CMS.registerPreviewTemplate('posts', ({ entry }) => (
-  <SinglePost singlePost={entry.toJS().data} />
+  <SinglePost fields={entry.toJS().data} />
 ))
 
 // Return to home when user logging out

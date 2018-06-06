@@ -1,8 +1,6 @@
 ---
 title: Hello World!
 status: Featured / Published
-categories:
-  - category: News
 date: '2018-03-27'
 postFeaturedImage: /images/uploads/tim-marshall-155597.jpg
 excerpt: >-
@@ -10,6 +8,13 @@ excerpt: >-
   interdum arcu vitae augue pulvinar sodales. Sed non dui diam. Quisque lectus
   est, lobortis ac efficitur vitae, posuere a mauris. Phasellus ac dui
   pellentesque, lacinia risus ut, imperdiet eros.
+categories:
+  - category: News
+meta:
+  canonicalLink: ''
+  description: ''
+  noindex: false
+  title: ''
 ---
 
 Paragraphs are separated by a blank line.
