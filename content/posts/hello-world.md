@@ -11,10 +11,10 @@ excerpt: >-
 categories:
   - category: News
 meta:
-  canonicalLink: 'https://asdf.com'
-  description: Test Meta Description
-  noindex: true
-  title: Test Meta Title
+  canonicalLink: ''
+  description: ''
+  noindex: false
+  title: ''
 ---
 
 Paragraphs are separated by a blank line.
