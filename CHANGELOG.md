@@ -1,3 +1,9 @@
+## 0.4.0 - 2018-06-06
+
+* Improve reusability of <Meta /> component
+* Rename `page` prop to `fields` on pages / posts
+* Update config.yml with meta object for each item
+
 ## 0.3.1 - 2018-06-01
 
 * Encode CMS image urls
