@@ -16,14 +16,14 @@ I aim to include commonly used components and best-practices e.g. forms, setting
 
 ## Get going
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/netlify-cms-react-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Jinksi/netlify-cms-react-starter&stack=cms)
 
 1.  Hit the **Deploy to Netlify** button. This will:
 
 * Clone the repo into your Github account
 * Create you a new project on Netlify, build & deploy
 
-1.  Once your Netlify project has been created, change a couple of settings:
+1.  Once your Netlify project has been created, check a couple of settings:
 
 * Enable **Identity**
 * Change **Registration Preferences** to **Invite Only**
