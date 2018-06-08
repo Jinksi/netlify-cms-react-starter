@@ -26,6 +26,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Phone, name: phone, widget: string}
           - {label: Email Address, name: email, widget: string}
           - label: "Meta"
+            required: false
             name: "meta"
             widget: "object"
             fields:
@@ -42,6 +43,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
           - label: "Meta"
+            required: false
             name: "meta"
             widget: "object"
             fields:
@@ -60,6 +62,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Section 1, name: section1, widget: markdown}
           - {label: Section 2, name: section2, widget: markdown}
           - label: "Meta"
+            required: false
             name: "meta"
             widget: "object"
             fields:
@@ -77,6 +80,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Body, name: body, widget: markdown}
           - label: "Meta"
+            required: false
             name: "meta"
             widget: "object"
             fields:
@@ -116,6 +120,7 @@ collections: # A list of collections the CMS should be able to edit
             searchFields: ["title"]
             valueField: "title"
       - label: "Meta"
+        required: false
         name: "meta"
         widget: "object"
         fields:
@@ -135,6 +140,7 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: Title, name: title, widget: string}
       - label: "Meta"
+        required: false
         name: "meta"
         widget: "object"
         fields:
