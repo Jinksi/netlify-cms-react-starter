@@ -1,4 +1,4 @@
-## 0.4.2 - 2018-06-06
+## 0.4.2 - 2018-06-08
 
 - Meta object field should not be required
 
