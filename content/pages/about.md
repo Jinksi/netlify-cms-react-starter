@@ -1,4 +1,6 @@
 ---
+template: AboutPage
+slug: 'about'
 title: About page title
 featuredImage: /images/uploads/tim-marshall-155597.jpg
 section1: |-
@@ -28,5 +30,5 @@ section2: |-
 
   The image below will have a `srcset` attribute generated:
 
-  ![Tim Marshall](/images/uploads/tim-marshall-155597.jpg)
+  ## ![Tim Marshall](/images/uploads/tim-marshall-155597.jpg)
 ---

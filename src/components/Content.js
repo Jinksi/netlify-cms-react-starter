@@ -2,10 +2,10 @@ import React from 'react'
 import Marked from 'react-markdown'
 import PropTypes from 'prop-types'
 
-import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
 import './Content.css'
 
 const encodeMarkdownURIs = (source = '') => {
+  console.log(source)
   const markdownLinkRegex = /\[(?:\[[^\]]*\]|[^[\]])*\]\([ \t]*<?((?:\([^)]*\)|[^()])*?)>?[ \t]*(['"].*?\6[ \t]*)?\)/g
   return source.replace(markdownLinkRegex, (match, linkURI) => {
     if (!linkURI) return match
@@ -14,16 +14,23 @@ const encodeMarkdownURIs = (source = '') => {
   })
 }
 
-const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
+// const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
+//   const decodedSrc = decodeURI(src)
+//   return (
+//     <img
+//       className="Content--Image"
+//       {...props}
+//       src={getImageSrc(decodedSrc)}
+//       srcSet={getImageSrcset(decodedSrc)}
+//       alt={alt}
+//     />
+//   )
+// }
+
+const Image = ({ nodeKey, src, alt, ...props }) => {
   const decodedSrc = decodeURI(src)
   return (
-    <img
-      className='Content--Image'
-      {...props}
-      src={getImageSrc(decodedSrc)}
-      srcSet={getImageSrcset(decodedSrc)}
-      alt={alt}
-    />
+    <img className="Content--Image" {...props} src={decodedSrc} alt={alt} />
   )
 }
 
@@ -44,7 +51,7 @@ const Content = ({ source, src, className = '' }) => (
     className={`Content ${className}`}
     source={encodeMarkdownURIs(source || src)}
     renderers={{
-      image: ImageWithSrcset,
+      image: Image,
       html: HtmlBlock
     }}
   />

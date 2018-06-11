@@ -1,18 +1,9 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-
-# testing
-coverage
-
-# production
-build
-
-# misc
+.cache/
+# Build directory
+public/
+static/admin/*.bundle.*
 .DS_Store
-npm-debug.log
-.env*.local
-*error.log
-
-src/data.json
+yarn-error.log

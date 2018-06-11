@@ -24,7 +24,7 @@ class PostSection extends React.Component {
     }))
   }
 
-  render () {
+  render() {
     const { posts, title, showLoadMore, loadMoreTitle } = this.props
     const { limit } = this.state
 
@@ -34,24 +34,24 @@ class PostSection extends React.Component {
       .slice(0, limit || posts.length)
 
     return (
-      <div className='PostSection'>
-        <div className='container'>
-          {title && <h2 className='PostSection--Title'>{title}</h2>}
+      <div className="PostSection">
+        <div className="container">
+          {title && <h2 className="PostSection--Title">{title}</h2>}
           {!!visiblePosts.length && (
-            <div className='PostSection--Grid'>
-              {visiblePosts.map((postItem, index) => (
-                <PostCard key={postItem.title + index} postItem={postItem} />
+            <div className="PostSection--Grid">
+              {visiblePosts.map((post, index) => (
+                <PostCard key={post.title + index} {...post} />
               ))}
             </div>
           )}
           {showLoadMore &&
             visiblePosts.length < posts.length && (
-            <div className='taCenter'>
-              <button className='button' onClick={this.increaseLimit}>
-                {loadMoreTitle}
-              </button>
-            </div>
-          )}
+              <div className="taCenter">
+                <button className="button" onClick={this.increaseLimit}>
+                  {loadMoreTitle}
+                </button>
+              </div>
+            )}
         </div>
       </div>
     )

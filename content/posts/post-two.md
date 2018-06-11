@@ -4,7 +4,7 @@ status: Published
 categories:
   - category: Updates
 date: '2018-03-28'
-postFeaturedImage: /images/uploads/vyouw5byhlc.jpeg
+featuredImage: /images/uploads/vyouw5byhlc.jpeg
 excerpt: This is an excerpt of Post Two
 ---
 

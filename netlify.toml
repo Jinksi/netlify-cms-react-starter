@@ -1,8 +1,6 @@
-# Global settings applied to the whole site.
-#
-# “publish” is the directory to publish (relative to root of your repo),
-# “command” is your build command
-
 [build]
-  publish = "build"
+  publish = "public"
   command = "npm run build"
+[build.environment]
+  YARN_VERSION = "1.3.2"
+  YARN_FLAGS = "--no-ignore-optional"

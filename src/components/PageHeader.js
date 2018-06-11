@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Content from './Content'
+// import Content from './Content'
 import BackgroundImage from './BackgroundImage'
 import './PageHeader.css'
 
@@ -18,15 +18,16 @@ const PageHeader = ({
       {backgroundImage && (
         <BackgroundImage src={backgroundImage} opacity={0.4} />
       )}
-      <div className='container relative'>
-        <h1 className='PageHeader--Title'>{title}</h1>
-        {subtitle && (
-          <Content className='PageHeader--Subtitle' src={subtitle} />
-        )}
+      <div className="container relative">
+        <h1 className="PageHeader--Title">{title}</h1>
+        {subtitle && subtitle
+        // <Content className="PageHeader--Subtitle" src={subtitle} />
+        }
       </div>
     </div>
   )
 }
+
 PageHeader.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string
