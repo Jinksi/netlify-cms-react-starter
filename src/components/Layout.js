@@ -12,13 +12,7 @@ import './globalStyles.css'
 export default ({ children }) => (
   <StaticQuery
     render={data => {
-      const {
-        siteTitle,
-        siteUrl,
-        siteDescription,
-        socialMediaCard,
-        headerScripts
-      } =
+      const { siteTitle, siteUrl, socialMediaCard, headerScripts } =
         data.settingsYaml || {}
       return (
         <Fragment>

@@ -73,9 +73,9 @@ export const SinglePostTemplate = ({
 )
 
 // Export Default SinglePost for front-end
-const SinglePost = ({ data, pathContext }) => {
+const SinglePost = ({ data, pageContext }) => {
   const { markdownRemark: page } = data
-  const { previous, next } = pathContext
+  const { previous, next } = pageContext
   return (
     <SinglePostTemplate
       body={page.rawMarkdownBody}
