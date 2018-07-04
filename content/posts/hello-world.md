@@ -1,5 +1,6 @@
 ---
 title: Hello World!
+template: SinglePost
 status: Featured / Published
 date: '2018-03-27'
 featuredImage: /images/uploads/tim-marshall-155597.jpg
@@ -23,9 +24,9 @@ The second paragraph. This is placeholder text that our web designers put here t
 
 ### Unordered lists:
 
-* this one
-* that one
-* the other one
+- this one
+- that one
+- the other one
 
 ### Ordered lists:
 

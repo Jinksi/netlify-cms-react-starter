@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 
@@ -10,36 +11,28 @@ export const HomePageTemplate = ({
   featuredImage,
   content
 }) => (
-  <main className="Home">
-    <PageHeader
-      large
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
+  <Layout>
+    <main className="Home">
+      <PageHeader
+        large
+        title={title}
+        subtitle={subtitle}
+        backgroundImage={featuredImage}
+      />
 
-    <div className="section">
-      <div className="container">
-        <Content source={content} />
+      <div className="section">
+        <div className="container">
+          <Content source={content} />
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </Layout>
 )
 
 // Export Default HomePage for front-end
-const HomePage = ({ data }) => {
-  const { markdownRemark: page } = data
-
-  return (
-    <HomePageTemplate
-      title={page.frontmatter.title}
-      subtitle={page.frontmatter.subtitle}
-      featuredImage={page.frontmatter.featuredImage}
-      content={page.rawMarkdownBody}
-    />
-  )
-}
-
+const HomePage = ({ data: { markdownRemark: page } }) => (
+  <HomePageTemplate {...page.frontmatter} content={page.rawMarkdownBody} />
+)
 export default HomePage
 
 export const pageQuery = graphql`
@@ -52,7 +45,6 @@ export const pageQuery = graphql`
       rawMarkdownBody
       frontmatter {
         title
-        template
         subtitle
         featuredImage
       }

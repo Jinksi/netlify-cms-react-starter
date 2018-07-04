@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 // import LazyImage from '../components/LazyImage'
 import Content from '../components/Content.js'
@@ -13,25 +14,27 @@ export const AboutPageTemplate = ({
   section1,
   section2
 }) => (
-  <main className="About">
-    <PageHeader
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
-    <div className="section">
-      <div className="container">
-        <Content source={section1} />
+  <Layout>
+    <main className="About">
+      <PageHeader
+        title={title}
+        subtitle={subtitle}
+        backgroundImage={featuredImage}
+      />
+      <div className="section">
+        <div className="container">
+          <Content source={section1} />
+        </div>
       </div>
-    </div>
-    <div className="section">
-      <div className="container">
-        <Content source={section2} />
-        <p>The image below is a {'<LazyImage />'}</p>
-        {/* <LazyImage src={featuredImage} alt="LazyImage" /> */}
+      <div className="section">
+        <div className="container">
+          <Content source={section2} />
+          <p>The image below is a {'<LazyImage />'}</p>
+          {/* <LazyImage src={featuredImage} alt="LazyImage" /> */}
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </Layout>
 )
 
 const AboutPage = ({ data }) => {

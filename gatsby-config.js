@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/img`,
+        path: `${__dirname}/src/images`,
         name: 'images'
       }
     },
@@ -53,12 +53,26 @@ module.exports = {
     'gatsby-transformer-sharp',
 
     // css
-    {
-      resolve: `gatsby-plugin-postcss-sass`,
-      options: {
-        postCssPlugins: [postcssPresetEnv()]
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-postcss-sass`,
+    //   options: {
+    //     postCssPlugins: [
+    //       postcssPresetEnv({
+    //         browsers: '> 0.5%, last 2 versions, ie 11'
+    //       })
+    //     ]
+    //   }
+    // },
+    // {
+    //   resolve: `gatsby-plugin-nprogress`,
+    //   options: {
+    //     // Setting a color is optional.
+    //     color: `white`,
+    //     // Disable the loading spinner.
+    //     showSpinner: false
+    //   }
+    // },
+    // `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

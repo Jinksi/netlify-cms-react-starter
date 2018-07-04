@@ -1,7 +1,7 @@
 import React from 'react'
 
+import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
-import Content from '../components/Content'
 import PostSection from '../components/PostSection'
 import PostCategoriesNav from '../components/PostCategoriesNav'
 
@@ -13,25 +13,27 @@ export const BlogIndexTemplate = ({
   posts = [],
   postCategories = []
 }) => (
-  <main className="Home">
-    <PageHeader
-      large
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
+  <Layout>
+    <main className="Home">
+      <PageHeader
+        large
+        title={title}
+        subtitle={subtitle}
+        backgroundImage={featuredImage}
+      />
 
-    {!!postCategories.length && (
-      <PostCategoriesNav categories={postCategories} />
-    )}
+      {!!postCategories.length && (
+        <PostCategoriesNav categories={postCategories} />
+      )}
 
-    {!!posts.length && <PostSection posts={posts} />}
-  </main>
+      {!!posts.length && <PostSection posts={posts} />}
+    </main>
+  </Layout>
 )
 
 // Export Default BlogIndex for front-end
 const BlogIndex = ({ data }) => {
-  const { markdownRemark: page, allMarkdownRemark: posts } = data
+  const { page, posts } = data
   return (
     <BlogIndexTemplate
       title={page.frontmatter.title}
@@ -55,7 +57,7 @@ export const pageQuery = graphql`
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
   query BlogIndex($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    page: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         template
@@ -64,7 +66,10 @@ export const pageQuery = graphql`
       }
     }
 
-    allMarkdownRemark(filter: { fields: { contentType: { eq: "posts" } } }) {
+    posts: allMarkdownRemark(
+      filter: { fields: { contentType: { eq: "posts" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           excerpt

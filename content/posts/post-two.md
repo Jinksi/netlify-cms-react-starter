@@ -1,5 +1,6 @@
 ---
 title: Post Two
+template: SinglePost
 status: Published
 categories:
   - category: Updates
