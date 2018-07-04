@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import './Content.css'
 
 const encodeMarkdownURIs = (source = '') => {
-  console.log(source)
   const markdownLinkRegex = /\[(?:\[[^\]]*\]|[^[\]])*\]\([ \t]*<?((?:\([^)]*\)|[^()])*?)>?[ \t]*(['"].*?\6[ \t]*)?\)/g
   return source.replace(markdownLinkRegex, (match, linkURI) => {
     if (!linkURI) return match

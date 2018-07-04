@@ -2,7 +2,8 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter'
+    title: 'Gatsby + Netlify CMS Starter',
+    siteUrl: 'https://netlify-cms-react-starter.netlify.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
