@@ -1,6 +1,6 @@
 import React from 'react'
 import _get from 'lodash/get'
-import Link from 'gatsby-link'
+import { Link, graphql } from 'gatsby'
 import { ChevronLeft } from 'react-feather'
 
 import Layout from '../components/Layout'

@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import AlertTriangle from 'react-feather/dist/icons/alert-triangle'
 
 import Layout from '../components/Layout'
