@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import _get from 'lodash/get'
 import AlertTriangle from 'react-feather/dist/icons/alert-triangle'
 
 import Layout from '../components/Layout'
@@ -19,7 +20,7 @@ const NotFoundPage = ({ data }) => (
           <h1>404 - Page Not Found</h1>
           <p>
             We can't find the page you are looking for!<br />Head back to{' '}
-            <Link to="/">{data.site.siteMetadata.title}</Link>
+            <Link to="/">{_get(data, 'globalSettings.siteTitle')}</Link>
           </p>
         </div>
       </section>
@@ -31,10 +32,8 @@ export default NotFoundPage
 
 export const query = graphql`
   query NotFoundPageQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    globalSettings: settingsYaml {
+      siteTitle
     }
   }
 `
