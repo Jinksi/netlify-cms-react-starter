@@ -11,6 +11,7 @@ import './SinglePost.css'
 export const SinglePostTemplate = ({
   title,
   date,
+  dateFormatted,
   featuredImage,
   body,
   nextPostURL,
@@ -18,12 +19,15 @@ export const SinglePostTemplate = ({
   categories = []
 }) => (
   <Layout>
-    <article className="SinglePost section light">
+    <article
+      className="SinglePost section light"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
       {featuredImage && (
         <BackgroundImage
           className="SinglePost--BackgroundImage"
           src={featuredImage}
-          alt={title}
         />
       )}
 
@@ -39,10 +43,22 @@ export const SinglePostTemplate = ({
                   {obj.category}
                 </span>
               ))}
-            {date && <span className="SinglePost--Meta--Date">{date}</span>}
+            {date && (
+              <time
+                className="SinglePost--Meta--Date"
+                itemprop="dateCreated pubdate datePublished"
+                date={date}
+              >
+                {dateFormatted}
+              </time>
+            )}
           </div>
 
-          {title && <h1 className="SinglePost--Title">{title}</h1>}
+          {title && (
+            <h1 className="SinglePost--Title" itemprop="title">
+              {title}
+            </h1>
+          )}
 
           <div className="SinglePost--InnerContent">
             <Content source={body} />
@@ -74,14 +90,14 @@ export const SinglePostTemplate = ({
 
 // Export Default SinglePost for front-end
 const SinglePost = ({ data, pageContext }) => {
-  const { markdownRemark: page } = data
+  const { post } = data
   const { previous, next } = pageContext
   return (
     <SinglePostTemplate
-      body={page.rawMarkdownBody}
+      body={post.rawMarkdownBody}
       nextPostURL={_get(next, 'fields.slug')}
       prevPostURL={_get(previous, 'fields.slug')}
-      {...page.frontmatter}
+      {...post.frontmatter}
     />
   )
 }
@@ -94,14 +110,15 @@ export const pageQuery = graphql`
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
   query SinglePost($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    post: markdownRemark(id: { eq: $id }) {
       rawMarkdownBody
       frontmatter {
         title
         template
         subtitle
         featuredImage
-        date(formatString: "MMMM Do, YYYY")
+        date
+        dateFormatted: date(formatString: "MMMM Do, YYYY")
       }
     }
   }
