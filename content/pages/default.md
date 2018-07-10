@@ -2,6 +2,7 @@
 template: DefaultPage
 slug: 'default'
 title: Default
+subtitle: This is the DefaultPage template
 featuredImage: /images/uploads/ng-32703.jpg
 ---
 
