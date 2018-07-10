@@ -13,7 +13,7 @@ export const DefaultPageTemplate = ({
   content
 }) => (
   <Layout>
-    <main className="Home">
+    <main className="DefaultPage">
       <PageHeader
         large
         title={title}

@@ -15,7 +15,7 @@ export const BlogIndexTemplate = ({
   postCategories = []
 }) => (
   <Layout>
-    <main className="Home">
+    <main className="Blog">
       <PageHeader
         large
         title={title}
