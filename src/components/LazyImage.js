@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './LazyImage.css'
+
 // Not lazy yet
 
 class LazyImage extends React.Component {
@@ -23,7 +25,7 @@ class LazyImage extends React.Component {
     src = src || source
     return (
       <img
-        className={`LazyImage ${className}`}
+        className={`LazyImage loaded ${className}`}
         src={src}
         srcSet={srcSet}
         sizes={sizes || '100vw'}
