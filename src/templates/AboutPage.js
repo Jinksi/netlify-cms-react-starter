@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
-// import LazyImage from '../components/LazyImage'
+import LazyImage from '../components/LazyImage'
 import Content from '../components/Content.js'
 import './AboutPage.css'
 
@@ -22,27 +22,27 @@ export const AboutPageTemplate = ({
         subtitle={subtitle}
         backgroundImage={featuredImage}
       />
-      <div className="section">
+
+      <section className="section">
         <div className="container">
           <Content source={section1} />
         </div>
-      </div>
-      <div className="section">
+      </section>
+
+      <section className="section">
         <div className="container">
           <Content source={section2} />
           <p>The image below is a {'<LazyImage />'}</p>
-          {/* <LazyImage src={featuredImage} alt="LazyImage" /> */}
+          <LazyImage src={featuredImage} alt="LazyImage" />
         </div>
-      </div>
+      </section>
     </main>
   </Layout>
 )
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark: page } = data
-
-  return <AboutPageTemplate {...page.frontmatter} />
-}
+const AboutPage = ({ data: { page } }) => (
+  <AboutPageTemplate {...page.frontmatter} />
+)
 
 export default AboutPage
 
@@ -51,7 +51,7 @@ export default AboutPage
 // ID is processed via gatsby-node.js
 export const pageQuery = graphql`
   query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    page: markdownRemark(id: { eq: $id }) {
       rawMarkdownBody
       frontmatter {
         title

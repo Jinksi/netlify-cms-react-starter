@@ -21,17 +21,17 @@ export const HomePageTemplate = ({
         backgroundImage={featuredImage}
       />
 
-      <div className="section">
+      <section className="section">
         <div className="container">
           <Content source={content} />
         </div>
-      </div>
+      </section>
     </main>
   </Layout>
 )
 
 // Export Default HomePage for front-end
-const HomePage = ({ data: { markdownRemark: page } }) => (
+const HomePage = ({ data: { page } }) => (
   <HomePageTemplate {...page.frontmatter} content={page.rawMarkdownBody} />
 )
 export default HomePage
@@ -42,7 +42,7 @@ export const pageQuery = graphql`
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
   query HomePage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    page: markdownRemark(id: { eq: $id }) {
       rawMarkdownBody
       frontmatter {
         title
