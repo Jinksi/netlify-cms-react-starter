@@ -18,7 +18,7 @@ class LazyImage extends React.Component {
       srcSet,
       source,
       sizes,
-      lazy,
+      // lazy,
       onClick,
       alt
     } = this.props

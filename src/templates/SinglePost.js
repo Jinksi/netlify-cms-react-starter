@@ -21,8 +21,8 @@ export const SinglePostTemplate = ({
   <Layout>
     <article
       className="SinglePost section light"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
+      itemScope
+      itemType="http://schema.org/BlogPosting"
     >
       {featuredImage && (
         <BackgroundImage
@@ -46,7 +46,7 @@ export const SinglePostTemplate = ({
             {date && (
               <time
                 className="SinglePost--Meta--Date"
-                itemprop="dateCreated pubdate datePublished"
+                itemProp="dateCreated pubdate datePublished"
                 date={date}
               >
                 {dateFormatted}
@@ -55,7 +55,7 @@ export const SinglePostTemplate = ({
           </div>
 
           {title && (
-            <h1 className="SinglePost--Title" itemprop="title">
+            <h1 className="SinglePost--Title" itemProp="title">
               {title}
             </h1>
           )}
