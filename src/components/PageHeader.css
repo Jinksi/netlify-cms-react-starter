@@ -17,3 +17,7 @@
   font-weight: 400;
   font-size: 1.8rem;
 }
+
+.PageHeader .container {
+  animation: fadeIn 0.5s ease-out;
+}

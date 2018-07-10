@@ -129,6 +129,12 @@ blockquote {
   text-align: right;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
 /* Layout */
 
 .section {
