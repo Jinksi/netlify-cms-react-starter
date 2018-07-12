@@ -52,7 +52,8 @@
     "start:app": "react-scripts start",
     "start:content": "chokidar 'content/**/**' -c 'npm run prepare-content'",
     "start:cms": "chokidar 'cms/cms.js' -c 'cd cms && npm run build'",
-    "build": "npm-run-all -s prepare-content build:cms build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
+    "build":
+      "npm-run-all -s image-cache:pull prepare-content image-cache:push build:cms build:app build:postcss build:react-snapshot build:sitemap build:sw build:sha",
     "build:app": "react-scripts build",
     "build:cms": "cd cms && NODE_ENV=production npm run build",
     "build:postcss": "postcss build/static/css/*.css -r",
@@ -60,6 +61,10 @@
     "build:sw": "sw-precache --config='sw-precache-config.js'",
     "build:sitemap": "node ./functions/generate-sitemap.js",
     "build:sha": "git rev-parse HEAD > build/sha",
+    "image-cache:push":
+      "mkdir -p ./node_modules/ncms-image-cache && cp ./package.json ./node_modules/ncms-image-cache/. && cp ./public/images/uploads/resized/* ./node_modules/ncms-image-cache/. && ls ./node_modules/ncms-image-cache/ | wc -l",
+    "image-cache:pull":
+      "ls ./node_modules/ncms-image-cache | wc -l && cp ./node_modules/ncms-image-cache/* ./public/images/uploads/resized/. 2>/dev/null || :",
     "parse-content": "node ./functions/parse-content.js",
     "prepare": "npm run install:cms",
     "install:cms": "cd cms && npm i",
@@ -69,8 +74,6 @@
     "eject": "react-scripts eject"
   },
   "reactSnapshot": {
-    "include": [
-      "/404"
-    ]
+    "include": ["/404"]
   }
 }
