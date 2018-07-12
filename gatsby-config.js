@@ -8,12 +8,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-transformer-yaml`,
-
+    // Add static assets before markdown files
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
-        name: 'pages'
+        path: `${__dirname}/static/images/uploads`,
+        name: 'images'
       }
     },
     {
@@ -23,6 +23,13 @@ module.exports = {
         name: 'images'
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content`,
+        name: 'pages'
+      }
+    },
 
     {
       resolve: 'gatsby-transformer-remark',
@@ -30,15 +37,15 @@ module.exports = {
         plugins: [
           // gatsby-remark-relative-images must
           // go before gatsby-remark-images
-          // {
-          //   resolve: `gatsby-remark-relative-images`
-          // },
-          // {
-          //   resolve: `gatsby-remark-images`,
-          //   options: {
-          //     maxWidth: 650
-          //   }
-          // },
+          {
+            resolve: `gatsby-remark-relative-images`
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800
+            }
+          }
           // {
           //   resolve: `gatsby-remark-responsive-iframe`,
           //   options: {

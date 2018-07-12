@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { extractChildImageSharp } from '../util/image'
 import './BackgroundImage.css'
 
 export default ({
@@ -8,13 +9,16 @@ export default ({
   imageSize,
   contain = false,
   opacity = 1
-}) => (
-  <div
-    className={`BackgroundImage absolute ${className}`}
-    style={{
-      backgroundImage: `url(${encodeURI(src)})`,
-      backgroundSize: contain ? 'contain' : 'cover',
-      opacity: opacity
-    }}
-  />
-)
+}) => {
+  src = extractChildImageSharp(src)
+  return (
+    <div
+      className={`BackgroundImage absolute ${className}`}
+      style={{
+        backgroundImage: `url(${encodeURI(src)})`,
+        backgroundSize: contain ? 'contain' : 'cover',
+        opacity: opacity
+      }}
+    />
+  )
+}

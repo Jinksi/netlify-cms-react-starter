@@ -47,7 +47,15 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
-        featuredImage
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1800, maxHeight: 1200) {
+              src
+              srcWebp
+              srcSet
+            }
+          }
+        }
       }
     }
   }
