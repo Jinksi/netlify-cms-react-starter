@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { extractChildImageSharp } from '../util/image'
+import { extractChildImageSharp } from '../utils'
 import './BackgroundImage.css'
 
 export default ({

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
-import LazyImage from '../components/LazyImage'
+import Image from '../components/Image'
 import Content from '../components/Content.js'
 import './AboutPage.css'
 
@@ -32,8 +32,8 @@ export const AboutPageTemplate = ({
       <section className="section">
         <div className="container">
           <Content source={section2} />
-          <p>The image below is a {'<LazyImage />'}</p>
-          <LazyImage src={featuredImage} alt="LazyImage" />
+          <p>The image below is a {'<Image />'}</p>
+          <Image src={featuredImage} alt="Image" />
         </div>
       </section>
     </main>
@@ -41,7 +41,7 @@ export const AboutPageTemplate = ({
 )
 
 const AboutPage = ({ data: { page } }) => (
-  <AboutPageTemplate {...page.frontmatter} />
+  <AboutPageTemplate {...page} {...page.frontmatter} />
 )
 
 export default AboutPage

@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './LazyImage.css'
+import { extractChildImageSharp } from '../utils'
+import './Image.css'
 
 // Not lazy yet
 
-class LazyImage extends React.Component {
+class Image extends React.Component {
   static defaultProps = {
-    lazy: false,
-    imageSize: '300'
+    lazy: false
   }
 
   render() {
@@ -22,12 +22,15 @@ class LazyImage extends React.Component {
       onClick,
       alt
     } = this.props
-    src = src || source
+
+    const imageSrcSet = srcSet || extractChildImageSharp(src, 'srcSet')
+    const imageSrc = extractChildImageSharp(src || source)
+
     return (
       <img
-        className={`LazyImage loaded ${className}`}
-        src={src}
-        srcSet={srcSet}
+        className={`Image loaded ${className}`}
+        src={imageSrc}
+        srcSet={imageSrcSet}
         sizes={sizes || '100vw'}
         onClick={onClick}
         alt={alt}
@@ -36,8 +39,8 @@ class LazyImage extends React.Component {
   }
 }
 
-LazyImage.propTypes = {
+Image.propTypes = {
   alt: PropTypes.string.isRequired
 }
 
-export default LazyImage
+export default Image
