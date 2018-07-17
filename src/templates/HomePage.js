@@ -6,12 +6,7 @@ import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ({
-  title,
-  subtitle,
-  featuredImage,
-  content
-}) => (
+export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
   <Layout>
     <main className="Home">
       <PageHeader
@@ -23,7 +18,7 @@ export const HomePageTemplate = ({
 
       <section className="section">
         <div className="container">
-          <Content source={content} />
+          <Content source={body} />
         </div>
       </section>
     </main>
@@ -32,8 +27,9 @@ export const HomePageTemplate = ({
 
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page } }) => (
-  <HomePageTemplate {...page.frontmatter} content={page.rawMarkdownBody} />
+  <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
 )
+
 export default HomePage
 
 export const pageQuery = graphql`
@@ -43,18 +39,12 @@ export const pageQuery = graphql`
   ## query name must be unique to this file
   query HomePage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
-      rawMarkdownBody
+      html
       frontmatter {
         title
         subtitle
         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1800, maxHeight: 1200) {
-              src
-              srcWebp
-              srcSet
-            }
-          }
+          ...LargeImage
         }
       }
     }

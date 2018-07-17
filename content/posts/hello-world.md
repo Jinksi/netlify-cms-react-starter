@@ -20,6 +20,8 @@ meta:
 
 Paragraphs are separated by a blank line.
 
+![Test Image](/images/uploads/vyouw5byhlc.jpeg)
+
 The second paragraph. This is placeholder text that our web designers put here to make sure words appear properly on your website. _Italic_, **bold**, and `monospace`.
 
 ### Unordered lists:

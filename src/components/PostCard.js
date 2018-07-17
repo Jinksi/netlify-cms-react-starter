@@ -12,7 +12,7 @@ const PostCard = ({
   className = '',
   ...props
 }) => (
-  <Link to={slug} className={`PostCard ${className}`} {...props}>
+  <Link to={slug} className={`PostCard ${className}`}>
     {featuredImage && (
       <div className="PostCard--Image relative">
         <BackgroundImage src={featuredImage} alt={title} />

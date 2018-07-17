@@ -13,7 +13,8 @@ export const AboutPageTemplate = ({
   subtitle,
   featuredImage,
   section1,
-  section2
+  section2,
+  body
 }) => (
   <Layout>
     <main className="About">
@@ -41,30 +42,21 @@ export const AboutPageTemplate = ({
 )
 
 const AboutPage = ({ data: { page } }) => (
-  <AboutPageTemplate {...page} {...page.frontmatter} />
+  <AboutPageTemplate {...page} {...page.frontmatter} body={page.html} />
 )
 
 export default AboutPage
 
-// Query for DefaultPage data
-// Use GraphiQL interface (http://localhost:8000/___graphql)
-// ID is processed via gatsby-node.js
 export const pageQuery = graphql`
   query AboutPage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
-      rawMarkdownBody
+      html
       frontmatter {
         title
         template
         subtitle
         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1800, maxHeight: 1200) {
-              src
-              srcWebp
-              srcSet
-            }
-          }
+          ...LargeImage
         }
         section1
         section2

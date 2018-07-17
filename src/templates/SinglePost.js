@@ -94,10 +94,11 @@ const SinglePost = ({ data, pageContext }) => {
   const { previous, next } = pageContext
   return (
     <SinglePostTemplate
-      body={post.rawMarkdownBody}
+      {...post}
+      {...post.frontmatter}
+      body={post.html}
       nextPostURL={_get(next, 'fields.slug')}
       prevPostURL={_get(previous, 'fields.slug')}
-      {...post.frontmatter}
     />
   )
 }
@@ -111,7 +112,7 @@ export const pageQuery = graphql`
   ## query name must be unique to this file
   query SinglePost($id: String!) {
     post: markdownRemark(id: { eq: $id }) {
-      rawMarkdownBody
+      html
       frontmatter {
         title
         template

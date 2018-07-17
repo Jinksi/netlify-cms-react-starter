@@ -91,13 +91,7 @@ export const pageQuery = graphql`
               category
             }
             featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 600, maxHeight: 600) {
-                  src
-                  srcWebp
-                  srcSet
-                }
-              }
+              ...SmallImage
             }
           }
         }

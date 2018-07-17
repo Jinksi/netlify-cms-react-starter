@@ -10,7 +10,7 @@ export const DefaultPageTemplate = ({
   title,
   subtitle,
   featuredImage,
-  content
+  body
 }) => (
   <Layout>
     <main className="DefaultPage">
@@ -23,7 +23,7 @@ export const DefaultPageTemplate = ({
 
       <section className="section">
         <div className="container">
-          <Content source={content} />
+          <Content source={body} />
         </div>
       </section>
     </main>
@@ -31,25 +31,19 @@ export const DefaultPageTemplate = ({
 )
 
 const DefaultPage = ({ data: { page } }) => (
-  <DefaultPageTemplate {...page.frontmatter} content={page.rawMarkdownBody} />
+  <DefaultPageTemplate {...page.frontmatter} body={page.html} />
 )
 export default DefaultPage
 
 export const pageQuery = graphql`
   query DefaultPage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
-      rawMarkdownBody
+      html
       frontmatter {
         title
         subtitle
         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1800, maxHeight: 1200) {
-              src
-              srcWebp
-              srcSet
-            }
-          }
+          ...LargeImage
         }
       }
     }

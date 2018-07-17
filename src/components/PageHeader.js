@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 // import Content from './Content'
 import BackgroundImage from './BackgroundImage'
+import Content from './Content'
 import './PageHeader.css'
 
 const PageHeader = ({
@@ -15,14 +16,12 @@ const PageHeader = ({
   if (large) className += ' PageHeader-large'
   return (
     <div className={`PageHeader relative ${className}`}>
-      {backgroundImage && (
-        <BackgroundImage src={backgroundImage} opacity={0.4} />
-      )}
+      {backgroundImage && <BackgroundImage src={backgroundImage} />}
       <div className="container relative">
         <h1 className="PageHeader--Title">{title}</h1>
-        {subtitle && subtitle
-        // <Content className="PageHeader--Subtitle" src={subtitle} />
-        }
+        {subtitle && (
+          <Content className="PageHeader--Subtitle" src={subtitle} />
+        )}
       </div>
     </div>
   )

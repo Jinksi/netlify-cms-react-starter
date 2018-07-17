@@ -10,7 +10,7 @@ import './ContactPage.css'
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
-  content,
+  body,
   title,
   subtitle,
   featuredImage,
@@ -29,7 +29,7 @@ export const ContactPageTemplate = ({
       <section className="section Contact--Section1">
         <div className="container Contact--Section1--Container">
           <div>
-            <Content source={content} />
+            <Content source={body} />
 
             <div className="Contact--Details">
               {address && (
@@ -67,30 +67,21 @@ export const ContactPageTemplate = ({
 )
 
 const ContactPage = ({ data: { page } }) => (
-  <ContactPageTemplate content={page.rawMarkdownBody} {...page.frontmatter} />
+  <ContactPageTemplate body={page.rawMarkdownBody} {...page.frontmatter} />
 )
 
 export default ContactPage
 
-// Query for DefaultPage data
-// Use GraphiQL interface (http://localhost:8000/___graphql)
-// ID is processed via gatsby-node.js
 export const pageQuery = graphql`
   query ContactPage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
-      rawMarkdownBody
+      html
       frontmatter {
         title
         template
         subtitle
         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1800, maxHeight: 1200) {
-              src
-              srcWebp
-              srcSet
-            }
-          }
+          ...LargeImage
         }
       }
     }
