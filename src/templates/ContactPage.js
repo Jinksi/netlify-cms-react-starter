@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         template
         subtitle
         featuredImage {
-          ...LargeImage
+          ...FluidImage
         }
         address
         phone
