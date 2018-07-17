@@ -83,6 +83,9 @@ export const pageQuery = graphql`
         featuredImage {
           ...LargeImage
         }
+        address
+        phone
+        email
       }
     }
   }
