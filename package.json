@@ -5,7 +5,7 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.7.3",
     "dom-form-serializer": "^1.0.7",
-    "gatsby": "2.0.0-beta.26",
+    "gatsby": "2.0.0-beta.17",
     "gatsby-image": "^2.0.0-beta.6",
     "gatsby-plugin-netlify": "^2.0.0-beta.2",
     "gatsby-plugin-netlify-cms": "^2.0.0-beta.5",

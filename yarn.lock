@@ -776,8 +776,8 @@
     "@types/react-router" "*"
 
 "@types/react-router@*":
-  version "4.0.28"
-  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.28.tgz#b0445fc38613c81e92ca9ec0e08ab36697d51003"
+  version "4.0.29"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.29.tgz#1a906dd99abf21297a5b7cf003d1fd36e7a92069"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -2248,8 +2248,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000865"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000865.tgz#82ffb64d40f7567620aac02d3a632079689abc6b"
+  version "1.0.30000867"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000867.tgz#b55a6ecfac3107988940c9c7dfe1866315312c97"
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
   version "1.0.30000865"
@@ -2671,22 +2671,22 @@ component-inherit@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/component-inherit/-/component-inherit-0.0.3.tgz#645fc4adf58b72b649d5cae65135619db26ff143"
 
-compressible@~2.0.13:
+compressible@~2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.14.tgz#326c5f507fbb055f54116782b969a81b67a29da7"
   dependencies:
     mime-db ">= 1.34.0 < 2"
 
 compression@^1.5.2, compression@^1.6.2:
-  version "1.7.2"
-  resolved "http://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/compression/-/compression-1.7.3.tgz#27e0e176aaf260f7f2c2813c3e440adb9f1993db"
   dependencies:
-    accepts "~1.3.4"
+    accepts "~1.3.5"
     bytes "3.0.0"
-    compressible "~2.0.13"
+    compressible "~2.0.14"
     debug "2.6.9"
     on-headers "~1.0.1"
-    safe-buffer "5.1.1"
+    safe-buffer "5.1.2"
     vary "~1.1.2"
 
 concat-map@0.0.1:
@@ -3844,8 +3844,8 @@ eslint-plugin-import@^2.9.0:
     resolve "^1.6.0"
 
 eslint-plugin-jsx-a11y@^6.0.3:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.0.tgz#569f6f2d29546cab82cedaa077ec829693b0c42d"
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.1.tgz#7bf56dbe7d47d811d14dbb3ddff644aa656ce8e1"
   dependencies:
     aria-query "^3.0.0"
     array-includes "^3.0.3"
@@ -3875,6 +3875,13 @@ eslint-scope@3.7.1:
 eslint-scope@^3.7.1:
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-3.7.3.tgz#bb507200d3d17f60247636160b4826284b108535"
+  dependencies:
+    esrecurse "^4.1.0"
+    estraverse "^4.1.1"
+
+eslint-scope@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.0.tgz#50bf3071e9338bcdc43331794a0cb533f0136172"
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
@@ -3938,8 +3945,8 @@ esprima@^2.6.0:
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
 esprima@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
 
 esquery@^1.0.0:
   version "1.0.1"
@@ -4614,9 +4621,9 @@ fuzzy@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/fuzzy/-/fuzzy-0.1.3.tgz#4c76ec2ff0ac1a36a9dccf9a00df8623078d4ed8"
 
-gatsby-cli@^2.0.0-beta.5:
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.0.0-beta.5.tgz#054480b14b4c75edf3190bd8a1a6875388135ec0"
+gatsby-cli@^2.0.0-beta.3:
+  version "2.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.0.0-beta.6.tgz#66329bb0d0c6e2cd7614d0dcfcc4b24a954524f9"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/runtime" "7.0.0-beta.51"
@@ -4630,6 +4637,7 @@ gatsby-cli@^2.0.0-beta.5:
     fs-extra "^4.0.1"
     hosted-git-info "^2.6.0"
     lodash "^4.17.4"
+    opentracing "^0.14.3"
     pretty-error "^2.1.1"
     resolve-cwd "^2.0.0"
     source-map "^0.5.7"
@@ -4684,7 +4692,7 @@ gatsby-plugin-nprogress@^2.0.0-beta.3:
     "@babel/runtime" "7.0.0-beta.51"
     nprogress "^0.2.0"
 
-gatsby-plugin-page-creator@^2.0.0-beta.4:
+gatsby-plugin-page-creator@^2.0.0-beta.2:
   version "2.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.0-beta.4.tgz#0c6029eace4cf3afce9d19d048821e0fedfcc1e1"
   dependencies:
@@ -4710,7 +4718,7 @@ gatsby-plugin-sass@^2.0.0-beta.5:
     "@babel/runtime" "7.0.0-beta.51"
     sass-loader "^7.0.1"
 
-gatsby-plugin-sharp@^2.0.0-beta.2, gatsby-plugin-sharp@^2.0.0-beta.5:
+gatsby-plugin-sharp@^2.0.0-beta.2:
   version "2.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.0-beta.5.tgz#4e09abdd5b59753ca642ed246c0402d2409ddbbe"
   dependencies:
@@ -4745,12 +4753,11 @@ gatsby-react-router-scroll@^2.0.0-beta.2:
     warning "^3.0.0"
 
 gatsby-remark-images@^2.0.1-beta.3:
-  version "2.0.1-beta.6"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.1-beta.6.tgz#858493a66946bef86ce5bbdaeb1c6047691b68c0"
+  version "2.0.1-beta.7"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.1-beta.7.tgz#b7e71e7a7c16353eb4da5ff6e44b70f74a1a4e6a"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     cheerio "^1.0.0-rc.2"
-    gatsby-plugin-sharp "^2.0.0-beta.5"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     slash "^1.0.0"
@@ -4779,8 +4786,8 @@ gatsby-remark-responsive-iframe@^2.0.0-beta.2:
     unist-util-visit "^1.3.0"
 
 gatsby-source-filesystem@^2.0.1-beta.3:
-  version "2.0.1-beta.3"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.1-beta.3.tgz#757527d0494261b9e1b632539b11049f6e0dde17"
+  version "2.0.1-beta.5"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.1-beta.5.tgz#1e8bb55cb22cdb572109be8a934d759e529e1b1d"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     better-queue "^3.8.7"
@@ -4820,8 +4827,8 @@ gatsby-transformer-remark@^2.1.1-beta.2:
     unist-util-visit "^1.3.0"
 
 gatsby-transformer-sharp@^2.1.1-beta.3:
-  version "2.1.1-beta.3"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.1-beta.3.tgz#63e4d5a3997f5fe4f38bdba3a9e5a6d276f606c6"
+  version "2.1.1-beta.4"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.1-beta.4.tgz#ac441a5807b64b5d8b6744033a181f3f818a7cc3"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     bluebird "^3.5.0"
@@ -4837,9 +4844,9 @@ gatsby-transformer-yaml@^2.1.1-beta.2:
     lodash "^4.17.4"
     unist-util-select "^1.5.0"
 
-gatsby@2.0.0-beta.26:
-  version "2.0.0-beta.26"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.26.tgz#0f0fd683be73cd57a2481d3ae47299179077295e"
+gatsby@2.0.0-beta.17:
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.17.tgz#186d31e0556e959166243ed266de9603fb139e44"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/core" "7.0.0-beta.51"
@@ -4892,16 +4899,15 @@ gatsby@2.0.0-beta.26:
     friendly-errors-webpack-plugin "^1.6.1"
     front-matter "^2.1.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.0.0-beta.5"
+    gatsby-cli "^2.0.0-beta.3"
     gatsby-link "^2.0.0-beta.4"
-    gatsby-plugin-page-creator "^2.0.0-beta.4"
+    gatsby-plugin-page-creator "^2.0.0-beta.2"
     gatsby-react-router-scroll "^2.0.0-beta.2"
     glob "^7.1.1"
     graphql "^0.13.2"
     graphql-relay "^0.5.5"
     graphql-skip-limit "^2.0.0-beta.2"
     graphql-type-json "^0.2.1"
-    hash-mod "^0.0.5"
     history "^4.6.2"
     invariant "^2.2.4"
     is-relative "^1.0.0"
@@ -4925,7 +4931,6 @@ gatsby@2.0.0-beta.26:
     node-libs-browser "^2.0.0"
     normalize-path "^2.1.1"
     null-loader "^0.1.1"
-    opentracing "^0.14.3"
     opn "^5.3.0"
     parse-filepath "^1.0.1"
     path-exists "^3.0.0"
@@ -4950,7 +4955,6 @@ gatsby@2.0.0-beta.26:
     socket.io "^2.0.3"
     string-similarity "^1.2.0"
     style-loader "^0.19.1"
-    treeify "^1.1.0"
     type-of "^2.0.1"
     uglifyjs-webpack-plugin "^1.2.4"
     url-loader "^1.0.1"
@@ -5470,10 +5474,6 @@ hash-base@^3.0.0:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
-
-hash-mod@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/hash-mod/-/hash-mod-0.0.5.tgz#daf1e4973a9116643467d54ee7690b43ef802ecc"
 
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.5"
@@ -6402,8 +6402,8 @@ isarray@2.0.1:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-2.0.1.tgz#a37d94ed9cda2d59865c9f76fe596ee1f338741e"
 
 isemail@3.x.x:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/isemail/-/isemail-3.1.2.tgz#937cf919002077999a73ea8b1951d590e84e01dd"
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/isemail/-/isemail-3.1.3.tgz#64f37fc113579ea12523165c3ebe3a71a56ce571"
   dependencies:
     punycode "2.x.x"
 
@@ -7294,8 +7294,8 @@ miller-rabin@^4.0.0:
     brorand "^1.0.1"
 
 "mime-db@>= 1.34.0 < 2", mime-db@^1.28.0:
-  version "1.34.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.34.0.tgz#452d0ecff5c30346a6dc1e64b1eaee0d3719ff9a"
+  version "1.35.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.35.0.tgz#0569d657466491283709663ad379a99b90d9ab47"
 
 mime-db@~1.33.0:
   version "1.33.0"
@@ -7486,8 +7486,8 @@ nan@^2.10.0, nan@^2.9.2:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
 nanoid@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.0.7.tgz#23857a9514ae8efb7374221b923a2b92be3f74f2"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.1.0.tgz#b18e806e1cdbfdbe030374d5cf08a48cbc80b474"
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -10034,7 +10034,7 @@ safe-buffer@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
 
@@ -11192,10 +11192,6 @@ tough-cookie@~2.3.3:
   dependencies:
     punycode "^1.4.1"
 
-treeify@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/treeify/-/treeify-1.1.0.tgz#4e31c6a463accd0943879f30667c4fdaff411bb8"
-
 trim-lines@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/trim-lines/-/trim-lines-1.1.1.tgz#da738ff58fa74817588455e30b11b85289f2a396"
@@ -11891,8 +11887,8 @@ webpack-stats-plugin@^0.1.5:
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.1.5.tgz#29e5f12ebfd53158d31d656a113ac1f7b86179d9"
 
 webpack@^4.12.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.16.0.tgz#660dae90890e55b8ed17c6f9d17bebb01dab5b4c"
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.16.1.tgz#2c4b89ea648125c3e67bcca6adf49ce2c14b2d31"
   dependencies:
     "@webassemblyjs/ast" "1.5.13"
     "@webassemblyjs/helper-module-context" "1.5.13"
@@ -11905,7 +11901,7 @@ webpack@^4.12.0:
     ajv-keywords "^3.1.0"
     chrome-trace-event "^1.0.0"
     enhanced-resolve "^4.1.0"
-    eslint-scope "^3.7.1"
+    eslint-scope "^4.0.0"
     json-parse-better-errors "^1.0.2"
     loader-runner "^2.3.0"
     loader-utils "^1.1.0"
@@ -12082,8 +12078,8 @@ xmlhttprequest-ssl@~1.5.4:
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
 
 xstate@^3.1.0:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-3.3.2.tgz#4be8003fef861c5e4dd4ceb1037d9cdd39635316"
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-3.3.3.tgz#64177cd4473d4c2424b3df7d2434d835404b09a9"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
