@@ -44,7 +44,7 @@ export const pageQuery = graphql`
         title
         subtitle
         featuredImage {
-          ...LargeImage
+          ...FluidImage
         }
       }
     }

@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import GatsbyImage from 'gatsby-image'
 import PropTypes from 'prop-types'
-import _get from 'lodash/get'
 
 import { extractChildImageSharp } from '../utils'
 import './Image.css'
@@ -16,11 +15,10 @@ class Image extends React.Component {
       src,
       srcSet,
       source,
-      sizes,
       onClick,
+      sizes,
       alt,
-      style,
-      ...props
+      style
     } = this.props
 
     const fluid = extractChildImageSharp(src, 'fluid')
@@ -61,26 +59,10 @@ Image.propTypes = {
 export default Image
 
 export const query = graphql`
-  fragment LargeImageFluid on File {
+  fragment FluidImage on File {
     publicURL
     childImageSharp {
-      fluid(maxWidth: 1800, quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  fragment MediumImageFluid on File {
-    publicURL
-    childImageSharp {
-      fluid(maxWidth: 800, quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  fragment SmallImageFluid on File {
-    publicURL
-    childImageSharp {
-      fluid(maxWidth: 400, quality: 75) {
+      fluid(quality: 75) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -88,12 +70,36 @@ export const query = graphql`
   fragment LargeImage on File {
     publicURL
     childImageSharp {
+      fluid(maxWidth: 1800, quality: 75) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fragment MediumImage on File {
+    publicURL
+    childImageSharp {
+      fluid(maxWidth: 800, quality: 75) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fragment SmallImage on File {
+    publicURL
+    childImageSharp {
+      fluid(maxWidth: 400, quality: 75) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fragment LargeImageFixed on File {
+    publicURL
+    childImageSharp {
       fixed(width: 1800, quality: 75) {
         ...GatsbyImageSharpFixed_withWebp
       }
     }
   }
-  fragment MediumImage on File {
+  fragment MediumImageFixed on File {
     publicURL
     childImageSharp {
       fixed(width: 800, quality: 75) {
@@ -101,7 +107,7 @@ export const query = graphql`
       }
     }
   }
-  fragment SmallImage on File {
+  fragment SmallImageFixed on File {
     publicURL
     childImageSharp {
       fixed(width: 400, quality: 75) {

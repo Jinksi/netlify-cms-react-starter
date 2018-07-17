@@ -118,13 +118,7 @@ export const pageQuery = graphql`
         template
         subtitle
         featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 1800, maxHeight: 1200) {
-              src
-              srcWebp
-              srcSet
-            }
-          }
+          ...FluidImage
         }
         date
         dateFormatted: date(formatString: "MMMM Do, YYYY")

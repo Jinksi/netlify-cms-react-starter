@@ -67,7 +67,7 @@ export const ContactPageTemplate = ({
 )
 
 const ContactPage = ({ data: { page } }) => (
-  <ContactPageTemplate body={page.rawMarkdownBody} {...page.frontmatter} />
+  <ContactPageTemplate {...page.frontmatter} body={page.html} />
 )
 
 export default ContactPage
