@@ -9,9 +9,9 @@ section1: |-
 
   Netlify CMS works with both `.md` and `.json`.
 
-  ![Image test](/images/uploads/isabella juskova.jpg)
+  ![Image test](/images/uploads/isabella-juskova.jpg)
 
-  [Link test](/images/uploads/isabella juskova.jpg)
+  [Link test](/images/uploads/isabella-juskova.jpg)
 
   ### Embed Test
 
