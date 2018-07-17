@@ -9,5 +9,5 @@ export const extractChildImageSharp = (src = '', format) => {
   if (format === 'fluid' || format === 'fixed')
     return _get(src, `childImageSharp.${format}`)
   if (format) return _get(src, `childImageSharp.fluid.${format}`)
-  return _get(src, 'childImageSharp.fluid.src')
+  return src
 }

@@ -15,7 +15,6 @@ export const DefaultPageTemplate = ({
   <Layout>
     <main className="DefaultPage">
       <PageHeader
-        large
         title={title}
         subtitle={subtitle}
         backgroundImage={featuredImage}

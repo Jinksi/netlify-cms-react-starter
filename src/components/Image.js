@@ -18,7 +18,8 @@ class Image extends React.Component {
       onClick,
       sizes,
       alt,
-      style
+      style,
+      imgStyle
     } = this.props
 
     const fluid = extractChildImageSharp(src, 'fluid')
@@ -35,13 +36,14 @@ class Image extends React.Component {
           onClick={onClick}
           alt={alt}
           style={style}
+          imgStyle={imgStyle}
         />
       )
     }
 
     return (
       <img
-        className={`Image Normal-Image ${className}`}
+        className={`Image ${className}`}
         src={imageSrc}
         srcSet={imageSrcSet}
         sizes={sizes || '100vw'}
