@@ -1,8 +1,9 @@
 ---
 title: Post Two
+template: SinglePost
 status: Published
 date: '2018-03-28'
-postFeaturedImage: /images/uploads/vyouw5byhlc.jpeg
+featuredImage: /images/uploads/vyouw5byhlc.jpeg
 excerpt: This is an excerpt of Post Two
 categories:
   - category: Updates

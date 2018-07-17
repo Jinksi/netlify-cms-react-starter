@@ -2,7 +2,6 @@ import React from 'react'
 import Marked from 'react-markdown'
 import PropTypes from 'prop-types'
 
-import { getImageSrc, getImageSrcset } from '../util/getImageUrl'
 import './Content.css'
 
 const encodeMarkdownURIs = (source = '') => {
@@ -14,16 +13,10 @@ const encodeMarkdownURIs = (source = '') => {
   })
 }
 
-const ImageWithSrcset = ({ nodeKey, src, alt, ...props }) => {
+const Image = ({ nodeKey, src, alt, ...props }) => {
   const decodedSrc = decodeURI(src)
   return (
-    <img
-      className='Content--Image'
-      {...props}
-      src={getImageSrc(decodedSrc)}
-      srcSet={getImageSrcset(decodedSrc)}
-      alt={alt}
-    />
+    <img className="Content--Image" {...props} src={decodedSrc} alt={alt} />
   )
 }
 
@@ -39,16 +32,30 @@ const HtmlBlock = ({ value }) => {
   )
 }
 
-const Content = ({ source, src, className = '' }) => (
-  <Marked
-    className={`Content ${className}`}
-    source={encodeMarkdownURIs(source || src)}
-    renderers={{
-      image: ImageWithSrcset,
-      html: HtmlBlock
-    }}
-  />
-)
+const Content = ({ source, src, className = '' }) => {
+  // accepts either html or markdown
+  source = source || src || ''
+  if (source.match(/^</)) {
+    // If source is html (starts with '<')
+    return (
+      <div
+        className={`Content ${className}`}
+        dangerouslySetInnerHTML={{ __html: source }}
+      />
+    )
+  }
+
+  return (
+    <Marked
+      className={`Content ${className}`}
+      source={encodeMarkdownURIs(source)}
+      renderers={{
+        image: Image,
+        html: HtmlBlock
+      }}
+    />
+  )
+}
 
 Content.propTypes = {
   source: PropTypes.string,
