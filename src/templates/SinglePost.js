@@ -1,5 +1,6 @@
 import React from 'react'
 import _get from 'lodash/get'
+import _format from 'date-fns/format'
 import Link from 'gatsby-link'
 import { ChevronLeft } from 'react-feather'
 
@@ -10,7 +11,6 @@ import './SinglePost.css'
 export const SinglePostTemplate = ({
   title,
   date,
-  dateFormatted,
   featuredImage,
   body,
   nextPostURL,
@@ -47,7 +47,7 @@ export const SinglePostTemplate = ({
               itemProp="dateCreated pubdate datePublished"
               date={date}
             >
-              {dateFormatted}
+              {_format(date, 'MMMM Do, YYYY')}
             </time>
           )}
         </div>
@@ -114,11 +114,10 @@ export const pageQuery = graphql`
         title
         template
         subtitle
+        date
         featuredImage {
           ...FluidImage
         }
-        date
-        dateFormatted: date(formatString: "MMMM Do, YYYY")
       }
     }
   }

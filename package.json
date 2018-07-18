@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.7.3",
+    "date-fns": "^1.29.0",
     "dom-form-serializer": "^1.0.7",
     "gatsby": "^1",
     "gatsby-image": "^1.0.54",
