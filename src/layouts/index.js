@@ -25,12 +25,6 @@ export default ({ children, data }) => {
           socialMediaCard.image &&
           siteUrl + socialMediaCard.image
         }
-        twitterCreatorAccount={
-          socialMediaCard && socialMediaCard.twitterCreatorAccount
-        }
-        twitterSiteAccount={
-          socialMediaCard && socialMediaCard.twitterSiteAccount
-        }
       />
 
       <GithubCorner url="https://github.com/Jinksi/netlify-cms-react-starter" />
@@ -52,8 +46,6 @@ export const query = graphql`
       headerScripts
       socialMediaCard {
         image
-        twitterCreatorAccount
-        twitterSiteAccount
       }
     }
   }

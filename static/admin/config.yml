@@ -1,7 +1,7 @@
 # See https://github.com/netlify/netlify-cms/blob/master/example/config.yml
 backend:
   name: git-gateway
-  branch: gatsby # Branch to update (optional; defaults to master)
+  branch: gatsby-v1 # Branch to update (optional; defaults to master)
 
 # display_url: https://netlify-cms-react-starter.netlify.com # This url will display in the top-right of the CMS
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
@@ -18,6 +18,8 @@ collections: # A list of collections the CMS should be able to edit
         label: "Contact Page"
         name: "contact-page"
         fields:
+          - {label: Template, name: template, widget: hidden, default: ContactPage}
+          - {label: Slug, name: slug, widget: hidden, default: 'contact'}
           - {label: Title, name: title, widget: string}
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
@@ -39,6 +41,8 @@ collections: # A list of collections the CMS should be able to edit
         label: "Blog Page"
         name: "blog-page"
         fields:
+          - {label: Template, name: template, widget: hidden, default: BlogIndex}
+          - {label: Slug, name: slug, widget: hidden, default: 'blog'}
           - {label: Title, name: title, widget: string}
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
@@ -56,11 +60,14 @@ collections: # A list of collections the CMS should be able to edit
         label: "About Page"
         name: "about-page"
         fields:
+          - {label: Template, name: template, widget: hidden, default: AboutPage}
+          - {label: Slug, name: slug, widget: hidden, default: 'about'}
           - {label: Title, name: title, widget: string}
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
           - {label: Section 1, name: section1, widget: markdown}
           - {label: Section 2, name: section2, widget: markdown}
+          - {label: Test Image, name: testImage, widget: image}
           - label: "Meta"
             required: false
             name: "meta"
@@ -75,6 +82,8 @@ collections: # A list of collections the CMS should be able to edit
         label: "Home Page"
         name: "home-page"
         fields:
+          - {label: Template, name: template, widget: hidden, default: HomePage}
+          - {label: Slug, name: slug, widget: hidden, default: ''}
           - {label: Title, name: title, widget: string}
           - {label: Featured Image, name: featuredImage, widget: image}
           - {label: Subtitle, name: subtitle, widget: markdown}
@@ -98,6 +107,7 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
+      - {label: Template, name: template, widget: hidden, default: SinglePost}
       - {label: Title, name: title, widget: string}
       - label: 'Status'
         name: 'status'
