@@ -1,45 +1,174 @@
+# See https://github.com/netlify/netlify-cms/blob/master/example/config.yml
 backend:
   name: git-gateway
-  branch: master
+  branch: gatsby # Branch to update (optional; defaults to master)
 
-media_folder: static/uploads
-public_folder: /uploads
+# display_url: https://netlify-cms-react-starter.netlify.com # This url will display in the top-right of the CMS
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
-collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
+collections: # A list of collections the CMS should be able to edit
   - name: "pages"
-    label: "Pages"
+    label: "Page"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: true
     files:
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "content/pages/contact.md"
+        label: "Contact Page"
+        name: "contact-page"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+          - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - {label: Body, name: body, widget: markdown}
+          - {label: Address, name: address, widget: text}
+          - {label: Phone, name: phone, widget: string}
+          - {label: Email Address, name: email, widget: string}
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - {label: Title, name: title, widget: string, required: false}
+              - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+              - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+              - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+      - file: "content/pages/blog.md"
+        label: "Blog Page"
+        name: "blog-page"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - {label: Title, name: title, widget: string, required: false}
+              - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+              - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+              - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+      - file: "content/pages/about.md"
+        label: "About Page"
+        name: "about-page"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - {label: Section 1, name: section1, widget: markdown}
+          - {label: Section 2, name: section2, widget: markdown}
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - {label: Title, name: title, widget: string, required: false}
+              - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+              - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+              - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+      - file: "content/pages/home.md"
+        label: "Home Page"
+        name: "home-page"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Featured Image, name: featuredImage, widget: image}
+          - {label: Subtitle, name: subtitle, widget: markdown}
+          - {label: Body, name: body, widget: markdown}
+          - label: "Meta"
+            required: false
+            name: "meta"
+            widget: "object"
+            fields:
+              - {label: Title, name: title, widget: string, required: false}
+              - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+              - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+              - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+
+  - name: posts
+    label: Post
+    editor:
+      preview: true
+    folder: content/posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: Title, name: title, widget: string}
+      - label: 'Status'
+        name: 'status'
+        widget: 'select'
+        options: ["Published", "Featured", "Draft"]
+        default: 'Published'
+      - {label: Date / Order, name: date, widget: date}
+      - {label: Post Featured Image, name: postFeaturedImage, widget: image, required: false}
+      - {label: Excerpt, name: excerpt, widget: text}
+      - {label: Content, name: body, widget: markdown}
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Category"
+            name: "category"
+            widget: "relation"
+            collection: "postCategories"
+            searchFields: ["title"]
+            valueField: "title"
+      - label: "Meta"
+        required: false
+        name: "meta"
+        widget: "object"
+        fields:
+          - {label: Title, name: title, widget: string, required: false}
+          - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+          - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+          - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+
+  - name: postCategories
+    label: Post Category
+    editor:
+      preview: false
+    folder: content/postCategories
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: Title, name: title, widget: string}
+      - label: "Meta"
+        required: false
+        name: "meta"
+        widget: "object"
+        fields:
+          - {label: Title, name: title, widget: string, required: false}
+          - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+          - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+          - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+
+  - name: "settings"
+    label: "Settings"
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - file: "content/settings/global.yml"
+        label: "Global Settings"
+        name: "global-settings"
+        fields:
+          - {label: Site Title, name: siteTitle, widget: string}
+          - {label: Site Url, name: siteUrl, widget: string, required: false}
+          - {label: Site Description, name: siteDescription, widget: text, required: false}
+          - label: Social Media Card
+            name: socialMediaCard
+            widget: object
+            fields:
+              - {label: Image, name: image, widget: image, required: false}
+              - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
+              - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
+          - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
+          - {label: Enable Service Worker Pre-Cache, name: enableServiceWorker, widget: boolean, required: false}
