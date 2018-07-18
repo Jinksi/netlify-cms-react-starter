@@ -99,6 +99,30 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Noindex, name: noindex, widget: boolean, required: false}
 
 
+  - name: infoPages
+    label: Info Pages
+    editor:
+      preview: true
+    folder: content/infoPages
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields:
+      - {label: Template, name: template, widget: hidden, default: DefaultPage}
+      - {label: Slug, name: slug, widget: string}
+      - {label: Title, name: title, widget: string}
+      - {label: Featured Image, name: featuredImage, widget: image}
+      - {label: Body, name: body, widget: markdown}
+      - label: "Meta"
+        required: false
+        name: "meta"
+        widget: "object"
+        fields:
+          - {label: Title, name: title, widget: string, required: false}
+          - {label: Description, name: description, widget: text, required: false, pattern: [".{,300}", "Must not exceed 300 characters"]}
+          - {label: Canonical Link, name: canonicalLink, widget: string, required: false}
+          - {label: Noindex, name: noindex, widget: boolean, required: false}
+
+
   - name: posts
     label: Post
     editor:

@@ -20,7 +20,7 @@ CMS.registerPreviewTemplate('about-page', ({ entry }) => (
 CMS.registerPreviewTemplate('contact-page', ({ entry }) => (
   <ContactPageTemplate {...entry.toJS().data} />
 ))
-CMS.registerPreviewTemplate('default-page', ({ entry }) => (
+CMS.registerPreviewTemplate('infoPages', ({ entry }) => (
   <DefaultPageTemplate {...entry.toJS().data} />
 ))
 CMS.registerPreviewTemplate('blog-page', ({ entry }) => (
