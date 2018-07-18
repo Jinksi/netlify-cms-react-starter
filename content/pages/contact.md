@@ -1,10 +1,10 @@
 ---
 template: ContactPage
-slug: 'contact'
-title: Contact us
-subtitle: ''
-featuredImage: '/images/uploads/mark-chang-74-3.jpg'
-address: 404 James St, Burleigh Heads QLD 4220
+slug: contact
+title: Contact
+featuredImage: /images/uploads/mark-chang-74-3.jpg
+subtitle: Contact Page has a subtitle
+address: '404 James St, Burleigh Heads QLD 4220'
 phone: 0987 123 456
 email: example@example.com
 ---
