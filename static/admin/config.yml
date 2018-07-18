@@ -100,7 +100,7 @@ collections: # A list of collections the CMS should be able to edit
 
 
   - name: infoPages
-    label: Info Pages
+    label: Info Page
     editor:
       preview: true
     folder: content/infoPages
