@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import PostSection from '../components/PostSection'
 import PostCategoriesNav from '../components/PostCategoriesNav'
@@ -14,22 +12,20 @@ export const BlogIndexTemplate = ({
   posts = [],
   postCategories = []
 }) => (
-  <Layout>
-    <main className="Blog">
-      <PageHeader
-        large
-        title={title}
-        subtitle={subtitle}
-        backgroundImage={featuredImage}
-      />
+  <main className="Blog">
+    <PageHeader
+      large
+      title={title}
+      subtitle={subtitle}
+      backgroundImage={featuredImage}
+    />
 
-      {!!postCategories.length && (
-        <PostCategoriesNav categories={postCategories} />
-      )}
+    {!!postCategories.length && (
+      <PostCategoriesNav categories={postCategories} />
+    )}
 
-      {!!posts.length && <PostSection posts={posts} />}
-    </main>
-  </Layout>
+    {!!posts.length && <PostSection posts={posts} />}
+  </main>
 )
 
 // Export Default BlogIndex for front-end

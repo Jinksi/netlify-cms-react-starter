@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 
@@ -12,21 +10,19 @@ export const DefaultPageTemplate = ({
   featuredImage,
   body
 }) => (
-  <Layout>
-    <main className="DefaultPage">
-      <PageHeader
-        title={title}
-        subtitle={subtitle}
-        backgroundImage={featuredImage}
-      />
+  <main className="DefaultPage">
+    <PageHeader
+      title={title}
+      subtitle={subtitle}
+      backgroundImage={featuredImage}
+    />
 
-      <section className="section">
-        <div className="container">
-          <Content source={body} />
-        </div>
-      </section>
-    </main>
-  </Layout>
+    <section className="section">
+      <div className="container">
+        <Content source={body} />
+      </div>
+    </section>
+  </main>
 )
 
 const DefaultPage = ({ data: { page } }) => (

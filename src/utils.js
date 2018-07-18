@@ -6,8 +6,7 @@ export const extractChildImageSharp = (src = '', format) => {
     const childImageSharp = _get(src, 'childImageSharp')
     if (!childImageSharp) return _get(src, 'publicURL')
   }
-  if (format === 'fluid' || format === 'fixed')
+  if (format === 'sizes' || format === 'resolutions')
     return _get(src, `childImageSharp.${format}`)
-  if (format) return _get(src, `childImageSharp.fluid.${format}`)
   return src
 }

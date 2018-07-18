@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 
@@ -25,9 +23,7 @@ export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
 
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page } }) => (
-  <Layout>
-    <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
-  </Layout>
+  <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
 )
 
 export default HomePage

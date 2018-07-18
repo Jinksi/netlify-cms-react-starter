@@ -1,7 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Image from '../components/Image'
 import Content from '../components/Content.js'
@@ -17,29 +15,27 @@ export const AboutPageTemplate = ({
   testImage,
   body
 }) => (
-  <Layout>
-    <main className="About">
-      <PageHeader
-        title={title}
-        subtitle={subtitle}
-        backgroundImage={featuredImage}
-      />
+  <main className="About">
+    <PageHeader
+      title={title}
+      subtitle={subtitle}
+      backgroundImage={featuredImage}
+    />
 
-      <section className="section">
-        <div className="container">
-          <Content source={section1} />
-        </div>
-      </section>
+    <section className="section">
+      <div className="container">
+        <Content source={section1} />
+      </div>
+    </section>
 
-      <section className="section">
-        <div className="container">
-          <Content source={section2} />
-          <p>The image below is a {'<Image />'}</p>
-          <Image src={testImage} alt="Image" />
-        </div>
-      </section>
-    </main>
-  </Layout>
+    <section className="section">
+      <div className="container">
+        <Content source={section2} />
+        <p>The image below is a {'<Image />'}</p>
+        <Image src={testImage} alt="Image" />
+      </div>
+    </section>
+  </main>
 )
 
 const AboutPage = ({ data: { page } }) => (

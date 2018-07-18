@@ -1,9 +1,8 @@
 import React from 'react'
 import _get from 'lodash/get'
-import { Link, graphql } from 'gatsby'
+import Link from 'gatsby-link'
 import { ChevronLeft } from 'react-feather'
 
-import Layout from '../components/Layout'
 import Content from '../components/Content'
 import BackgroundImage from '../components/BackgroundImage'
 import './SinglePost.css'
@@ -18,80 +17,78 @@ export const SinglePostTemplate = ({
   prevPostURL,
   categories = []
 }) => (
-  <Layout>
-    <article
-      className="SinglePost section light"
-      itemScope
-      itemType="http://schema.org/BlogPosting"
-    >
-      {featuredImage && (
-        <BackgroundImage
-          className="SinglePost--BackgroundImage"
-          src={featuredImage}
-        />
-      )}
+  <article
+    className="SinglePost section light"
+    itemScope
+    itemType="http://schema.org/BlogPosting"
+  >
+    {featuredImage && (
+      <BackgroundImage
+        className="SinglePost--BackgroundImage"
+        src={featuredImage}
+      />
+    )}
 
-      <div className="container skinny">
-        <Link className="SinglePost--BackButton" to="/blog/">
-          <ChevronLeft /> BACK
-        </Link>
-        <div className="SinglePost--Content relative">
-          <div className="SinglePost--Meta">
-            {!!categories.length &&
-              categories.map(obj => (
-                <span key={obj.category} className="SinglePost--Meta--Category">
-                  {obj.category}
-                </span>
-              ))}
-            {date && (
-              <time
-                className="SinglePost--Meta--Date"
-                itemProp="dateCreated pubdate datePublished"
-                date={date}
-              >
-                {dateFormatted}
-              </time>
-            )}
-          </div>
-
-          {title && (
-            <h1 className="SinglePost--Title" itemProp="title">
-              {title}
-            </h1>
+    <div className="container skinny">
+      <Link className="SinglePost--BackButton" to="/blog/">
+        <ChevronLeft /> BACK
+      </Link>
+      <div className="SinglePost--Content relative">
+        <div className="SinglePost--Meta">
+          {!!categories.length &&
+            categories.map(obj => (
+              <span key={obj.category} className="SinglePost--Meta--Category">
+                {obj.category}
+              </span>
+            ))}
+          {date && (
+            <time
+              className="SinglePost--Meta--Date"
+              itemProp="dateCreated pubdate datePublished"
+              date={date}
+            >
+              {dateFormatted}
+            </time>
           )}
+        </div>
 
-          <div className="SinglePost--InnerContent">
-            <Content source={body} />
-          </div>
+        {title && (
+          <h1 className="SinglePost--Title" itemProp="title">
+            {title}
+          </h1>
+        )}
 
-          <div className="SinglePost--Pagination">
-            {prevPostURL && (
-              <Link
-                className="SinglePost--Pagination--Link prev"
-                to={prevPostURL}
-              >
-                Previous Post
-              </Link>
-            )}
-            {nextPostURL && (
-              <Link
-                className="SinglePost--Pagination--Link next"
-                to={nextPostURL}
-              >
-                Next Post
-              </Link>
-            )}
-          </div>
+        <div className="SinglePost--InnerContent">
+          <Content source={body} />
+        </div>
+
+        <div className="SinglePost--Pagination">
+          {prevPostURL && (
+            <Link
+              className="SinglePost--Pagination--Link prev"
+              to={prevPostURL}
+            >
+              Previous Post
+            </Link>
+          )}
+          {nextPostURL && (
+            <Link
+              className="SinglePost--Pagination--Link next"
+              to={nextPostURL}
+            >
+              Next Post
+            </Link>
+          )}
         </div>
       </div>
-    </article>
-  </Layout>
+    </div>
+  </article>
 )
 
 // Export Default SinglePost for front-end
-const SinglePost = ({ data, pageContext }) => {
+const SinglePost = ({ data, pathContext }) => {
   const { post } = data
-  const { previous, next } = pageContext
+  const { previous, next } = pathContext
   return (
     <SinglePostTemplate
       {...post}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import GatsbyImage from 'gatsby-image'
 import PropTypes from 'prop-types'
 
@@ -22,17 +21,17 @@ class Image extends React.Component {
       imgStyle
     } = this.props
 
-    const fluid = extractChildImageSharp(src, 'fluid')
-    const fixed = extractChildImageSharp(src, 'fixed')
+    const imageSizes = extractChildImageSharp(src, 'sizes')
+    const resolutions = extractChildImageSharp(src, 'resolutions')
     const imageSrcSet = srcSet || extractChildImageSharp(src, 'srcSet')
     const imageSrc = extractChildImageSharp(src || source)
 
-    if (fluid || fixed) {
+    if (imageSizes || resolutions) {
       return (
         <GatsbyImage
           className={`Image ${className}`}
-          fluid={fluid}
-          fixed={fixed}
+          sizes={imageSizes}
+          resolutions={resolutions}
           onClick={onClick}
           alt={alt}
           style={style}
@@ -64,56 +63,56 @@ export const query = graphql`
   fragment FluidImage on File {
     publicURL
     childImageSharp {
-      fluid(quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
+      sizes(quality: 75) {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }
   fragment LargeImage on File {
     publicURL
     childImageSharp {
-      fluid(maxWidth: 1800, quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
+      sizes(maxWidth: 1800, quality: 75) {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }
   fragment MediumImage on File {
     publicURL
     childImageSharp {
-      fluid(maxWidth: 800, quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
+      sizes(maxWidth: 800, quality: 75) {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }
   fragment SmallImage on File {
     publicURL
     childImageSharp {
-      fluid(maxWidth: 400, quality: 75) {
-        ...GatsbyImageSharpFluid_withWebp
+      sizes(maxWidth: 400, quality: 75) {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }
   fragment LargeImageFixed on File {
     publicURL
     childImageSharp {
-      fixed(width: 1800, quality: 75) {
-        ...GatsbyImageSharpFixed_withWebp
+      resolutions(width: 1800, quality: 75) {
+        ...GatsbyImageSharpResolutions_withWebp
       }
     }
   }
   fragment MediumImageFixed on File {
     publicURL
     childImageSharp {
-      fixed(width: 800, quality: 75) {
-        ...GatsbyImageSharpFixed_withWebp
+      resolutions(width: 800, quality: 75) {
+        ...GatsbyImageSharpResolutions_withWebp
       }
     }
   }
   fragment SmallImageFixed on File {
     publicURL
     childImageSharp {
-      fixed(width: 400, quality: 75) {
-        ...GatsbyImageSharpFixed_withWebp
+      resolutions(width: 400, quality: 75) {
+        ...GatsbyImageSharpResolutions_withWebp
       }
     }
   }
