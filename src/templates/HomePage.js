@@ -7,27 +7,27 @@ import Content from '../components/Content'
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({ title, subtitle, featuredImage, body }) => (
-  <Layout>
-    <main className="Home">
-      <PageHeader
-        large
-        title={title}
-        subtitle={subtitle}
-        backgroundImage={featuredImage}
-      />
+  <main className="Home">
+    <PageHeader
+      large
+      title={title}
+      subtitle={subtitle}
+      backgroundImage={featuredImage}
+    />
 
-      <section className="section">
-        <div className="container">
-          <Content source={body} />
-        </div>
-      </section>
-    </main>
-  </Layout>
+    <section className="section">
+      <div className="container">
+        <Content source={body} />
+      </div>
+    </section>
+  </main>
 )
 
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page } }) => (
-  <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
+  <Layout>
+    <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
+  </Layout>
 )
 
 export default HomePage
