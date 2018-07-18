@@ -1,6 +1,6 @@
 ---
-title: Hello World!
 template: SinglePost
+title: Hello World!
 status: Featured / Published
 date: '2018-03-27'
 featuredImage: /images/uploads/tim-marshall-155597.jpg
