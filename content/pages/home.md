@@ -3,7 +3,7 @@ template: HomePage
 slug: ''
 title: Hello World!
 featuredImage: /images/uploads/isabella-juskova.jpg
-subtitle: This is the home page subtitle
+subtitle: This is the home page subtitle test
 meta:
   title: ''
 ---
