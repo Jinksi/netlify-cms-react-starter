@@ -10,7 +10,7 @@ meta:
 
 # Gatsbro
 
-An opinionated starter project for creating lightning-fast, offline-first websites with [Gatsby](https://gatsbyjs.org) and [Netlify CMS](https://netlifycms.org).
+An opinionated starter project for creating lightning-fast websites with [Gatsby](https://gatsbyjs.org) and [Netlify CMS](https://netlifycms.org).
 
 - **[Gatsby](https://gatsbyjs.org)** static site generator
 - **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
