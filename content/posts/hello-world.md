@@ -1,8 +1,9 @@
 ---
+template: SinglePost
 title: Hello World!
 status: Featured / Published
 date: '2018-03-27'
-postFeaturedImage: /images/uploads/tim-marshall-155597.jpg
+featuredImage: /images/uploads/tim-marshall-155597.jpg
 excerpt: >-
   Etiam ac quam eget lectus venenatis ullamcorper sit amet non arcu. Nullam
   interdum arcu vitae augue pulvinar sodales. Sed non dui diam. Quisque lectus
@@ -19,13 +20,15 @@ meta:
 
 Paragraphs are separated by a blank line.
 
+![Test Image](/images/uploads/vyouw5byhlc.jpeg)
+
 The second paragraph. This is placeholder text that our web designers put here to make sure words appear properly on your website. _Italic_, **bold**, and `monospace`.
 
 ### Unordered lists:
 
-* this one
-* that one
-* the other one
+- this one
+- that one
+- the other one
 
 ### Ordered lists:
 

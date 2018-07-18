@@ -24,33 +24,35 @@ const Meta = props => {
   }
 
   // write headerScripts
-  const headerScriptsElement = document.head.querySelector('#headerScripts')
-  if (headerScripts && headerScriptsElement) {
-    headerScriptsElement.outerHTML = headerScripts
+  if (typeof window !== 'undefined') {
+    const headerScriptsElement = document.head.querySelector('#headerScripts')
+    if (headerScripts && headerScriptsElement) {
+      headerScriptsElement.outerHTML = headerScripts
+    }
   }
 
   return (
     <Helmet>
       {title && <title>{title}</title>}
-      {title && <meta property='og:title' content={title} />}
-      {description && <meta name='description' content={description} />}
-      {description && <meta property='og:description' content={description} />}
-      {url && <meta property='og:type' content='website' />}
-      {url && <meta property='og:url' content={url} />}
+      {title && <meta property="og:title" content={title} />}
+      {description && <meta name="description" content={description} />}
+      {description && <meta property="og:description" content={description} />}
+      {url && <meta property="og:type" content="website" />}
+      {url && <meta property="og:url" content={url} />}
       {absoluteImageUrl && (
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta name="twitter:card" content="summary_large_image" />
       )}
       {absoluteImageUrl && (
-        <meta property='og:image' content={absoluteImageUrl} />
+        <meta property="og:image" content={absoluteImageUrl} />
       )}
       {twitterSiteAccount && (
-        <meta name='twitter:site' content={twitterSiteAccount} />
+        <meta name="twitter:site" content={twitterSiteAccount} />
       )}
       {twitterCreatorAccount && (
-        <meta name='twitter:creator' content={twitterCreatorAccount} />
+        <meta name="twitter:creator" content={twitterCreatorAccount} />
       )}
-      {noindex && <meta name='robots' content='noindex' />}
-      {canonicalLink && <link rel='canonical' href={canonicalLink} />}
+      {noindex && <meta name="robots" content="noindex" />}
+      {canonicalLink && <link rel="canonical" href={canonicalLink} />}
     </Helmet>
   )
 }

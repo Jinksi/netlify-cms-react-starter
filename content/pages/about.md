@@ -1,19 +1,22 @@
 ---
+template: AboutPage
+slug: about
 title: About page title
 featuredImage: /images/uploads/tim-marshall-155597.jpg
-section1: |-
+subtitle: Test subtitle
+section1: >-
   ## Lorem Ipsum
 
-  Netlify CMS works with both `.md` and `.json`.
 
-  ![Image test](/images/uploads/isabella juskova.jpg)
+  [Link test](/images/uploads/isabella-juskova.jpg)
 
-  [Link test](/images/uploads/isabella juskova.jpg)
 
   ### Embed Test
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Js00yn142ic" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+  <iframe width="560" height="315"
+  src="https://www.youtube.com/embed/Js00yn142ic" frameborder="0"
+  allow="autoplay; encrypted-media" allowfullscreen></iframe>
 section2: |-
   ## This is a Container component
 
@@ -25,8 +28,6 @@ section2: |-
   vel est ut proin dis auctor. Suscipit scelerisque orci magna interdum vel
   bibendum duis netus a consectetur dui magnis ac aliquet sem posuere tincidunt
   vestibulum.
-
-  The image below will have a `srcset` attribute generated:
-
-  ![Tim Marshall](/images/uploads/tim-marshall-155597.jpg)
+testImage: /images/uploads/mark-chang-74-3.jpg
 ---
+

@@ -5,15 +5,13 @@
   bottom: 0;
   right: 0;
   background-position: center;
-  transform: translate3d(0, 0, 0);
-  transition: filter 0.3s ease-in-out;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
-.BackgroundImage-lazy {
-  filter: blur(5px);
-}
-
-.BackgroundImage-lazy-loaded {
-  filter: blur(0);
+.BackgroundImage .Image {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

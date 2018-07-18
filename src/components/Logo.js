@@ -4,9 +4,9 @@ import './Logo.css'
 
 export default ({ inverted }) => (
   <div
-    className='Logo'
+    className="Logo"
     style={{
-      backgroundImage: 'url(/images/logo.svg)'
+      backgroundImage: `url(/images/logo.svg)`
     }}
   />
 )
