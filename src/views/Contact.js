@@ -9,37 +9,38 @@ import './Contact.css'
 export default ({ fields }) => {
   const { body, title, subtitle, featuredImage, address, phone, email } = fields
   return (
-    <div className='Contact'>
+    <div className="Contact">
       <PageHeader
         title={title}
         subtitle={subtitle}
         backgroundImage={featuredImage}
       />
 
-      <div className='section Contact--Section1'>
-        <div className='container Contact--Section1--Container'>
+      <div className="section Contact--Section1">
+        <div className="container Contact--Section1--Container">
           <div>
             <Content source={body} />
 
-            <div className='Contact--Details'>
+            <div className="Contact--Details">
               {address && (
                 <a
-                  className='Contact--Details--Item'
+                  className="Contact--Details--Item"
                   href={`https://www.google.com.au/maps/search/${encodeURI(
                     address
                   )}`}
-                  target='_blank'
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <MapPin /> {address}
                 </a>
               )}
               {phone && (
-                <a className='Contact--Details--Item' href={`tel:${phone}`}>
+                <a className="Contact--Details--Item" href={`tel:${phone}`}>
                   <Smartphone /> {phone}
                 </a>
               )}
               {email && (
-                <a className='Contact--Details--Item' href={`mailto:${email}`}>
+                <a className="Contact--Details--Item" href={`mailto:${email}`}>
                   <Mail /> {email}
                 </a>
               )}
@@ -47,7 +48,7 @@ export default ({ fields }) => {
           </div>
 
           <div>
-            <EnquiryFormSimpleAjax name='Simple Form Ajax' />
+            <EnquiryFormSimpleAjax name="Simple Form Ajax" />
           </div>
         </div>
       </div>
