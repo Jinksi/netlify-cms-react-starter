@@ -13,14 +13,16 @@ const options = {
   inputDir: './public/images/uploads',
   outputDir: './public/images/uploads/resized',
   sizes,
-  imageFormats: ['jpg', 'jpeg', 'png', 'gif', 'webp']
+  imageFormats: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
 }
 
 const saveImage = ({ buffer, size, outputFile }) => {
   return new Promise((resolve, reject) => {
     sharp(buffer)
-      .resize(size)
-      .withoutEnlargement()
+      .resize({
+        width: size,
+        withoutEnlargement: true,
+      })
       .toFile(outputFile, err => {
         if (err) {
           return reject(err)
