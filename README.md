@@ -6,11 +6,11 @@
 
 A starter project for creating lightning-fast, offline-first websites with [Netlify CMS](https://netlifycms.org) and React.
 
-* **[Create React App](https://github.com/facebookincubator/create-react-app)**
-* **[React Router](https://github.com/ReactTraining/react-router)** for routing
-* **[React Helmet](https://github.com/nfl/react-helmet)** for document titles, descriptions, meta
-* **[React Snapshot](https://github.com/geelen/react-snapshot)** for pre-rendering to static html so it works without Javascript ⭐️
-* **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
+- **[Create React App](https://github.com/facebookincubator/create-react-app)**
+- **[React Router](https://github.com/ReactTraining/react-router)** for routing
+- **[React Helmet](https://github.com/nfl/react-helmet)** for document titles, descriptions, meta
+- **[React Snapshot](https://github.com/geelen/react-snapshot)** for pre-rendering to static html so it works without Javascript ⭐️
+- **[Netlify CMS](https://github.com/netlify/netlify-cms)** for content management
 
 I aim to include commonly used components and best-practices e.g. forms, settings, <head> tags, lazy-loading images, etc.
 
@@ -20,18 +20,18 @@ I aim to include commonly used components and best-practices e.g. forms, setting
 
 1.  Hit the **Deploy to Netlify** button. This will:
 
-* Clone the repo into your Github account
-* Create you a new project on Netlify, build & deploy
+- Clone the repo into your Github account
+- Create you a new project on Netlify, build & deploy
 
 1.  Once your Netlify project has been created, check a couple of settings:
 
-* Enable **Identity**
-* Change **Registration Preferences** to **Invite Only**
-* Enable **Git Gateway**
+- Enable **Identity**
+- Change **Registration Preferences** to **Invite Only**
+- Enable **Git Gateway**
 
 1.  Invite users (probably yourself) to enable admin access
 
-* Open the **Identity** tab and hit **Invite Users**
+- Open the **Identity** tab and hit **Invite Users**
 
 ## Show me the CMS!
 
@@ -66,4 +66,4 @@ Find out more in the [Netlify CMS Docs](https://www.netlifycms.org/docs/#configu
 [Netlify CMS Docs](https://www.netlifycms.org/docs/)  
 [Netlify CMS Repo](https://github.com/netlify/netlify-cms)  
 [Hyperstatic](https://github.com/Jinksi/hyperstatic) – the same starter project minus Netlify CMS  
-[Gatsby + Netlify CMS Starter](https://github.com/AustinGreen/gatsby-starter-netlify-cms)
+[Gatsby + Netlify CMS Starter (Gatsbro)](https://github.com/Jinksi/gatsbro)

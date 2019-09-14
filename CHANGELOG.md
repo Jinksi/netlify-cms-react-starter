@@ -1,3 +1,9 @@
+## 0.4.2 - 2019-09-14
+
+- Upgrade dependencies
+- Update date format
+- Update README
+
 ## 0.4.2 - 2018-06-08
 
 - Meta object field should not be required
