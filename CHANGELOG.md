@@ -1,4 +1,9 @@
-## 0.4.2 - 2019-09-14
+## 0.5.1 - 2019-09-14
+
+- Fix webpack build errors in `/cms` dir
+- Upgrade `netlify-cms`
+
+## 0.5.0 - 2019-09-14
 
 - Upgrade dependencies
 - Update date format
