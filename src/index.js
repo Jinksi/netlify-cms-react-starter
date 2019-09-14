@@ -1,4 +1,3 @@
-import 'core-js/es6'
 import React from 'react'
 import { render } from 'react-snapshot'
 import 'modern-normalize/modern-normalize.css'
