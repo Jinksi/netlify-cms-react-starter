@@ -75,11 +75,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolutions": {
-    "lodash": "4.17.15",
-    "reload": "2.4.0",
-    "union-value": "1.0.1",
-    "set-value": "2.0.1"
   }
 }
