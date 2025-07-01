@@ -1,9 +1,9 @@
 # Netlify CMS + React Starter
 
-> **Warning**
-> Netlify CMS is no longer being maintained, therefore I won't be maintaining this project.  
+> [!Warning]
+> As of Nov 7 2022, Netlify CMS is no longer being maintained, therefore I won't be maintaining this project.  
 > See https://github.com/netlify/netlify-cms/discussions/6503.  
-> Both Netlify CMS and this project both work for the most part (as of Nov 2022), albeit with some outdated approaches e,g, React class components.  
+> Both Netlify CMS and this project both work for the most part, albeit with some outdated approaches e,g, React class components.  
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
